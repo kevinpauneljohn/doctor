@@ -41,8 +41,21 @@ class LoginController extends Controller
 
         if(Auth::attempt($credential))
         {
-            return 'hello';
+            return redirect(route('dashboard'));
         }
         return back()->with(['success' => false, 'message' => 'Error Occurred']);
+    }
+
+    /**
+     * Dec. 06, 2019
+     * @author john kevin paunel
+     * @param Request $request
+     * @return mixed
+     * */
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        return redirect(route('login'));
     }
 }
