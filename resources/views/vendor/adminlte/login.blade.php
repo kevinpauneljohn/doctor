@@ -36,18 +36,18 @@
         <div class="card">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">{{ __('adminlte::adminlte.login_message') }}</p>
-                <form action="{{ $login_url }}" method="post">
+                <form action="{{ route('login.authenticate') }}" method="post">
                     {{ csrf_field() }}
                     <div class="input-group mb-3">
-                        <input type="email" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" value="{{ old('email') }}" placeholder="{{ __('adminlte::adminlte.email') }}" autofocus>
+                        <input type="text" name="username" class="form-control {{ $errors->has('username') ? 'is-invalid' : '' }}" value="{{ old('username') }}" placeholder="{{ __('Username') }}" autofocus>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
                             </div>
                         </div>
-                        @if ($errors->has('email'))
+                        @if ($errors->has('username'))
                             <div class="invalid-feedback">
-                                {{ $errors->first('email') }}
+                                {{ $errors->first('username') }}
                             </div>
                         @endif
                     </div>
