@@ -183,14 +183,23 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+        ['header' => 'USER MANAGEMENT'],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text'    => 'Users',
+            'icon'    => 'fa fa-fw fa-users',
+            'submenu' => [
+                [
+                    'text' => 'Users',
+                    'icon_color' => 'blue',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Add User',
+                    'icon_color' => 'red',
+                    'url'  => '#',
+                ],
+            ],
         ],
-        ['header' => 'account_settings'],
         [
             'text' => 'profile',
             'url'  => 'admin/settings',
