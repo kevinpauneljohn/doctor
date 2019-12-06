@@ -36,6 +36,11 @@
         <div class="card">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">{{ __('adminlte::adminlte.login_message') }}</p>
+                @if(session('success') === false && session('message') === "Invalid Credential")
+                    <div class="alert alert-danger">
+                        <i class="fa fa-times-circle"></i> {{session('message')}}
+                    </div>
+                    @endif
                 <form action="{{ route('login.authenticate') }}" method="post">
                     {{ csrf_field() }}
                     <div class="input-group mb-3">
@@ -66,10 +71,9 @@
                     </div>
                     <div class="row">
                         <div class="col-8">
-                            <div class="icheck-primary">
-                                <input type="checkbox" name="remember" id="remember">
-                                <label for="remember">{{ __('adminlte::adminlte.remember_me') }}</label>
-                            </div>
+                            <a href="{{ $password_reset_url }}">
+                                {{ __('adminlte::adminlte.i_forgot_my_password') }}
+                            </a>
                         </div>
                         <div class="col-4">
                             <button type="submit" class="btn btn-primary btn-block btn-flat">
@@ -79,17 +83,8 @@
                     </div>
                 </form>
                 <p class="mt-2 mb-1">
-                    <a href="{{ $password_reset_url }}">
-                        {{ __('adminlte::adminlte.i_forgot_my_password') }}
-                    </a>
+
                 </p>
-                @if ($register_url)
-                    <p class="mb-0">
-                        <a href="{{ $register_url }}">
-                            {{ __('adminlte::adminlte.register_a_new_membership') }}
-                        </a>
-                    </p>
-                @endif
             </div>
         </div>
     </div>

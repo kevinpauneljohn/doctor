@@ -47,7 +47,7 @@ class LoginController extends Controller
         {
             return redirect(route('dashboard'));
         }
-        return back()->with(['success' => false, 'message' => 'Error Occurred']);
+        return back()->with(['success' => false, 'message' => 'Invalid Credential']);
     }
 
     /**
