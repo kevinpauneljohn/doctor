@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','LandingPageController');
 
 /*------------------Custom auth------------------------*/
 Route::get('/login','CustomAuth\LoginController@login')->name('login');
