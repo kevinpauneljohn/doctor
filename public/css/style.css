@@ -1,0 +1,12 @@
+.form-inline{
+    display:inline;
+}
+table{
+    width:100%!important;
+}
+
+@media only screen and (min-width: 10px){
+    .form-inline label{
+        display:inline;
+    }
+}

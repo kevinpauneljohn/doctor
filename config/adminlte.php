@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Request;
 return [
 
     /*
@@ -183,6 +183,11 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+        [
+            'text' => 'Clinics',
+            'url'  => '/clinics',
+            'icon' => 'fa fa-fw fa fa-hospital-alt',
+        ],
         ['header' => 'USER MANAGEMENT'],
         [
             'text'    => 'Users',
@@ -300,7 +305,7 @@ return [
     'plugins' => [
         [
             'name' => 'Datatables',
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',

@@ -22,3 +22,8 @@ Route::group(['middleware' => ['auth']], function (){
     Route::get('/dashboard','DashboardController@dashboard')->name('dashboard');
     Route::post('/logout','CustomAuth\LoginController@logout')->name('logout');
 });
+
+Route::group(['middleware' => ['auth']], function(){
+    Route::resource('clinics','ClinicController');
+    Route::get('/clinic-list','ClinicController@clinicList')->name('clinics.list');
+});

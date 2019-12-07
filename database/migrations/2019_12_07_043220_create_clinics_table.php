@@ -16,9 +16,10 @@ class CreateClinicsTable extends Migration
         Schema::create('clinics', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('phone');
-            $table->string('landline')->nullable();
             $table->text('address');
+            $table->string('landline')->nullable();
+            $table->string('mobile')->nullable();
+            $table->text('status');
             $table->timestamps();
             $table->softDeletes();
         });
