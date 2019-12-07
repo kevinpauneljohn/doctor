@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Clinic;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 use Yajra\DataTables\DataTables;
 
-class ClinicController extends Controller
+class RolesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,18 +15,18 @@ class ClinicController extends Controller
      */
     public function index()
     {
-        return view('pages.Clinic.index');
+        return view('pages.Roles.index');
     }
 
-    public function clinicList()
+    public function rolesList()
     {
-        $clinics = Clinic::all();
+        $roles = Role::all();
 
-        return DataTables::of($clinics)
+        return DataTables::of($roles)
             ->addColumn('counter',function(){
                 return "";
             })
-            ->addColumn('action', function ($clinic) {
+            ->addColumn('action', function ($role) {
                 $action = '<a href="#" class="btn btn-xs btn-success"><i class="fa fa-eye"></i> View</a>';
                 $action .= '<a href="#" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Edit</a>';
                 if(auth()->user()->hasAnyRole(['super admin']))
@@ -35,7 +35,7 @@ class ClinicController extends Controller
                 }
                 return $action;
             })
-            ->rawColumns(['action','status'])
+            ->rawColumns(['action'])
             ->make(true);
     }
 

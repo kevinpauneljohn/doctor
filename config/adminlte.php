@@ -173,15 +173,20 @@ return [
     */
 
     'menu' => [
-        [
-            'text' => 'search',
-            'search' => true,
-            'topnav' => true,
-        ],
+//        [
+//            'text' => 'search',
+//            'search' => true,
+//            'topnav' => true,
+//        ],
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
+        ],
+        [
+            'text' => 'Dashboard',
+            'url'  => '/dashboard',
+            'icon' => 'fa fa-fw fa-home',
         ],
         [
             'text' => 'Clinics',
@@ -197,6 +202,22 @@ return [
                     'text' => 'Users',
                     'icon_color' => 'blue',
                     'url'  => '#',
+                ],
+                [
+                    'text' => 'Add User',
+                    'icon_color' => 'red',
+                    'url'  => '#',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'Roles And Permission',
+            'icon'    => 'fa fa-fw fa-id-badge',
+            'submenu' => [
+                [
+                    'text' => 'Roles',
+                    'icon_color' => 'blue',
+                    'url'  => '/roles',
                 ],
                 [
                     'text' => 'Add User',
@@ -309,12 +330,12 @@ return [
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.datatables.net/v/bs/dt-1.10.18/datatables.min.js',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.datatables.net/v/bs/dt-1.10.18/datatables.min.css',
                 ],
             ],

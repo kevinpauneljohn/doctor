@@ -24,6 +24,10 @@ Route::group(['middleware' => ['auth']], function (){
 });
 
 Route::group(['middleware' => ['auth']], function(){
-    Route::resource('clinics','ClinicController');
+    Route::resources([
+        'clinics' => 'ClinicController',
+        'roles' => 'RolesController'
+    ]);
     Route::get('/clinic-list','ClinicController@clinicList')->name('clinics.list');
+    Route::get('/roles-list','RolesController@rolesList')->name('roles.list');
 });
