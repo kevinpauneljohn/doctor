@@ -222,7 +222,7 @@ return [
                 [
                     'text' => 'Permission',
                     'icon_color' => 'red',
-                    'url'  => '#',
+                    'url'  => '/permissions',
                 ],
             ],
         ],

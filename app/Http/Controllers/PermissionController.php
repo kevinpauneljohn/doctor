@@ -15,7 +15,7 @@ class PermissionController extends Controller
      */
     public function index()
     {
-        //
+        return view('Pages.Permissions.index');
     }
 
     /**
