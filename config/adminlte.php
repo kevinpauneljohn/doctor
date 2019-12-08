@@ -330,12 +330,12 @@ return [
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => true,
+                    'asset' => false,
                     'location' => '//cdn.datatables.net/v/bs/dt-1.10.18/datatables.min.js',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => true,
+                    'asset' => false,
                     'location' => '//cdn.datatables.net/v/bs/dt-1.10.18/datatables.min.css',
                 ],
             ],
@@ -369,12 +369,28 @@ return [
         ],
         [
             'name' => 'Sweetalert2',
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
                     'asset' => false,
                     'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
+                ],
+            ],
+        ],
+        [
+            'name' => 'Toastr',
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/toastr/toastr.min.js',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/toastr/toastr.min.css',
                 ],
             ],
         ],

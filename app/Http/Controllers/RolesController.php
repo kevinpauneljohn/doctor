@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Spatie\Permission\Models\Role;
 use Yajra\DataTables\DataTables;
 
@@ -27,12 +28,9 @@ class RolesController extends Controller
                 return "";
             })
             ->addColumn('action', function ($role) {
-                $action = '<a href="#" class="btn btn-xs btn-success"><i class="fa fa-eye"></i> View</a>';
-                $action .= '<a href="#" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Edit</a>';
-                if(auth()->user()->hasAnyRole(['super admin']))
-                {
-                    $action .= '<a href="#" class="btn btn-xs btn-danger delete-job" data-toggle="modal" data-target="#delete-job-order" id="job-order-'.$clinic->id.'"><i class="fa fa-trash"></i> Delete</a>';
-                }
+                $action = '<button class="btn btn-xs btn-primary edit-role"><i class="fa fa-edit"></i> Edit</button> &nbsp;';
+                $action .= '<button class="btn btn-xs btn-danger delete-job" data-toggle="modal" data-target="#delete-job-order" id="job-order-"><i class="fa fa-trash"></i> Delete</a>';
+
                 return $action;
             })
             ->rawColumns(['action'])
@@ -57,7 +55,17 @@ class RolesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(),[
+            'role' => 'required'
+        ]);
+
+        if($validator->passes())
+        {
+            Role::create(['name' => $request->role]);
+
+            return response()->json(['success' => true]);
+        }
+        return response()->json($validator->errors());
     }
 
     /**

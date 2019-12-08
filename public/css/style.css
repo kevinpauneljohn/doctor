@@ -10,3 +10,6 @@ table{
         display:inline;
     }
 }
+.required{
+    color:red;
+}
