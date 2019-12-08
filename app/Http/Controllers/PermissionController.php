@@ -33,8 +33,8 @@ class PermissionController extends Controller
                 return "";
             })
             ->addColumn('action', function ($permission) {
-                $action = '<button class="btn btn-xs btn-primary edit-role" id="'.$permission->id.'"><i class="fa fa-edit"></i> Edit</button> &nbsp;';
-                $action .= '<button class="btn btn-xs btn-danger delete-role" id="'.$permission->id.'"><i class="fa fa-trash"></i> Delete</a>';
+                $action = '<button class="btn btn-xs btn-primary edit-permission" id="'.$permission->id.'"><i class="fa fa-edit"></i> Edit</button> &nbsp;';
+                $action .= '<button class="btn btn-xs btn-danger delete-permission" id="'.$permission->id.'"><i class="fa fa-trash"></i> Delete</a>';
 
                 return $action;
             })
@@ -105,7 +105,23 @@ class PermissionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(),[
+            'editPermission' => 'required||unique:permissions,name'
+        ],[
+            'editPermission.unique' => $request->editPermission.' has been already taken'
+        ]);
+
+        if($validator->passes())
+        {
+            $permission = Permission::find($id);
+            $permission->name = $request->editPermission;
+            if($permission->save())
+            {
+                return response()->json(['success' => true]);
+            }
+            return response()->json(['success' => false]);
+        }
+        return response()->json($validator->errors());
     }
 
     /**

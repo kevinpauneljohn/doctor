@@ -80,7 +80,7 @@
             @csrf
             @method('PUT')
             <input type="hidden" name="id" id="id">
-            <input type="hidden" name="url" id="url" value="roles">
+            <input type="hidden" name="url" id="url" value="permissions">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
