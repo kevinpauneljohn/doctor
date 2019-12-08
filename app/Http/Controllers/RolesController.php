@@ -21,7 +21,7 @@ class RolesController extends Controller
 
     public function rolesList()
     {
-        $roles = Role::all();
+        $roles = \App\Role::all();
 
         return DataTables::of($roles)
             ->addColumn('counter',function(){
@@ -126,6 +126,11 @@ class RolesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $role = \App\Role::find($id);
+        if($role->delete())
+        {
+            return response()->json(['success' => true]);
+        }
+        return response()->json(['success' => false]);
     }
 }

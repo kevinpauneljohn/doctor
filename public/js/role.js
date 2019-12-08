@@ -121,6 +121,39 @@ $(document).on('click','.delete-role',function () {
         return $(this).text();
     }).get();
 
-    $('.role-name').html('<strong>'+data[0]+'</strong>');
+    $('.role-name').html(
+        '<strong>'+data[0]+'</strong>' +
+        '<input type="hidden" name="deleteRoleId" id="deleteRoleId" value="'+this.id+'">'
+    );
 });
 /* end flash delete role form*/
+/*store update role name*/
+$(document).on('submit','#delete-role-form',function (form) {
+    form.preventDefault();
+    let url = $('#url').val();
+    let id = $('#deleteRoleId').val();
+    let value = $('#delete-role-form').serialize();
+
+    $.ajax({
+        'url' : '/'+url+'/'+id,
+        'type' : 'POST',
+        'data' : value,
+        'cache' : false,
+        success: function (result, status, xhr) {
+            console.log(result);
+            if(result.success === true)
+            {
+                setTimeout(function(){
+                    toastr.success('Role Successfully Deleted!')
+
+                    setTimeout(function(){
+                        location.reload();
+                    },1500);
+                });
+            }
+        },error: function(xhr, status, error){
+            console.log("error: "+error+" status: "+status+" xhr: "+xhr);
+        }
+    });
+});
+/*end store update role name*/

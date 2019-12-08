@@ -112,7 +112,6 @@
         <form role="form" id="delete-role-form">
             @csrf
             @method('DELETE')
-            <input type="hidden" name="id" id="id">
             <input type="hidden" name="url" id="url" value="roles">
             <div class="modal-dialog">
                 <div class="modal-content bg-danger">

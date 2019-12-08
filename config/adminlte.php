@@ -220,7 +220,7 @@ return [
                     'url'  => '/roles',
                 ],
                 [
-                    'text' => 'Add User',
+                    'text' => 'Permission',
                     'icon_color' => 'red',
                     'url'  => '#',
                 ],
