@@ -20,7 +20,7 @@
     <div class="card">
         <div class="card-header">
             {{--<button type="button" class="btn btn-block bg-gradient-primary btn-flat">Primary</button>--}}
-            <button type="button" class="btn bg-gradient-primary btn-sm" data-toggle="modal" data-target="#add-new-role-modal"><i class="fa fa-plus-circle"></i> Add New</button>
+            <button type="button" class="btn bg-gradient-primary btn-sm" data-toggle="modal" data-target="#add-new-permission-modal"><i class="fa fa-plus-circle"></i> Add New</button>
         </div>
         <div class="card-body">
             <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
@@ -57,7 +57,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div class="form-group role">
+                        <div class="form-group permission">
                             <label for="permission">Permission</label><span class="required">*</span>
                             <input type="text" name="permission" class="form-control" id="permission">
                         </div>
@@ -116,7 +116,7 @@
             <div class="modal-dialog">
                 <div class="modal-content bg-danger">
                     <div class="modal-body">
-                        <p class="delete_role">Delete Permission: <span class="role-name"></span></p>
+                        <p class="delete_permission">Delete Permission: <span class="permission-name"></span></p>
                     </div>
                     <div class="modal-footer justify-content-between">
                         <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
@@ -145,7 +145,7 @@
 
 @section('js')
     <script src="{{asset('vendor/datatables/js/dataTables.bootstrap4.min.js')}}"></script>
-    <Script src="{{asset('js/role.js')}}"></Script>
+    <Script src="{{asset('js/permission.js')}}"></Script>
     <script>
         $(function() {
             $('#permissions-list').DataTable({

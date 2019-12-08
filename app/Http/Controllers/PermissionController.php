@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Permission;
+use Spatie\Permission\Models\Permission;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\DataTables;
 
 class PermissionController extends Controller
@@ -25,7 +26,7 @@ class PermissionController extends Controller
      * */
     public function permissionList()
     {
-        $permissions = Permission::all();
+        $permissions = \App\Permission::all();
 
         return DataTables::of($permissions)
             ->addColumn('counter',function(){
@@ -59,7 +60,18 @@ class PermissionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'permission' => 'required|unique:permissions,name'
+        ]);
+
+        if($validator->passes())
+        {
+            Permission::create(['name' => $request->permission]);
+
+            return response()->json(['success' => true]);
+        }
+        return response()->json($validator->errors());
+
     }
 
     /**
