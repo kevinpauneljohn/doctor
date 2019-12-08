@@ -74,7 +74,7 @@
     </div>
     <!--end add new roles modal-->
 
-    <!--add new roles modal-->
+    <!--edit roles modal-->
     <div class="modal fade" id="edit-role-modal">
         <form role="form" id="edit-role-form" action="{{route('roles.update',['role' => 1])}}">
             @csrf
@@ -105,6 +105,30 @@
             <!-- /.modal-dialog -->
         </form>
     </div>
+    <!--end edit roles modal-->
+
+    <!--add new roles modal-->
+    <div class="modal fade" id="delete-role-modal">
+        <form role="form" id="delete-role-form">
+            @csrf
+            @method('DELETE')
+            <input type="hidden" name="id" id="id">
+            <input type="hidden" name="url" id="url" value="roles">
+            <div class="modal-dialog">
+                <div class="modal-content bg-danger">
+                    <div class="modal-body">
+                        <p class="delete_role">Delete Role: <span class="role-name"></span></p>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-outline-light">Delete</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </form>
+    </div>
     <!--end add new roles modal-->
 
 @stop
@@ -113,6 +137,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{asset('/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('vendor/datatables/css/dataTables.bootstrap4.min.css')}}">
+    <style type="text/css">
+        .delete_role{
+            font-size: 20px;
+        }
+    </style>
 @stop
 
 @section('js')

@@ -21,8 +21,6 @@ $(document).on('submit','#role-form', function(form){
         'data' : value,
         'cache' : false,
         success: function(result, status, xhr){
-            console.log(result);
-
             if(result.success === true)
             {
                 setTimeout(function(){
@@ -83,10 +81,46 @@ $(document).on('submit','#edit-role-form',function (form) {
         'data' : value,
         'cache' : false,
         success: function (result, status, xhr) {
-            console.log(result);
+            if(result.success === true)
+            {
+                setTimeout(function(){
+                    /*$('#role_form').trigger('reset');
+                    $('#roles').modal('toggle');*/
+                    toastr.success('Role Successfully Updated!')
+
+                    setTimeout(function(){
+                        location.reload();
+                    },1500);
+                });
+            }
+
+            $.each(result, function (key, value) {
+                var element = $('#'+key);
+
+                element.closest('div.'+key)
+                    .addClass(value.length > 0 ? 'has-error' : 'has-success')
+                    .find('.text-danger')
+                    .remove();
+                element.after('<p class="text-danger">'+value+'</p>');
+            });
         },error: function(xhr, status, error){
             console.log("error: "+error+" status: "+status+" xhr: "+xhr);
         }
     });
+    clear_errors('editRole');
 });
 /*end store update role name*/
+
+/* flash delete role form*/
+$(document).on('click','.delete-role',function () {
+    $('#delete-role-modal').modal('show');
+
+    $tr = $(this).closest('tr');
+
+    var data = $tr.children("td").map(function () {
+        return $(this).text();
+    }).get();
+
+    $('.role-name').html('<strong>'+data[0]+'</strong>');
+});
+/* end flash delete role form*/

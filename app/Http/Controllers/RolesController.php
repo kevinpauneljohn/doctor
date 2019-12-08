@@ -29,7 +29,7 @@ class RolesController extends Controller
             })
             ->addColumn('action', function ($role) {
                 $action = '<button class="btn btn-xs btn-primary edit-role" id="'.$role->id.'"><i class="fa fa-edit"></i> Edit</button> &nbsp;';
-                $action .= '<button class="btn btn-xs btn-danger delete-job" data-toggle="modal" data-target="#delete-job-order" id="job-order-"><i class="fa fa-trash"></i> Delete</a>';
+                $action .= '<button class="btn btn-xs btn-danger delete-role" id="'.$role->id.'"><i class="fa fa-trash"></i> Delete</a>';
 
                 return $action;
             })
@@ -101,11 +101,19 @@ class RolesController extends Controller
     {
         $validator = Validator::make($request->all(),[
             'editRole' => 'required||unique:roles,name'
+        ],[
+            'editRole.unique' => $request->editRole.' has been already taken'
         ]);
 
         if($validator->passes())
         {
-
+            $role = Role::find($id);
+            $role->name = $request->editRole;
+            if($role->save())
+            {
+                return response()->json(['success' => true]);
+            }
+            return response()->json(['success' => false]);
         }
         return response()->json($validator->errors());
     }
