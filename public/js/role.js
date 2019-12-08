@@ -58,5 +58,35 @@ $(document).on('submit','#role-form', function(form){
 var edit_modal = $('#edit-role-modal');
 $(document).on('click','.edit-role',function () {
     edit_modal.modal('show');
+
+    $tr = $(this).closest('tr');
+
+    var data = $tr.children("td").map(function () {
+        return $(this).text();
+    }).get();
+
+    $('#id').val(this.id);
+    $('#editRole').val(data[0]);
 });
 /*End of flash edit form*/
+
+/*store update role name*/
+$(document).on('submit','#edit-role-form',function (form) {
+    form.preventDefault();
+    let url = $('#url').val();
+    let id = $('#id').val();
+    let value = $('#edit-role-form').serialize();
+
+    $.ajax({
+        'url' : '/'+url+'/'+id,
+        'type' : 'POST',
+        'data' : value,
+        'cache' : false,
+        success: function (result, status, xhr) {
+            console.log(result);
+        },error: function(xhr, status, error){
+            console.log("error: "+error+" status: "+status+" xhr: "+xhr);
+        }
+    });
+});
+/*end store update role name*/

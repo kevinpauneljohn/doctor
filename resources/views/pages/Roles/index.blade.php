@@ -76,8 +76,11 @@
 
     <!--add new roles modal-->
     <div class="modal fade" id="edit-role-modal">
-        <form role="form" id="edit-role-form">
+        <form role="form" id="edit-role-form" action="{{route('roles.update',['role' => 1])}}">
             @csrf
+            @method('PUT')
+            <input type="hidden" name="id" id="id">
+            <input type="hidden" name="url" id="url" value="roles">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -87,14 +90,14 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div class="form-group role">
-                            <label for="role">Role Name</label><span class="required">*</span>
-                            <input type="text" name="role" class="form-control" id="role">
+                        <div class="form-group editRole">
+                            <label for="editRole">Role Name</label><span class="required">*</span>
+                            <input type="text" name="editRole" class="form-control" id="editRole">
                         </div>
                     </div>
                     <div class="modal-footer justify-content-between">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
                     </div>
                 </div>
                 <!-- /.modal-content -->
@@ -130,7 +133,4 @@
             });
         });
     </script>
-{{--    <script>--}}
-{{--        toastr.success('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')--}}
-{{--    </script>--}}
 @stop

@@ -28,7 +28,7 @@ class RolesController extends Controller
                 return "";
             })
             ->addColumn('action', function ($role) {
-                $action = '<button class="btn btn-xs btn-primary edit-role"><i class="fa fa-edit"></i> Edit</button> &nbsp;';
+                $action = '<button class="btn btn-xs btn-primary edit-role" id="'.$role->id.'"><i class="fa fa-edit"></i> Edit</button> &nbsp;';
                 $action .= '<button class="btn btn-xs btn-danger delete-job" data-toggle="modal" data-target="#delete-job-order" id="job-order-"><i class="fa fa-trash"></i> Delete</a>';
 
                 return $action;
@@ -56,7 +56,7 @@ class RolesController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(),[
-            'role' => 'required'
+            'role' => 'required|unique:roles,name'
         ]);
 
         if($validator->passes())
@@ -99,7 +99,15 @@ class RolesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(),[
+            'editRole' => 'required||unique:roles,name'
+        ]);
+
+        if($validator->passes())
+        {
+
+        }
+        return response()->json($validator->errors());
     }
 
     /**
