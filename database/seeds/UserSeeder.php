@@ -25,5 +25,19 @@ class UserSeeder extends Seeder
         $user->assignRole('super admin');
 
         $user->save();
+
+        $admin = new User;
+        $admin->firstname = "jamaica";
+        $admin->middlename = "";
+        $admin->lastname = "soto";
+        $admin->username = "jamaica";
+        $admin->email = "jhamie@gmail.com";
+        $admin->password = bcrypt("123");
+        $admin->mobileNo ='09166520817';
+        $admin->address ='blk 141 lot 2, Bulaon Resettlement, City Of San Fernando, Pampanga';
+        $admin->status = "offline";
+        $admin->assignRole('admin');
+
+        $admin->save();
     }
 }

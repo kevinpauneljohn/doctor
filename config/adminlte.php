@@ -1,5 +1,4 @@
 <?php
-use Illuminate\Support\Facades\Request;
 return [
 
     /*
@@ -193,7 +192,11 @@ return [
             'url'  => '/clinics',
             'icon' => 'fa fa-fw fa fa-hospital-alt',
         ],
-        ['header' => 'USER MANAGEMENT'],
+        [
+            'header' => 'USER MANAGEMENT','roles'   => [
+            'super admin'
+        ],
+            ],
         [
             'text'    => 'Users',
             'icon'    => 'fa fa-fw fa-users',
@@ -208,6 +211,9 @@ return [
                     'icon_color' => 'red',
                     'url'  => '#',
                 ],
+            ],
+            'roles'   => [
+                'super admin'
             ],
         ],
         [
@@ -307,8 +313,9 @@ return [
         JeroenNoten\LaravelAdminLte\Menu\Filters\ActiveFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\SubmenuFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\ClassesFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\GateFilter::class,
+//        JeroenNoten\LaravelAdminLte\Menu\Filters\GateFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\LangFilter::class,
+        App\Filters\RoleMenuFilter::class,
     ],
 
     /*
