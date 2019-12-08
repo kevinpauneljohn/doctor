@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Spatie\Permission\Models\Permission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Spatie\Permission\Models\Role;
 use Yajra\DataTables\DataTables;
 
 class PermissionController extends Controller
@@ -16,7 +17,9 @@ class PermissionController extends Controller
      */
     public function index()
     {
-        return view('Pages.Permissions.index');
+        return view('Pages.Permissions.index')->with([
+            'roles' => Role::all()
+        ]);
     }
 
     /**
@@ -29,8 +32,13 @@ class PermissionController extends Controller
         $permissions = \App\Permission::all();
 
         return DataTables::of($permissions)
-            ->addColumn('counter',function(){
-                return "";
+            ->addColumn('roles',function($permission){
+                $permission_roles = Permission::whereName($permission->name)->first()->roles->pluck('name');
+                $roles = "";
+                    foreach( $permission_roles as $roleName){
+                        $roles .= '<span class="badge badge-info">'.$roleName.'</span>&nbsp;';
+                    }
+                return $roles;
             })
             ->addColumn('action', function ($permission) {
                 $action = '<button class="btn btn-xs btn-primary edit-permission" id="'.$permission->id.'"><i class="fa fa-edit"></i> Edit</button> &nbsp;';
@@ -38,7 +46,7 @@ class PermissionController extends Controller
 
                 return $action;
             })
-            ->rawColumns(['action'])
+            ->rawColumns(['action','roles'])
             ->make(true);
     }
 
@@ -66,7 +74,13 @@ class PermissionController extends Controller
 
         if($validator->passes())
         {
-            Permission::create(['name' => $request->permission]);
+            $permission = Permission::create(['name' => $request->permission]);
+            if(isset($request->roles))
+            {
+                foreach ($request->roles as $role){
+                    $permission->assignRole($role);
+                }
+            }
 
             return response()->json(['success' => true]);
         }
@@ -93,7 +107,9 @@ class PermissionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $permission_roles = Permission::find($id)->roles->pluck('name');
+
+        return $permission_roles;
     }
 
     /**

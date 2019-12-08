@@ -193,13 +193,13 @@ return [
             'icon' => 'fa fa-fw fa fa-hospital-alt',
         ],
         [
-            'header' => 'USER MANAGEMENT','roles'   => [
-            'super admin'
-        ],
+            'header' => 'USER MANAGEMENT',
+            'can'   => 'view user',
             ],
         [
             'text'    => 'Users',
             'icon'    => 'fa fa-fw fa-users',
+            'can'     => 'view user',
             'submenu' => [
                 [
                     'text' => 'Users',
@@ -212,9 +212,6 @@ return [
                     'url'  => '#',
                 ],
             ],
-            'roles'   => [
-                'super admin'
-            ],
         ],
         [
             'text'    => 'Roles And Permission',
@@ -224,6 +221,7 @@ return [
                     'text' => 'Roles',
                     'icon_color' => 'blue',
                     'url'  => '/roles',
+                    'can'  => 'view role'
                 ],
                 [
                     'text' => 'Permission',

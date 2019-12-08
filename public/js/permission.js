@@ -21,6 +21,7 @@ $(document).on('submit','#permission-form', function(form){
         'data' : value,
         'cache' : false,
         success: function(result, status, xhr){
+            console.log(result);
             if(result.success === true)
             {
                 setTimeout(function(){
@@ -53,8 +54,8 @@ $(document).on('submit','#permission-form', function(form){
 /*flash edit form*/
 var edit_modal = $('#edit-permission-modal');
 $(document).on('click','.edit-permission',function () {
+    let url = $('#url').val();
     edit_modal.modal('show');
-
     $tr = $(this).closest('tr');
 
     var data = $tr.children("td").map(function () {
@@ -63,6 +64,16 @@ $(document).on('click','.edit-permission',function () {
 
     $('#id').val(this.id);
     $('#editPermission').val(data[0]);
+
+    $.ajax({
+        'url' : '/'+url+'/'+this.id+'/edit',
+        'type' : 'GET',
+        'cache' : false,
+        success: function (result, status, xhr) {
+            var roles = result;
+            $('#editRoles').val(roles).trigger('change')
+        }
+    });
 });
 /*End of flash edit form*/
 

@@ -28,13 +28,15 @@
                     <thead>
                     <tr role="row">
                         <th>Permission</th>
+                        <th>Assigned Roles</th>
                         <th>Action</th>
                     </tr>
                     </thead>
 
                     <tfoot>
                     <tr>
-                        <th>Permission</th>
+                        <th width="30%">Permission</th>
+                        <th>Assigned Roles</th>
                         <th width="20%">Action</th>
                     </tr>
                     </tfoot>
@@ -60,6 +62,15 @@
                         <div class="form-group permission">
                             <label for="permission">Permission</label><span class="required">*</span>
                             <input type="text" name="permission" class="form-control" id="permission">
+                        </div>
+                        <div class="form-group">
+                            <label>Give Permission To Role</label>
+                            <select name="roles[]" class="form-control select2" multiple="multiple" data-placeholder="Select a Role"
+                                    style="width: 100%;">
+                                @foreach($roles as $role)
+                                        <option value="{{$role->name}}">{{$role->name}}</option>
+                                    @endforeach
+                            </select>
                         </div>
                     </div>
                     <div class="modal-footer justify-content-between">
@@ -93,6 +104,15 @@
                         <div class="form-group editPermission">
                             <label for="editPermission">Permission</label><span class="required">*</span>
                             <input type="text" name="editPermission" class="form-control" id="editPermission">
+                        </div>
+                        <div class="form-group">
+                            <label>Give Permission To Role</label>
+                            <select name="editRoles[]" class="form-control select2" multiple="multiple" id="editRoles" data-placeholder="Select a Role"
+                                    style="width: 100%;">
+                                @foreach($roles as $role)
+                                    <option value="{{$role->name}}">{{$role->name}}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                     <div class="modal-footer justify-content-between">
@@ -136,6 +156,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{asset('/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('vendor/datatables/css/dataTables.bootstrap4.min.css')}}">
+    <link rel="stylesheet" href="{{asset('vendor/select2/css/select2.min.css')}}">
     <style type="text/css">
         .delete_role{
             font-size: 20px;
@@ -145,15 +166,19 @@
 
 @section('js')
     <script src="{{asset('vendor/datatables/js/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('vendor/select2/js/select2.full.min.js')}}"></script>
     <Script src="{{asset('js/permission.js')}}"></Script>
     <script>
         $(function() {
+            $('.select2').select2();
+
             $('#permissions-list').DataTable({
                 processing: true,
                 serverSide: true,
                 ajax: '{!! route('permissions.list') !!}',
                 columns: [
                     { data: 'name', name: 'name'},
+                    { data: 'roles', name: 'roles'},
                     { data: 'action', name: 'action', orderable: false, searchable: false}
                 ],
                 responsive:true,
