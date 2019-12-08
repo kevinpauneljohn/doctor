@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Permission;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
-use Spatie\Permission\Models\Role;
 use Yajra\DataTables\DataTables;
 
-class RolesController extends Controller
+class PermissionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,7 @@ class RolesController extends Controller
      */
     public function index()
     {
-        return view('pages.Roles.index');
+        //
     }
 
     /**
@@ -24,17 +23,17 @@ class RolesController extends Controller
      * @author john kevin paunel
      * display all roles
      * */
-    public function rolesList()
+    public function permissionList()
     {
-        $roles = \App\Role::all();
+        $permissions = Permission::all();
 
-        return DataTables::of($roles)
+        return DataTables::of($permissions)
             ->addColumn('counter',function(){
                 return "";
             })
-            ->addColumn('action', function ($role) {
-                $action = '<button class="btn btn-xs btn-primary edit-role" id="'.$role->id.'"><i class="fa fa-edit"></i> Edit</button> &nbsp;';
-                $action .= '<button class="btn btn-xs btn-danger delete-role" id="'.$role->id.'"><i class="fa fa-trash"></i> Delete</a>';
+            ->addColumn('action', function ($permission) {
+                $action = '<button class="btn btn-xs btn-primary edit-role" id="'.$permission->id.'"><i class="fa fa-edit"></i> Edit</button> &nbsp;';
+                $action .= '<button class="btn btn-xs btn-danger delete-role" id="'.$permission->id.'"><i class="fa fa-trash"></i> Delete</a>';
 
                 return $action;
             })
@@ -60,17 +59,7 @@ class RolesController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(),[
-            'role' => 'required|unique:roles,name'
-        ]);
-
-        if($validator->passes())
-        {
-            Role::create(['name' => $request->role]);
-
-            return response()->json(['success' => true]);
-        }
-        return response()->json($validator->errors());
+        //
     }
 
     /**
@@ -104,23 +93,7 @@ class RolesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validator = Validator::make($request->all(),[
-            'editRole' => 'required||unique:roles,name'
-        ],[
-            'editRole.unique' => $request->editRole.' has been already taken'
-        ]);
-
-        if($validator->passes())
-        {
-            $role = Role::find($id);
-            $role->name = $request->editRole;
-            if($role->save())
-            {
-                return response()->json(['success' => true]);
-            }
-            return response()->json(['success' => false]);
-        }
-        return response()->json($validator->errors());
+        //
     }
 
     /**
@@ -131,11 +104,6 @@ class RolesController extends Controller
      */
     public function destroy($id)
     {
-        $role = \App\Role::find($id);
-        if($role->delete())
-        {
-            return response()->json(['success' => true]);
-        }
-        return response()->json(['success' => false]);
+        //
     }
 }
