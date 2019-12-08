@@ -36,12 +36,13 @@ class PermissionController extends Controller
                 $permission_roles = Permission::whereName($permission->name)->first()->roles->pluck('name');
                 $roles = "";
                     foreach( $permission_roles as $roleName){
-                        $roles .= '<span class="badge badge-info">'.$roleName.'</span>&nbsp;';
+                        $roles .= '<span class="badge badge-primary">'.$roleName.'</span>&nbsp;';
                     }
                 return $roles;
             })
             ->addColumn('action', function ($permission) {
-                $action = '<button class="btn btn-xs btn-primary edit-permission" id="'.$permission->id.'"><i class="fa fa-edit"></i> Edit</button> &nbsp;';
+                $action = '<button class="btn btn-xs btn-success assign-role" id="'.$permission->id.'"><i class="fa fa-id-badge"></i> Assign Roles</button> &nbsp;';
+                $action .= '<button class="btn btn-xs btn-primary edit-permission" id="'.$permission->id.'"><i class="fa fa-edit"></i> Edit</button> &nbsp;';
                 $action .= '<button class="btn btn-xs btn-danger delete-permission" id="'.$permission->id.'"><i class="fa fa-trash"></i> Delete</a>';
 
                 return $action;
@@ -74,13 +75,7 @@ class PermissionController extends Controller
 
         if($validator->passes())
         {
-            $permission = Permission::create(['name' => $request->permission]);
-            if(isset($request->roles))
-            {
-                foreach ($request->roles as $role){
-                    $permission->assignRole($role);
-                }
-            }
+           Permission::create(['name' => $request->permission]);
 
             return response()->json(['success' => true]);
         }
@@ -107,9 +102,7 @@ class PermissionController extends Controller
      */
     public function edit($id)
     {
-        $permission_roles = Permission::find($id)->roles->pluck('name');
-
-        return $permission_roles;
+        //
     }
 
     /**

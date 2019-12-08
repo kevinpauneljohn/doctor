@@ -216,12 +216,12 @@ return [
         [
             'text'    => 'Roles And Permission',
             'icon'    => 'fa fa-fw fa-id-badge',
+            'can'  => 'view role',
             'submenu' => [
                 [
                     'text' => 'Roles',
                     'icon_color' => 'blue',
                     'url'  => '/roles',
-                    'can'  => 'view role'
                 ],
                 [
                     'text' => 'Permission',

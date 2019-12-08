@@ -21,6 +21,7 @@ $(document).on('submit','#permission-form', function(form){
         'data' : value,
         'cache' : false,
         success: function(result, status, xhr){
+            console.log(result);
             if(result.success === true)
             {
                 setTimeout(function(){
@@ -53,8 +54,8 @@ $(document).on('submit','#permission-form', function(form){
 /*flash edit form*/
 var edit_modal = $('#edit-permission-modal');
 $(document).on('click','.edit-permission',function () {
+    let url = $('#url').val();
     edit_modal.modal('show');
-
     $tr = $(this).closest('tr');
 
     var data = $tr.children("td").map(function () {
@@ -63,6 +64,16 @@ $(document).on('click','.edit-permission',function () {
 
     $('#id').val(this.id);
     $('#editPermission').val(data[0]);
+
+    $.ajax({
+        'url' : '/'+url+'/'+this.id+'/edit',
+        'type' : 'GET',
+        'cache' : false,
+        success: function (result, status, xhr) {
+            var roles = result;
+            $('#editRoles').val(roles).trigger('change')
+        }
+    });
 });
 /*End of flash edit form*/
 
@@ -79,18 +90,19 @@ $(document).on('submit','#edit-permission-form',function (form) {
         'data' : value,
         'cache' : false,
         success: function (result, status, xhr) {
-            if(result.success === true)
-            {
-                setTimeout(function(){
-                    /*$('#role_form').trigger('reset');
-                    $('#roles').modal('toggle');*/
-                    toastr.success('Permission Successfully Updated!')
-
-                    setTimeout(function(){
-                        location.reload();
-                    },1500);
-                });
-            }
+            console.log(result);
+            // if(result.success === true)
+            // {
+            //     setTimeout(function(){
+            //         /*$('#role_form').trigger('reset');
+            //         $('#roles').modal('toggle');*/
+            //         toastr.success('Permission Successfully Updated!')
+            //
+            //         setTimeout(function(){
+            //             location.reload();
+            //         },1500);
+            //     });
+            // }
 
             $.each(result, function (key, value) {
                 var element = $('#'+key);
@@ -108,11 +120,3 @@ $(document).on('submit','#edit-permission-form',function (form) {
     clear_errors('editPermission');
 });
 /*end store update permission name*/
-
-/*flash assign role form*/
-var assign_role_modal = $('#assign-role-modal');
-$(document).on('click','.assign-role',function () {
-    assign_role_modal.modal('show');
-
-});
-/*End of flash assign role form*/

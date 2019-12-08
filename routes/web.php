@@ -23,7 +23,7 @@ Route::group(['middleware' => ['auth']], function (){
     Route::post('/logout','CustomAuth\LoginController@logout')->name('logout');
 });
 
-Route::group(['middleware' => ['auth','role:super admin']], function(){
+Route::group(['middleware' => ['auth']], function(){
     Route::resources([
         'clinics' => 'ClinicController',
         'roles' => 'RolesController',

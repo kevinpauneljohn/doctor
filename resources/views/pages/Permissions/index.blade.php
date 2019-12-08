@@ -63,15 +63,6 @@
                             <label for="permission">Permission</label><span class="required">*</span>
                             <input type="text" name="permission" class="form-control" id="permission">
                         </div>
-                        <div class="form-group">
-                            <label>Give Permission To Role</label>
-                            <select name="roles[]" class="form-control select2" multiple="multiple" data-placeholder="Select a Role"
-                                    style="width: 100%;">
-                                @foreach($roles as $role)
-                                        <option value="{{$role->name}}">{{$role->name}}</option>
-                                    @endforeach
-                            </select>
-                        </div>
                     </div>
                     <div class="modal-footer justify-content-between">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -104,15 +95,6 @@
                         <div class="form-group editPermission">
                             <label for="editPermission">Permission</label><span class="required">*</span>
                             <input type="text" name="editPermission" class="form-control" id="editPermission">
-                        </div>
-                        <div class="form-group">
-                            <label>Give Permission To Role</label>
-                            <select name="editRoles[]" class="form-control select2" multiple="multiple" id="editRoles" data-placeholder="Select a Role"
-                                    style="width: 100%;">
-                                @foreach($roles as $role)
-                                    <option value="{{$role->name}}">{{$role->name}}</option>
-                                @endforeach
-                            </select>
                         </div>
                     </div>
                     <div class="modal-footer justify-content-between">
@@ -150,13 +132,49 @@
     </div>
     <!--end add new roles modal-->
 
+    <!--set/remove role-->
+    <div class="modal fade" id="assign-role-modal">
+        <form role="form" id="assign-role-form">
+            @csrf
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Assign or Remove Role</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group clearfix">
+                            @foreach($roles as $role)
+                                <div class="icheck-primary">
+                                    <input name="role" type="checkbox" id="checkboxPrimary-{{$role->id}}">
+                                    <label for="checkboxPrimary-{{$role->id}}">
+                                        {{$role->name}}
+                                    </label>
+                                </div>
+                                @endforeach
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </form>
+    </div>
+    <!--end set/remove role-->
+
 @stop
 
 @section('css')
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{asset('/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('vendor/datatables/css/dataTables.bootstrap4.min.css')}}">
-    <link rel="stylesheet" href="{{asset('vendor/select2/css/select2.min.css')}}">
+    <link rel="stylesheet" href="{{asset('vendor/icheck-bootstrap/icheck-bootstrap.min.css')}}">
     <style type="text/css">
         .delete_role{
             font-size: 20px;
@@ -166,11 +184,9 @@
 
 @section('js')
     <script src="{{asset('vendor/datatables/js/dataTables.bootstrap4.min.js')}}"></script>
-    <script src="{{asset('vendor/select2/js/select2.full.min.js')}}"></script>
     <Script src="{{asset('js/permission.js')}}"></Script>
     <script>
         $(function() {
-            $('.select2').select2();
 
             $('#permissions-list').DataTable({
                 processing: true,
@@ -182,7 +198,7 @@
                     { data: 'action', name: 'action', orderable: false, searchable: false}
                 ],
                 responsive:true,
-                order:[0,'desc']
+
             });
         });
     </script>
