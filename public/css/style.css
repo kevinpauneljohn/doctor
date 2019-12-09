@@ -13,3 +13,6 @@ table{
 .required{
     color:red;
 }
+.roles-cell .badge{
+    margin-right:3px;
+}

@@ -136,15 +136,17 @@
     <div class="modal fade" id="assign-role-modal">
         <form role="form" id="assign-role-form">
             @csrf
+            <input type="hidden" name="assignRoleUrl" value="{{route('permissions.index')}}">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Assign or Remove Role</h4>
+                        <h4 class="modal-title"></h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">×</span>
                         </button>
                     </div>
                     <div class="modal-body">
+                        <strong style="margin-bottom: 20px;">Set/Remove Role</strong>
                         <div class="form-group clearfix">
                             @foreach($roles as $role)
                                 <div class="icheck-primary">
@@ -199,6 +201,9 @@
                     { data: 'action', name: 'action', orderable: false, searchable: false}
                 ],
                 responsive:true,
+                createdRow: function( row, data, dataIndex ) {
+                    $( row ).find('td:eq(1)').attr('class', 'roles-cell');
+                }
 
             });
         });

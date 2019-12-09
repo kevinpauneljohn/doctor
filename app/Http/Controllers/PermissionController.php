@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use http\Client\Response;
 use Spatie\Permission\Models\Permission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -34,10 +35,11 @@ class PermissionController extends Controller
         return DataTables::of($permissions)
             ->addColumn('roles',function($permission){
                 $permission_roles = Permission::whereName($permission->name)->first()->roles->pluck('name');
-                $roles = "";
+                $roles = '<div id="data-cell-'.$permission->id.'">';
                     foreach( $permission_roles as $roleName){
-                        $roles .= '<span class="badge badge-primary">'.$roleName.'</span>&nbsp;';
+                        $roles .= '<span class="badge badge-primary">'.$roleName.'</span>';
                     }
+                    $roles .= '</div>';
                 return $roles;
             })
             ->addColumn('action', function ($permission) {
@@ -160,7 +162,7 @@ class PermissionController extends Controller
      * @author john kevin paunel
      * set roles to permission
      * @param Request $request
-     * @return Request
+     * @return Response
      * */
     public function permissionSetRole(Request $request)
     {
@@ -180,7 +182,13 @@ class PermissionController extends Controller
         /*save the new roles*/
         $permission->assignRole($request->roles);
 
-        return response()->json(['success' => true]);
+        return response()->json(
+            [
+                'success' => true,
+                'url' => $request->assignRoleUrl,
+                'id' => $request->id,
+                'roles' => $request->roles
+            ]);
 
     }
 }

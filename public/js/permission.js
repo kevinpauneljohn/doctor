@@ -121,8 +121,16 @@ $(document).ready(function(){
 var assign_role_modal = $('#assign-role-modal');
 $(document).on('click','.assign-role',function () {
     assign_role_modal.modal('show');
+
+    $tr = $(this).closest('tr');
+
+    var data = $tr.children("td").map(function () {
+        return $(this).text();
+    }).get();
+
+    $('#assign-role-modal .modal-title').text(data[0]);
     let id = this.id;
-    $('#assign-role-form').append('<input class="role-form-id" type="text" name="id" value="'+id+'">');
+    $('#assign-role-form').append('<input class="role-form-id" type="hidden" name="id" value="'+id+'">');
     $.ajax({
         'url' : '/permissions/'+id,
         'headers': {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
@@ -153,8 +161,13 @@ $(document).on('submit','#assign-role-form', function(form){
         'cache' : false,
         success: function (result, status, xhr)
         {
+            console.log(result.id);
             if(result.success === true)
             {
+                $('#permissions-list tr #data-cell-'+result.id+' .badge').remove();
+                $.each(result.roles, function (key, value) {
+                    $('#permissions-list tr #data-cell-'+result.id).append('<span class="badge badge-primary">'+value+'</span>');
+                });
 
             }
         },error: function (xhr, status, error) {
