@@ -118,7 +118,6 @@ $(document).ready(function(){
 /*flash assign role form*/
 var assign_role_modal = $('#assign-role-modal');
 $(document).on('click','.assign-role',function () {
-    assign_role_modal.modal('show');
 
     $.ajax({
         'url' : '/permissions/'+this.id,
@@ -130,7 +129,7 @@ $(document).on('click','.assign-role',function () {
             $.each(result, function(key, value){
                 $('#checkboxPrimary-'+value.id).attr(   'checked',"" );
             });
-
+            assign_role_modal.modal('show');
         },error: function (xhr, status, error) {
             console.log("error: "+error+" status: "+status+" xhr: "+xhr);
         }
