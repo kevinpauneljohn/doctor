@@ -109,10 +109,51 @@ $(document).on('submit','#edit-permission-form',function (form) {
 });
 /*end store update permission name*/
 
+$(document).ready(function(){
+    $("#assign-role-modal").on('hidden.bs.modal', function(){
+        $('input[type=checkbox]').removeAttr("checked");
+    });
+});
+
 /*flash assign role form*/
 var assign_role_modal = $('#assign-role-modal');
 $(document).on('click','.assign-role',function () {
     assign_role_modal.modal('show');
 
+    $.ajax({
+        'url' : '/permissions/'+this.id,
+        'headers': {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        'type' : 'GET',
+        'cache' : false,
+        success: function (result, status, xhr)
+        {
+            $.each(result, function(key, value){
+                $('#checkboxPrimary-'+value.id).attr(   'checked',"" );
+            });
+
+        },error: function (xhr, status, error) {
+            console.log("error: "+error+" status: "+status+" xhr: "+xhr);
+        }
+    });
 });
 /*End of flash assign role form*/
+
+$(document).on('submit','#assign-role-form', function(form){
+    form.preventDefault();
+    value = $('#assign-role-form').serialize();
+
+    console.log(value);
+    // $.ajax({
+    //     'url' : '/permission-get-roles',
+    //     'headers': {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+    //     'type' : 'POST',
+    //     'data' : value,
+    //     'cache' : false,
+    //     success: function (result, status, xhr)
+    //     {
+    //         console.log(result);
+    //     },error: function (xhr, status, error) {
+    //         console.log("error: "+error+" status: "+status+" xhr: "+xhr);
+    //     }
+    // });
+});

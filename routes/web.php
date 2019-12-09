@@ -33,4 +33,5 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/clinic-list','ClinicController@clinicList')->name('clinics.list');
     Route::get('/roles-list','RolesController@rolesList')->name('roles.list');
     Route::get('/permissions-list','PermissionController@permissionList')->name('permissions.list');
+    Route::post('/permission-get-roles','PermissionController@permissionAssignedRoles')->name('permission.roles');
 });

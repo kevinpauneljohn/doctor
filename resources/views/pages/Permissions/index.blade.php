@@ -148,7 +148,7 @@
                         <div class="form-group clearfix">
                             @foreach($roles as $role)
                                 <div class="icheck-primary">
-                                    <input name="role" type="checkbox" id="checkboxPrimary-{{$role->id}}">
+                                    <input name="roles[]" type="checkbox" id="checkboxPrimary-{{$role->id}}" value="{{$role->name}}">
                                     <label for="checkboxPrimary-{{$role->id}}">
                                         {{$role->name}}
                                     </label>

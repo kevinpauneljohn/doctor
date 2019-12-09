@@ -91,7 +91,7 @@ class PermissionController extends Controller
      */
     public function show($id)
     {
-        //
+        return Permission::find($id)->roles;
     }
 
     /**
@@ -142,5 +142,16 @@ class PermissionController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Dec. 09, 2019
+     * @author john kevin paunel
+     * assign roles to permission
+     * @param Request $request
+     * */
+    public function permissionAssignedRoles(Request $request)
+    {
+        return $request->roles;
     }
 }
