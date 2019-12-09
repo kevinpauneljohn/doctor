@@ -34,4 +34,5 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/roles-list','RolesController@rolesList')->name('roles.list');
     Route::get('/permissions-list','PermissionController@permissionList')->name('permissions.list');
     Route::post('/permission-get-roles','PermissionController@permissionAssignedRoles')->name('permission.roles');
+    Route::post('/permission-set-roles','PermissionController@permissionSetRole')->name('permission.set.roles');
 });

@@ -147,11 +147,40 @@ class PermissionController extends Controller
     /**
      * Dec. 09, 2019
      * @author john kevin paunel
-     * assign roles to permission
+     * get roles to permission
      * @param Request $request
+     * @return Request
      * */
     public function permissionAssignedRoles(Request $request)
     {
         return $request->roles;
+    }
+    /**
+     * Dec. 09, 2019
+     * @author john kevin paunel
+     * set roles to permission
+     * @param Request $request
+     * @return Request
+     * */
+    public function permissionSetRole(Request $request)
+    {
+//        /*check if there are roles in a permission*/
+        $checkRoles = Permission::find($request->id)->roles->count();
+
+        $permission = Permission::find($request->id);
+        if($checkRoles > 0)
+        {
+            /*remove the old roles*/
+                foreach ($permission->roles as $role)
+                {
+                    $permission->removeRole($role->name);
+                }
+        }
+
+        /*save the new roles*/
+        $permission->assignRole($request->roles);
+
+        return response()->json(['success' => true]);
+
     }
 }

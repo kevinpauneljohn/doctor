@@ -184,6 +184,7 @@
 
 @section('js')
     <script src="{{asset('vendor/datatables/js/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('vendor/inputmask/min/jquery.inputmask.bundle.min.js')}}"></script>
     <Script src="{{asset('js/permission.js')}}"></Script>
     <script>
         $(function() {

@@ -111,25 +111,28 @@ $(document).on('submit','#edit-permission-form',function (form) {
 
 $(document).ready(function(){
     $("#assign-role-modal").on('hidden.bs.modal', function(){
-        $('input[type=checkbox]').removeAttr("checked");
+        //$('input[type=checkbox]').removeAttr("checked");
+        $('input[type=checkbox]').prop('checked',false);
+        $('.role-form-id').remove();
     });
 });
 
 /*flash assign role form*/
 var assign_role_modal = $('#assign-role-modal');
 $(document).on('click','.assign-role',function () {
-
+    assign_role_modal.modal('show');
+    let id = this.id;
+    $('#assign-role-form').append('<input class="role-form-id" type="text" name="id" value="'+id+'">');
     $.ajax({
-        'url' : '/permissions/'+this.id,
+        'url' : '/permissions/'+id,
         'headers': {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
         'type' : 'GET',
         'cache' : false,
         success: function (result, status, xhr)
         {
             $.each(result, function(key, value){
-                $('#checkboxPrimary-'+value.id).attr(   'checked',"" );
+                $('#checkboxPrimary-'+value.id).prop(   'checked',true);
             });
-            assign_role_modal.modal('show');
         },error: function (xhr, status, error) {
             console.log("error: "+error+" status: "+status+" xhr: "+xhr);
         }
@@ -141,18 +144,21 @@ $(document).on('submit','#assign-role-form', function(form){
     form.preventDefault();
     value = $('#assign-role-form').serialize();
 
-    console.log(value);
-    // $.ajax({
-    //     'url' : '/permission-get-roles',
-    //     'headers': {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-    //     'type' : 'POST',
-    //     'data' : value,
-    //     'cache' : false,
-    //     success: function (result, status, xhr)
-    //     {
-    //         console.log(result);
-    //     },error: function (xhr, status, error) {
-    //         console.log("error: "+error+" status: "+status+" xhr: "+xhr);
-    //     }
-    // });
+    //console.log(value);
+    $.ajax({
+        'url' : '/permission-set-roles',
+        'headers': {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        'type' : 'POST',
+        'data' : value,
+        'cache' : false,
+        success: function (result, status, xhr)
+        {
+            if(result.success === true)
+            {
+
+            }
+        },error: function (xhr, status, error) {
+            console.log("error: "+error+" status: "+status+" xhr: "+xhr);
+        }
+    });
 });

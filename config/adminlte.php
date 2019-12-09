@@ -415,5 +415,21 @@ return [
                 ],
             ],
         ],
+        [
+            'name' => 'AdminLTE',
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/adminlte/dist/css/adminlte.min.css',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/adminlte/dist/js/adminlte.min.js',
+                ],
+            ],
+        ],
     ],
 ];
