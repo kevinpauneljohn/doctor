@@ -29,6 +29,14 @@ Route::group(['middleware' => ['auth']], function(){
     ]);
 
 });
+
+
+/*client*/
+Route::get('/clients','ClientController@index')->name('clients.index')->middleware(['auth','permission:view client']);
+Route::post('/clients','ClientController@store')->name('clients.store')->middleware(['auth','permission:add client']);
+Route::put('/clients/{client}','ClientController@update')->name('clients.update')->middleware(['auth','permission:edit client']);
+Route::get('/clients/{client}','ClientController@show')->name('clients.show')->middleware(['auth']);
+
 /*permissions*/
 Route::get('/permissions','PermissionController@index')->name('permissions.index')->middleware(['auth','permission:view permission']);
 Route::post('/permissions','PermissionController@store')->name('permissions.store')->middleware(['auth','permission:add permission']);
