@@ -161,7 +161,6 @@ $(document).on('submit','#assign-role-form', function(form){
         'cache' : false,
         success: function (result, status, xhr)
         {
-            console.log(result.id);
             if(result.success === true)
             {
                 $('#permissions-list tr #data-cell-'+result.id+' .badge').remove();

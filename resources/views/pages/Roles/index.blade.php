@@ -19,8 +19,10 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            {{--<button type="button" class="btn btn-block bg-gradient-primary btn-flat">Primary</button>--}}
-            <button type="button" class="btn bg-gradient-primary btn-sm" data-toggle="modal" data-target="#add-new-role-modal"><i class="fa fa-plus-circle"></i> Add New</button>
+            @can('add role')
+                <button type="button" class="btn bg-gradient-primary btn-sm" data-toggle="modal" data-target="#add-new-role-modal"><i class="fa fa-plus-circle"></i> Add New</button>
+                @endcan
+
         </div>
         <div class="card-body">
             <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
@@ -44,6 +46,7 @@
     </div>
 
 
+    @can('add role')
     <!--add new roles modal-->
     <div class="modal fade" id="add-new-role-modal">
         <form role="form" id="role-form">
@@ -73,7 +76,9 @@
         </form>
     </div>
     <!--end add new roles modal-->
+    @endcan
 
+    @can('edit role')
     <!--edit roles modal-->
     <div class="modal fade" id="edit-role-modal">
         <form role="form" id="edit-role-form" action="{{route('roles.update',['role' => 1])}}">
@@ -106,7 +111,9 @@
         </form>
     </div>
     <!--end edit roles modal-->
+    @endcan
 
+    @can('delete role')
     <!--add new roles modal-->
     <div class="modal fade" id="delete-role-modal">
         <form role="form" id="delete-role-form">
@@ -129,6 +136,7 @@
         </form>
     </div>
     <!--end add new roles modal-->
+    @endcan
 
 @stop
 
@@ -144,6 +152,7 @@
 @stop
 
 @section('js')
+    @can('view role')
     <script src="{{asset('vendor/datatables/js/dataTables.bootstrap4.min.js')}}"></script>
     <Script src="{{asset('js/role.js')}}"></Script>
     <script>
@@ -161,4 +170,5 @@
             });
         });
     </script>
+    @endcan
 @stop

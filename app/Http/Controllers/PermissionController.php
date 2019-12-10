@@ -19,7 +19,7 @@ class PermissionController extends Controller
     public function index()
     {
         return view('Pages.Permissions.index')->with([
-            'roles' => Role::all()
+            'roles' => \App\Role::all()
         ]);
     }
 
@@ -43,9 +43,20 @@ class PermissionController extends Controller
                 return $roles;
             })
             ->addColumn('action', function ($permission) {
-                $action = '<button class="btn btn-xs btn-success assign-role" id="'.$permission->id.'"><i class="fa fa-id-badge"></i> Assign Roles</button> &nbsp;';
-                $action .= '<button class="btn btn-xs btn-primary edit-permission" id="'.$permission->id.'"><i class="fa fa-edit"></i> Edit</button> &nbsp;';
-                $action .= '<button class="btn btn-xs btn-danger delete-permission" id="'.$permission->id.'"><i class="fa fa-trash"></i> Delete</a>';
+                $action ="";
+                if(auth()->user()->hasPermissionTo('assign role to permission'))
+                {
+                    $action .= '<button class="btn btn-xs btn-success assign-role" id="'.$permission->id.'"><i class="fa fa-id-badge"></i> Assign Roles</button> &nbsp;';
+                }
+
+                if(auth()->user()->hasPermissionTo('edit permission'))
+                {
+                    $action .= '<button class="btn btn-xs btn-primary edit-permission" id="'.$permission->id.'"><i class="fa fa-edit"></i> Edit</button> &nbsp;';
+                }
+                if(auth()->user()->hasPermissionTo('delete permission'))
+                {
+                    $action .= '<button class="btn btn-xs btn-danger delete-permission" id="'.$permission->id.'"><i class="fa fa-trash"></i> Delete</a>';
+                }
 
                 return $action;
             })

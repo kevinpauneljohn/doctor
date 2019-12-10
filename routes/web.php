@@ -26,13 +26,31 @@ Route::group(['middleware' => ['auth']], function (){
 Route::group(['middleware' => ['auth']], function(){
     Route::resources([
         'clinics' => 'ClinicController',
-        'roles' => 'RolesController',
-        'permissions' => 'PermissionController'
     ]);
 
-    Route::get('/clinic-list','ClinicController@clinicList')->name('clinics.list');
-    Route::get('/roles-list','RolesController@rolesList')->name('roles.list');
-    Route::get('/permissions-list','PermissionController@permissionList')->name('permissions.list');
+});
+/*permissions*/
+Route::get('/permissions','PermissionController@index')->name('permissions.index')->middleware(['auth','permission:view permission']);
+Route::post('/permissions','PermissionController@store')->name('permissions.store')->middleware(['auth','permission:add permission']);
+Route::put('/permissions/{permission}','PermissionController@update')->name('permissions.update')->middleware(['auth','permission:edit permission']);
+Route::get('/permissions/{permission}','PermissionController@show')->name('permissions.show')->middleware(['auth','permission:assign role to permission']);
+
+/*roles*/
+Route::get('/roles','RolesController@index')->name('roles.index')->middleware(['auth','permission:view role']);
+Route::post('/roles','RolesController@store')->name('roles.store')->middleware(['auth','permission:add role']);
+Route::put('/roles/{role}','RolesController@update')->name('roles.update')->middleware(['auth','permission:edit role']);
+Route::delete('/roles/{role}','RolesController@destroy')->name('roles.destroy')->middleware(['auth','permission:delete role']);
+
+Route::group(['middleware' => ['auth','permission:assign role to permission']],function (){
     Route::post('/permission-get-roles','PermissionController@permissionAssignedRoles')->name('permission.roles');
     Route::post('/permission-set-roles','PermissionController@permissionSetRole')->name('permission.set.roles');
+});
+Route::group(['middleware' => ['auth','permission:view clinic']],function (){
+    Route::get('/clinic-list','ClinicController@clinicList')->name('clinics.list');
+});
+Route::group(['middleware' => ['auth','permission:view role']],function (){
+    Route::get('/roles-list','RolesController@rolesList')->name('roles.list');
+});
+Route::group(['middleware' => ['auth','permission:view permission']],function (){
+    Route::get('/permissions-list','PermissionController@permissionList')->name('permissions.list');
 });

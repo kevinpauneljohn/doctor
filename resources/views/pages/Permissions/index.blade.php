@@ -20,7 +20,9 @@
     <div class="card">
         <div class="card-header">
             {{--<button type="button" class="btn btn-block bg-gradient-primary btn-flat">Primary</button>--}}
+            @can('add permission')
             <button type="button" class="btn bg-gradient-primary btn-sm" data-toggle="modal" data-target="#add-new-permission-modal"><i class="fa fa-plus-circle"></i> Add New</button>
+                @endcan
         </div>
         <div class="card-body">
             <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
@@ -45,7 +47,7 @@
         </div>
     </div>
 
-
+    @can('add permission')
     <!--add new permissions modal-->
     <div class="modal fade" id="add-new-permission-modal">
         <form role="form" id="permission-form">
@@ -75,7 +77,9 @@
         </form>
     </div>
     <!--end add new roles modal-->
+    @endcan
 
+    @can('edit permission')
     <!--edit roles modal-->
     <div class="modal fade" id="edit-permission-modal">
         <form role="form" id="edit-permission-form">
@@ -107,9 +111,11 @@
             <!-- /.modal-dialog -->
         </form>
     </div>
-    <!--end edit roles modal-->
+    <!--end edit permission modal-->
+    @endcan
 
-    <!--add new roles modal-->
+    @can('delete permission')
+    <!--delete permission modal-->
     <div class="modal fade" id="delete-permission-modal">
         <form role="form" id="delete-permission-form">
             @csrf
@@ -130,8 +136,10 @@
             <!-- /.modal-dialog -->
         </form>
     </div>
-    <!--end add new roles modal-->
+    <!--end delete modal-->
+    @endcan
 
+    @can('assign role to permission')
     <!--set/remove role-->
     <div class="modal fade" id="assign-role-modal">
         <form role="form" id="assign-role-form">
@@ -169,6 +177,7 @@
         </form>
     </div>
     <!--end set/remove role-->
+    @endcan
 
 @stop
 

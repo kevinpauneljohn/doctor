@@ -33,8 +33,14 @@ class RolesController extends Controller
                 return "";
             })
             ->addColumn('action', function ($role) {
-                $action = '<button class="btn btn-xs btn-primary edit-role" id="'.$role->id.'"><i class="fa fa-edit"></i> Edit</button> &nbsp;';
-                $action .= '<button class="btn btn-xs btn-danger delete-role" id="'.$role->id.'"><i class="fa fa-trash"></i> Delete</a>';
+                $action = "";
+                if(auth()->user()->hasPermissionTo('edit role'))
+                {
+                    $action .= '<button class="btn btn-xs btn-primary edit-role" id="'.$role->id.'"><i class="fa fa-edit"></i> Edit</button> &nbsp;';
+                }
+                if(auth()->user()->hasPermissionTo('delete role')) {
+                    $action .= '<button class="btn btn-xs btn-danger delete-role" id="' . $role->id . '"><i class="fa fa-trash"></i> Delete</a>';
+                }
 
                 return $action;
             })
