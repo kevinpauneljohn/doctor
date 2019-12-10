@@ -167,6 +167,7 @@
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary">Save</button>
                         </div>
+                        </div>
                     </div>
                     <!-- /.modal-content -->
                 </div>
@@ -259,15 +260,15 @@
         <script>
             $(function() {
                 $('#roles-list').DataTable({
-                    processing: true,
-                    serverSide: true,
-                    ajax: '{!! route('roles.list') !!}',
-                    columns: [
-                        { data: 'name', name: 'name'},
-                        { data: 'action', name: 'action', orderable: false, searchable: false}
-                    ],
-                    responsive:true,
-                    order:[0,'desc']
+                    {{--processing: true,--}}
+                    {{--serverSide: true,--}}
+                    {{--ajax: '{!! route('roles.list') !!}',--}}
+                    {{--columns: [--}}
+                    {{--    { data: 'name', name: 'name'},--}}
+                    {{--    { data: 'action', name: 'action', orderable: false, searchable: false}--}}
+                    {{--],--}}
+                    {{--responsive:true,--}}
+                    {{--order:[0,'desc']--}}
                 });
 
                 //Money Euro
