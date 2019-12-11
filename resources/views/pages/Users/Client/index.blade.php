@@ -29,15 +29,29 @@
                 <table id="roles-list" class="table table-bordered table-striped" role="grid">
                     <thead>
                     <tr role="row">
-                        <th>Role</th>
+                        <th>Date Registered</th>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                        <th>Mobile No</th>
+                        <th>Phone</th>
+                        <th>Clinics</th>
                         <th>Action</th>
                     </tr>
                     </thead>
 
                     <tfoot>
                     <tr>
-                        <th>Role</th>
-                        <th width="20%">Action</th>
+                        <th>Date Registered</th>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                        <th>Mobile No</th>
+                        <th>Phone</th>
+                        <th>Clinics</th>
+                        <th>Action</th>
                     </tr>
                     </tfoot>
                 </table>
@@ -45,177 +59,12 @@
         </div>
     </div>
 
-{{--    @can('add client')--}}
-{{--        <!--add new client modal-->--}}
-{{--        <div class="modal fade" id="add-new-client-modal">--}}
-{{--            <form role="form" id="client-form">--}}
-{{--                @csrf--}}
-{{--                <div class="modal-dialog">--}}
-{{--                    <div class="modal-content">--}}
-{{--                        <div class="modal-header">--}}
-{{--                            <h4 class="modal-title">Add New Client</h4>--}}
-{{--                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
-{{--                                <span aria-hidden="true">×</span>--}}
-{{--                            </button>--}}
-{{--                        </div>--}}
-{{--                        <div class="modal-body">--}}
-{{--                            <div id="accordion">--}}
-
-{{--                                <div class="card">--}}
-{{--                                    <div class="card-header">--}}
-{{--                                        <a class="card-link" data-toggle="collapse" href="#personal-details">--}}
-{{--                                            Personal Details--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <div id="personal-details" class="collapse show" data-parent="#accordion">--}}
-{{--                                        <div class="card-body">--}}
-{{--                                            <div class="form-group firstname">--}}
-{{--                                                <label for="firstname">First Name</label><span class="required">*</span>--}}
-{{--                                                <input type="text" name="firstname" class="form-control" id="firstname">--}}
-{{--                                            </div>--}}
-{{--                                            <div class="form-group middlename">--}}
-{{--                                                <label for="middlename">Middle Name</label>--}}
-{{--                                                <input type="text" name="middlename" class="form-control" id="middlename">--}}
-{{--                                            </div>--}}
-{{--                                            <div class="form-group lastname">--}}
-{{--                                                <label for="lastname">Last Name</label>--}}
-{{--                                                <input type="text" name="lastname" class="form-control" id="lastname">--}}
-{{--                                            </div>--}}
-{{--                                            <div class="form-group birthday">--}}
-{{--                                                <label for="birthday">Date Of Birth</label>--}}
-
-{{--                                                <div class="input-group">--}}
-{{--                                                    <div class="input-group-prepend">--}}
-{{--                                                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>--}}
-{{--                                                    </div>--}}
-{{--                                                    <input name="birthday" id="birthday" type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="mm/dd/yyyy" data-mask>--}}
-{{--                                                </div>--}}
-{{--                                                <!-- /.input group -->--}}
-{{--                                            </div>--}}
-{{--                                            <div class="form-group">--}}
-{{--                                                <label>Phone</label>--}}
-{{--                                                <div class="input-group">--}}
-{{--                                                    <div class="input-group-prepend">--}}
-{{--                                                        <span class="input-group-text"><i class="fas fa-phone"></i></span>--}}
-{{--                                                    </div>--}}
-{{--                                                    <input type="text" class="form-control" data-inputmask="'mask': ['999-999-9999 [x99999]', '+099 99 99 9999[9]-9999']" data-mask>--}}
-{{--                                                </div>--}}
-{{--                                                <!-- /.input group -->--}}
-{{--                                            </div>--}}
-{{--                                            <div class="form-group">--}}
-{{--                                                <label>Mobile</label>--}}
-{{--                                                <div class="input-group">--}}
-{{--                                                    <div class="input-group-prepend">--}}
-{{--                                                        <span class="input-group-text"><i class="fas fa-mobile-alt"></i></span>--}}
-{{--                                                    </div>--}}
-{{--                                                    <input type="text" class="form-control" data-inputmask="'mask': '(9999) 999-9999'" data-mask>--}}
-{{--                                                </div>--}}
-{{--                                                <!-- /.input group -->--}}
-{{--                                            </div>--}}
-{{--                                            <div class="form-group gender">--}}
-{{--                                                <p><strong>Gender</strong></p>--}}
-{{--                                                <div class="icheck-primary d-inline">--}}
-{{--                                                    <input type="radio" id="gender1" name="gender" value="male">--}}
-{{--                                                    <label for="gender1">--}}
-{{--                                                        Male--}}
-{{--                                                    </label>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="icheck-primary d-inline">--}}
-{{--                                                    <input type="radio" id="gender2" name="gender" value="female">--}}
-{{--                                                    <label for="gender2">--}}
-{{--                                                        Female--}}
-{{--                                                    </label>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-
-{{--                                <div class="card">--}}
-{{--                                    <div class="card-header">--}}
-{{--                                        <a class="collapsed card-link" data-toggle="collapse" href="#billing-address">--}}
-{{--                                            Billing Address--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <div id="billing-address" class="collapse" data-parent="#accordion">--}}
-{{--                                        <div class="card-body">--}}
-{{--                                            <div class="form-group address">--}}
-{{--                                                    <label for="address">Address</label><span class="required">*</span>--}}
-{{--                                                    <input type="text" name="address" class="form-control" id="address">--}}
-{{--                                                </div>--}}
-{{--                                                <div class="row">--}}
-{{--                                                    <div class="col-lg-6 region">--}}
-{{--                                                        <label for="region">Region</label><span class="required">*</span>--}}
-{{--                                                        <input type="text" name="region" class="form-control" id="region">--}}
-{{--                                                    </div>--}}
-{{--                                                    <div class="col-lg-6 state">--}}
-{{--                                                        <label for="state">State</label><span class="required">*</span>--}}
-{{--                                                        <input type="text" name="state" class="form-control" id="state">--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="row">--}}
-{{--                                                    <div class="col-lg-6 region">--}}
-{{--                                                        <label for="city">City</label><span class="required">*</span>--}}
-{{--                                                        <input type="text" name="city" class="form-control" id="city">--}}
-{{--                                                    </div>--}}
-{{--                                                    <div class="col-lg-6 state">--}}
-{{--                                                        <label for="postalcode">Postal Code</label><span class="required">*</span>--}}
-{{--                                                        <input type="text" name="postalcode" class="form-control" id="postalcode">--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-
-{{--                                <div class="card">--}}
-{{--                                    <div class="card-header">--}}
-{{--                                        <a class="collapsed card-link" data-toggle="collapse" href="#access-details">--}}
-{{--                                            Access Details--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <div id="access-details" class="collapse" data-parent="#accordion">--}}
-{{--                                        <div class="card-body">--}}
-{{--                                            <div class="form-group email">--}}
-{{--                                                <label for="email">Email</label><span class="required">*</span>--}}
-{{--                                                <input type="email" name="email" class="form-control" id="email">--}}
-{{--                                            </div>--}}
-{{--                                            <div class="form-group username">--}}
-{{--                                                <label for="username">Username</label><span class="required">*</span>--}}
-{{--                                                <input type="text" name="username" class="form-control" id="username">--}}
-{{--                                            </div>--}}
-{{--                                            <div class="form-group password">--}}
-{{--                                                <label for="password">Username</label><span class="required">*</span>--}}
-{{--                                                <input type="password" name="password" class="form-control" id="password">--}}
-{{--                                            </div>--}}
-{{--                                            <div class="form-group">--}}
-{{--                                                <label for="password_confirmation">Re-type Password</label><span class="required">*</span>--}}
-{{--                                                <input type="password" name="password_confirmation" class="form-control" id="password_confirmation">--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-
-{{--                            </div>--}}
-{{--                            <div class="modal-footer justify-content-between">--}}
-{{--                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--}}
-{{--                                <button type="submit" class="btn btn-primary">Save</button>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <!-- /.modal-content -->--}}
-{{--                </div>--}}
-{{--                <!-- /.modal-dialog -->--}}
-{{--            </form>--}}
-{{--        </div>--}}
-{{--        <!--end add new client modal-->--}}
-{{--    @endcan--}}
-
     @can('add client')
         <!--add new client modal-->
         <div class="modal fade" id="add-new-client-modal">
             <form role="form" id="client-form">
                 @csrf
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-xl">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h4 class="modal-title">Add New Client</h4>
@@ -225,22 +74,8 @@
                         </div>
                         <div class="modal-body">
                             <div class="container mt-3">
-                                <!-- Nav tabs -->
-                                <ul class="nav nav-tabs">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" data-toggle="tab" href="#personal-details">Personal Details</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#billing-address">Billing Address</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#access-details">Access Details</a>
-                                    </li>
-                                </ul>
-
-                                <!-- Tab panes -->
-                                <div class="tab-content">
-                                    <div id="personal-details" class="container tab-pane active">
+                                <div class="row">
+                                    <div class="col-lg-4">
                                         <div class="form-group firstname">
                                             <label for="firstname">First Name</label><span class="required">*</span>
                                             <input type="text" name="firstname" class="form-control" id="firstname">
@@ -299,35 +134,41 @@
                                                 </label>
                                             </div>
                                         </div>
-                                </div>
-                                    <div id="billing-address" class="container tab-pane">
+                                    </div>
+
+                                    <div class="col-lg-4" style="border-left:solid 1px #e9ecef;border-right:solid 1px #e9ecef;">
                                         <div class="form-group address">
                                             <label for="address">Address</label><span class="required">*</span>
                                             <input type="text" name="address" class="form-control" id="address">
                                         </div>
-                                        <div class="row">
-                                            <div class="col-lg-6 region">
-                                                <label for="region">Region</label><span class="required">*</span>
-                                                <input type="text" name="region" class="form-control" id="region">
-                                            </div>
-                                            <div class="col-lg-6 state">
-                                                <label for="state">State</label><span class="required">*</span>
-                                                <input type="text" name="state" class="form-control" id="state">
-                                            </div>
+                                        <div class="form-group">
+                                            <label for="region">Region</label><span class="required">*</span>
+                                            <select name="region" id="phil-region" class="form-control" style="width: 100%;">
+                                                <option value="">Select a Region</option>
+                                                @foreach($regions as $region)
+                                                    <option value="{{$region->regCode}}">{{$region->regDesc}}</option>
+                                                    @endforeach
+                                            </select>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-lg-6 region">
-                                                <label for="city">City</label><span class="required">*</span>
-                                                <input type="text" name="city" class="form-control" id="city">
-                                            </div>
-                                            <div class="col-lg-6 state">
-                                                <label for="postalcode">Postal Code</label><span class="required">*</span>
-                                                <input type="text" name="postalcode" class="form-control" id="postalcode">
-                                            </div>
+                                        <div class="form-group state">
+                                            <label for="state">State</label><span class="required">*</span>
+                                            <select name="state" class="form-control" id="phil-state">
+
+                                            </select>
+                                        </div>
+                                        <div class="form-group city">
+                                            <label for="city">City</label><span class="required">*</span>
+                                            <select name="city" class="form-control" id="phil-city">
+
+                                            </select>
+                                        </div>
+                                        <div class="form-group postalcode">
+                                            <label for="postalcode">Postal Code</label><span class="required">*</span>
+                                            <input type="text" name="postalcode" class="form-control" id="postalcode">
                                         </div>
                                     </div>
 
-                                    <div id="access-details" class="container tab-pane">
+                                    <div class="col-lg-4">
                                         <div class="form-group email">
                                             <label for="email">Email</label><span class="required">*</span>
                                             <input type="email" name="email" class="form-control" id="email">
@@ -345,7 +186,7 @@
                                             <input type="password" name="password_confirmation" class="form-control" id="password_confirmation">
                                         </div>
                                     </div>
-                            </div>
+                                </div>
                         </div>
                         <div class="modal-footer justify-content-between">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -428,6 +269,7 @@
     <link rel="stylesheet" href="{{asset('/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('vendor/datatables/css/dataTables.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('vendor/icheck-bootstrap/icheck-bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('vendor/select2/css/select2.min.css')}}">
     <style type="text/css">
         .delete_role{
             font-size: 20px;
@@ -440,23 +282,33 @@
         <script src="{{asset('vendor/datatables/js/dataTables.bootstrap4.min.js')}}"></script>
         <script src="{{asset('vendor/inputmask/min/jquery.inputmask.bundle.min.js')}}"></script>
         <script src="{{asset('vendor/inputmask/inputmask/inputmask.date.extensions.js')}}"></script>
-        <Script src="{{asset('js/role.js')}}"></Script>
+        <script src="{{asset('vendor/select2/js/select2.full.min.js')}}"></script>
+        <Script src="{{asset('js/client.js')}}"></Script>
+        <Script src="{{asset('js/address.js')}}"></Script>
         <script>
             $(function() {
                 $('#roles-list').DataTable({
-                    {{--processing: true,--}}
-                    {{--serverSide: true,--}}
-                    {{--ajax: '{!! route('roles.list') !!}',--}}
-                    {{--columns: [--}}
-                    {{--    { data: 'name', name: 'name'},--}}
-                    {{--    { data: 'action', name: 'action', orderable: false, searchable: false}--}}
-                    {{--],--}}
-                    {{--responsive:true,--}}
-                    {{--order:[0,'desc']--}}
+                    processing: true,
+                    serverSide: true,
+                    ajax: '{!! route('clients.list') !!}',
+                    columns: [
+                        { data: 'created_at', name: 'created_at'},
+                        { data: 'firstname', name: 'firstname'},
+                        { data: 'middlename', name: 'middlename'},
+                        { data: 'lastname', name: 'lastname'},
+                        { data: 'username', name: 'username'},
+                        { data: 'mobileNo', name: 'mobileNo'},
+                        { data: 'landline', name: 'landline'},
+                        { data: 'clinics', name: 'clinics'},
+                        { data: 'action', name: 'action', orderable: false, searchable: false}
+                    ],
+                    responsive:true,
+                    order:[0,'desc']
                 });
 
                 //Money Euro
-                $('[data-mask]').inputmask()
+                $('[data-mask]').inputmask();
+                $('.select2').select2();
             });
         </script>
     @endcan
