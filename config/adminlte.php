@@ -374,6 +374,17 @@ return [
                 ],
             ],
         ],
+        [
+            'name' => 'AdminLTE_Sidebar',
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'js/sidebar.js',
+                ],
+            ],
+        ],
     ],
 
 ];
