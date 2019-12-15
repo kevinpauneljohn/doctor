@@ -9,6 +9,10 @@ let provCode = function () {
     return $('#phil-state').val();
 };
 
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
+
 $(document).ready(function () {
 
     region.change(function () {
@@ -42,7 +46,6 @@ $(document).ready(function () {
             success: function(result){
                 city.append('<option value="">Select City</option>');
                 $.each(result, function (key, value) {
-                    console.log(value.citymunCode);
                     city.append('<option value="'+value.citymunCode+'">'+value.citymunDesc+'</option>');
                 });
             },error(xhr, status, error){

@@ -99,40 +99,25 @@
                                             </div>
                                             <!-- /.input group -->
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group landline">
                                             <label>Phone</label>
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><i class="fas fa-phone"></i></span>
                                                 </div>
-                                                <input type="text" class="form-control" data-inputmask="'mask': ['999-999-9999 [x99999]', '+099 99 99 9999[9]-9999']" data-mask>
+                                                <input name="landline" id="landline" type="text" class="form-control" data-inputmask="'mask': ['999-999-9999 [x99999]', '+099 99 99 9999[9]-9999']" data-mask>
                                             </div>
                                             <!-- /.input group -->
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group mobileNo">
                                             <label>Mobile</label>
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><i class="fas fa-mobile-alt"></i></span>
                                                 </div>
-                                                <input type="text" class="form-control" data-inputmask="'mask': '(9999) 999-9999'" data-mask>
+                                                <input name="mobileNo" id="mobileNo" type="text" class="form-control" data-inputmask="'mask': '(9999) 999-9999'" data-mask>
                                             </div>
                                             <!-- /.input group -->
-                                        </div>
-                                        <div class="form-group gender">
-                                            <p><strong>Gender</strong></p>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="gender1" name="gender" value="male">
-                                                <label for="gender1">
-                                                    Male
-                                                </label>
-                                            </div>
-                                            <div class="icheck-primary d-inline">
-                                                <input type="radio" id="gender2" name="gender" value="female">
-                                                <label for="gender2">
-                                                    Female
-                                                </label>
-                                            </div>
                                         </div>
                                     </div>
 
@@ -243,7 +228,7 @@
             <form role="form" id="delete-role-form">
                 @csrf
                 @method('DELETE')
-                <input type="hidden" name="url" id="url" value="roles">
+                {{--<input type="hidden" name="url" id="url" value="roles">--}}
                 <div class="modal-dialog">
                     <div class="modal-content bg-danger">
                         <div class="modal-body">

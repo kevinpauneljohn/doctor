@@ -22,6 +22,7 @@ class UserSeeder extends Seeder
         $user->mobileNo ='09166520817';
         $user->address ='blk 141 lot 2, Bulaon Resettlement, City Of San Fernando, Pampanga';
         $user->status = "offline";
+        $user->category = "backend";
         $user->assignRole('super admin');
 
         $user->save();
@@ -36,6 +37,7 @@ class UserSeeder extends Seeder
         $admin->mobileNo ='09166520817';
         $admin->address ='blk 141 lot 2, Bulaon Resettlement, City Of San Fernando, Pampanga';
         $admin->status = "offline";
+        $admin->category = "client";
         $admin->assignRole('admin');
 
         $admin->save();

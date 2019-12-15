@@ -74,10 +74,14 @@ class ClientController extends Controller
         $validator = Validator::make($request->all(), [
             'firstname'     => 'required',
             'lastname'      => 'required',
+            'birthday'      => 'required',
+            'phone'      => 'required',
             'username'      => 'required|unique:users,username',
             'email'         => 'required|unique:users,email',
             'password'      => 'required|confirmed',
             'landline'      => 'required',
+            'mobileNo'      => 'required',
+            'gender'      => 'required',
         ]);
 
         if($validator->passes())
@@ -133,6 +137,12 @@ class ClientController extends Controller
     }
 
     /*custom codes*/
+
+    /**
+     * Dec. 15, 2019
+     * @author john kevin paunel
+     * generate license key for the client
+     * */
     function generate_license_key() {
 
         $tokens = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
