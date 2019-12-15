@@ -90,34 +90,15 @@
                                         </div>
                                         <div class="form-group birthday">
                                             <label for="birthday">Date Of Birth</label>
-
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
-                                                </div>
                                                 <input name="birthday" id="birthday" type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="mm/dd/yyyy" data-mask>
-                                            </div>
-                                            <!-- /.input group -->
                                         </div>
                                         <div class="form-group landline">
                                             <label>Phone</label>
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                                                </div>
-                                                <input name="landline" id="landline" type="text" class="form-control" data-inputmask="'mask': ['999-999-9999 [x99999]', '+099 99 99 9999[9]-9999']" data-mask>
-                                            </div>
-                                            <!-- /.input group -->
+                                                <input name="landline" id="landline" type="text" class="form-control" data-inputmask="'mask': '999 999 999'" data-mask>
                                         </div>
                                         <div class="form-group mobileNo">
                                             <label>Mobile</label>
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text"><i class="fas fa-mobile-alt"></i></span>
-                                                </div>
                                                 <input name="mobileNo" id="mobileNo" type="text" class="form-control" data-inputmask="'mask': '(9999) 999-9999'" data-mask>
-                                            </div>
-                                            <!-- /.input group -->
                                         </div>
                                     </div>
 
@@ -126,9 +107,9 @@
                                             <label for="address">Address</label><span class="required">*</span>
                                             <input type="text" name="address" class="form-control" id="address">
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group region">
                                             <label for="region">Region</label><span class="required">*</span>
-                                            <select name="region" id="phil-region" class="form-control" style="width: 100%;">
+                                            <select name="region" id="region" class="form-control" style="width: 100%;">
                                                 <option value="">Select a Region</option>
                                                 @foreach($regions as $region)
                                                     <option value="{{$region->regCode}}">{{$region->regDesc}}</option>
@@ -137,13 +118,13 @@
                                         </div>
                                         <div class="form-group state">
                                             <label for="state">State</label><span class="required">*</span>
-                                            <select name="state" class="form-control" id="phil-state">
+                                            <select name="state" class="form-control" id="state">
 
                                             </select>
                                         </div>
                                         <div class="form-group city">
                                             <label for="city">City</label><span class="required">*</span>
-                                            <select name="city" class="form-control" id="phil-city">
+                                            <select name="city" class="form-control" id="city">
 
                                             </select>
                                         </div>
@@ -163,7 +144,7 @@
                                             <input type="text" name="username" class="form-control" id="username">
                                         </div>
                                         <div class="form-group password">
-                                            <label for="password">Username</label><span class="required">*</span>
+                                            <label for="password">Password</label><span class="required">*</span>
                                             <input type="password" name="password" class="form-control" id="password">
                                         </div>
                                         <div class="form-group">

@@ -1,17 +1,14 @@
 /*display the list of states when region dropdowm change event triggered*/
-let region = $('#phil-region');
-let state = $('#phil-state');
-let city = $('#phil-city');
+let region = $('#region');
+let state = $('#state');
+let city = $('#city');
 let regCode = function () {
-    return $('#phil-region').val();
+    return $('#region').val();
 };
 let provCode = function () {
-    return $('#phil-state').val();
+    return $('#state').val();
 };
 
-String.prototype.capitalize = function() {
-    return this.charAt(0).toUpperCase() + this.slice(1);
-}
 
 $(document).ready(function () {
 

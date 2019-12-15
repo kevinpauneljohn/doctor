@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\License;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -35,7 +36,7 @@ class ClientController extends Controller
                 $action ="";
                 if(auth()->user()->hasPermissionTo('view client'))
                 {
-                    $action .= '<button class="btn btn-xs btn-success assign-client" id="'.$client->id.'"><i class="fa fa-id-badge"></i> Assign Roles</button> &nbsp;';
+                    $action .= '<button class="btn btn-xs btn-success view-client" id="'.$client->id.'"><i class="fa fa-eye"></i> View Client</button> &nbsp;';
                 }
 
                 if(auth()->user()->hasPermissionTo('edit client'))
@@ -75,17 +76,44 @@ class ClientController extends Controller
             'firstname'     => 'required',
             'lastname'      => 'required',
             'birthday'      => 'required',
-            'phone'      => 'required',
+            'landline'      => 'required',
             'username'      => 'required|unique:users,username',
             'email'         => 'required|unique:users,email',
             'password'      => 'required|confirmed',
             'landline'      => 'required',
             'mobileNo'      => 'required',
-            'gender'      => 'required',
+            'address'      => 'required',
+            'region'      => 'required',
+            'state'      => 'required',
+            'city'      => 'required',
         ]);
 
         if($validator->passes())
         {
+            $user = new User();
+            $user->firstname = $request->firstname;
+            $user->middlename = $request->middlename;
+            $user->lastname = $request->lastname;
+            $user->username = $request->username;
+            $user->email = $request->email;
+            $user->password = bcrypt($request->password);
+            $user->mobileNo = $request->mobileNo;
+            $user->landline = $request->landline;
+            $user->birthday = $request->birthday;
+            $user->address = $request->address;
+            $user->refregion = $request->refregion;
+            $user->refprovince = $request->refprovince;
+            $user->refcitymun = $request->refcitymun;
+            $user->status = 0;
+            $user->category = 'client';
+
+            if($user->save())
+            {
+                $license = new License();
+                $license->license = $this->generate_license_key();
+                $license->user_id = $user->id;
+                $license->save();
+            }
             return response()->json(['success' => true]);
         }
         return response()->json($validator->errors());
@@ -166,7 +194,15 @@ class ClientController extends Controller
 
         }
 
-        return $key_string;
+        /*check if license already exists*/
+        $unique_license = License::where('license',$key_string)->count();
+        if($unique_license > 0)
+        {
+            /*generate license key if its already exists*/
+            return $this->generate_license_key();
+        }else{
+            return $key_string;
+        }
 
     }
 }

@@ -20,5 +20,26 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'add role'])->assignRole('super admin');
         Permission::create(['name' => 'edit role'])->assignRole('super admin');
         Permission::create(['name' => 'delete role'])->assignRole('super admin');
+        Permission::create(['name' => 'assign role to permission'])->assignRole('super admin');
+
+        Permission::create(['name' => 'view permission'])->assignRole('super admin');
+        Permission::create(['name' => 'add permission'])->assignRole('super admin');
+        Permission::create(['name' => 'edit permission'])->assignRole('super admin');
+        Permission::create(['name' => 'delete permission'])->assignRole('super admin');
+
+        Permission::create(['name' => 'view user'])->assignRole('super admin');
+        Permission::create(['name' => 'add user'])->assignRole('super admin');
+        Permission::create(['name' => 'edit user'])->assignRole('super admin');
+        Permission::create(['name' => 'delete user'])->assignRole('super admin');
+
+        Permission::create(['name' => 'view client'])->assignRole('super admin');
+        Permission::create(['name' => 'add client'])->assignRole('super admin');
+        Permission::create(['name' => 'edit client'])->assignRole('super admin');
+        Permission::create(['name' => 'delete client'])->assignRole('super admin');
+
+        Permission::create(['name' => 'view clinic'])->assignRole('super admin');
+        Permission::create(['name' => 'add clinic'])->assignRole('super admin');
+        Permission::create(['name' => 'edit clinic'])->assignRole('super admin');
+        Permission::create(['name' => 'delete clinic'])->assignRole('super admin');
     }
 }
