@@ -36,7 +36,7 @@ class ClientController extends Controller
                 $action ="";
                 if(auth()->user()->hasPermissionTo('view client'))
                 {
-                    $action .= '<button class="btn btn-xs btn-success view-client" id="'.$client->id.'"><i class="fa fa-eye"></i> View Client</button> &nbsp;';
+                    $action .= '<a href="'.route('clients.show',['client' => $client->id]).'"><button class="btn btn-xs btn-success view-client" id="'.$client->id.'"><i class="fa fa-eye"></i> View</button> </a>&nbsp;';
                 }
 
                 if(auth()->user()->hasPermissionTo('edit client'))
@@ -127,7 +127,12 @@ class ClientController extends Controller
      */
     public function show($id)
     {
-        //
+        $client = User::where('id',$id)->count();
+        if($client > 0)
+        {
+            return view('pages.Users.Client.profile');
+        }
+        return abort(404);
     }
 
     /**

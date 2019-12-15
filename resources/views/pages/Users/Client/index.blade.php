@@ -168,10 +168,10 @@
         <!--end add new client modal-->
     @endcan
 
-    @can('edit user')
-        <!--edit user modal-->
-        <div class="modal fade" id="edit-role-modal">
-            <form role="form" id="edit-role-form" action="{{route('roles.update',['role' => 1])}}">
+    @can('edit client')
+        <!--edit client modal-->
+        <div class="modal fade" id="edit-client-modal">
+            <form role="form" id="edit-client-form" action="{{route('roles.update',['role' => 1])}}">
                 @csrf
                 @method('PUT')
                 <input type="hidden" name="id" id="id">
