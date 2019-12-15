@@ -48,4 +48,40 @@ class AddressController extends Controller
         $city = DB::table('refcitymun')->where('provCode',$provCode)->get();
         return $city;
     }
+
+    /**
+     * Dec. 16, 2019
+     * @author john kevin paunel
+     * get the region name
+     * @param int regCode
+     * @return object
+     * */
+    public function getRegionName($regCode)
+    {
+        return DB::table('refregion')->where('regCode',$regCode)->first()->regDesc;
+    }
+
+    /**
+     * Dec. 16, 2019
+     * @author john kevin paunel
+     * get the region name
+     * @param int regCode
+     * @return object
+     * */
+    public function getStateName($provCode)
+    {
+        return DB::table('refprovince')->where('provCode',$provCode)->first()->provDesc;
+    }
+
+    /**
+     * Dec. 16, 2019
+     * @author john kevin paunel
+     * get the region name
+     * @param int regCode
+     * @return object
+     * */
+    public function getCityName($citymunCode)
+    {
+        return DB::table('refcitymun')->where('citymunCode',$citymunCode)->first()->citymunDesc;
+    }
 }

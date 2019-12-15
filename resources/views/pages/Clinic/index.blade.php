@@ -18,6 +18,12 @@
 
 @section('content')
     <div class="card">
+        <div class="card-header">
+            @can('add clinic')
+                <button type="button" class="btn bg-gradient-primary btn-sm" data-toggle="modal" data-target="#add-new-client-modal"><i class="fa fa-plus-circle"></i> Add New</button>
+            @endcan
+
+        </div>
         <div class="card-body">
             <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
                 <table id="clinic-list" class="table table-bordered table-striped" role="grid">

@@ -101,11 +101,12 @@ class ClientController extends Controller
             $user->landline = $request->landline;
             $user->birthday = $request->birthday;
             $user->address = $request->address;
-            $user->refregion = $request->refregion;
-            $user->refprovince = $request->refprovince;
-            $user->refcitymun = $request->refcitymun;
+            $user->refregion = $request->region;
+            $user->refprovince = $request->state;
+            $user->refcitymun = $request->city;
             $user->status = 0;
             $user->category = 'client';
+            $user->assignRole(['owner','client admin']);
 
             if($user->save())
             {
@@ -130,7 +131,11 @@ class ClientController extends Controller
         $client = User::where('id',$id)->count();
         if($client > 0)
         {
-            return view('pages.Users.Client.profile');
+            return view('pages.Users.Client.profile')->with([
+                'user'  => User::find($id),
+                'address' => new AddressController(),
+                'license' => DB::table('licenses')->where('user_id',$id)->first()->license,
+            ]);
         }
         return abort(404);
     }

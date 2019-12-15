@@ -37,7 +37,7 @@ class UserSeeder extends Seeder
         $admin->mobileNo ='09166520817';
         $admin->address ='blk 141 lot 2, Bulaon Resettlement, City Of San Fernando, Pampanga';
         $admin->status = "offline";
-        $admin->category = "client";
+        $admin->category = "backend";
         $admin->assignRole('admin');
 
         $admin->save();
