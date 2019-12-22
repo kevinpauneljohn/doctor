@@ -38,6 +38,9 @@ Route::put('/clients/{client}','ClientController@update')->name('clients.update'
 Route::get('/clients/{client}','ClientController@show')->name('clients.show')->middleware(['auth']);
 Route::get('/clients-list','ClientController@clientList')->name('clients.list')->middleware(['auth','permission:view client']);
 
+Route::post('/client-form','ClientController@editForm')->name('client.form')->middleware(['auth','permission:edit client']);
+/*end client*/
+
 /*permissions*/
 Route::get('/permissions','PermissionController@index')->name('permissions.index')->middleware(['auth','permission:view permission']);
 Route::post('/permissions','PermissionController@store')->name('permissions.store')->middleware(['auth','permission:add permission']);

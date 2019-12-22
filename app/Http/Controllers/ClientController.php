@@ -41,7 +41,7 @@ class ClientController extends Controller
 
                 if(auth()->user()->hasPermissionTo('edit client'))
                 {
-                    $action .= '<button class="btn btn-xs btn-primary edit-client" id="'.$client->id.'"><i class="fa fa-edit"></i> Edit</button> &nbsp;';
+                    $action .= '<button class="btn btn-xs btn-primary edit-client" id="'.$client->id.'" data-toggle="modal" data-target="#edit-new-client-modal"><i class="fa fa-edit"></i> Edit</button> &nbsp;';
                 }
                 if(auth()->user()->hasPermissionTo('delete client'))
                 {
@@ -149,6 +149,28 @@ class ClientController extends Controller
     public function edit($id)
     {
         //
+    }
+
+    public function editForm(Request $request)
+    {
+        $view = "";
+        $region = DB::table('refregion')->get();
+        if($request->option == 'personal')
+        {
+            $view = 'pages.Users.Client.forms.editPersonalinformation';
+        }
+        else if($request->option == 'billing')
+        {
+            $view = 'pages.Users.Client.forms.editBilling';
+        }
+        else if($request->option == 'access')
+        {
+            $view = 'pages.Users.Client.forms.editAccess';
+        }
+        return view($view)->with([
+            'user'  => User::find($request->id),
+            'regions' => $region,
+        ]);
     }
 
     /**

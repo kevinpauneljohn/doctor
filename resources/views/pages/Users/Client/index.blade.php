@@ -76,6 +76,7 @@
                             <div class="container mt-3">
                                 <div class="row">
                                     <div class="col-lg-4">
+                                        <h2 class="modal-form-title">Personal Information</h2>
                                         <div class="form-group firstname">
                                             <label for="firstname">First Name</label><span class="required">*</span>
                                             <input type="text" name="firstname" class="form-control" id="firstname">
@@ -103,6 +104,7 @@
                                     </div>
 
                                     <div class="col-lg-4" style="border-left:solid 1px #e9ecef;border-right:solid 1px #e9ecef;">
+                                        <h2 class="modal-form-title">Billing Address</h2>
                                         <div class="form-group address">
                                             <label for="address">Address</label><span class="required">*</span>
                                             <input type="text" name="address" class="form-control" id="address">
@@ -135,6 +137,7 @@
                                     </div>
 
                                     <div class="col-lg-4">
+                                        <h2 class="modal-form-title">Access Details</h2>
                                         <div class="form-group email">
                                             <label for="email">Email</label><span class="required">*</span>
                                             <input type="email" name="email" class="form-control" id="email">
@@ -169,99 +172,30 @@
     @endcan
 
     @can('edit client')
-        <!--add new client modal-->
+        <!--edit client modal-->
         <div class="modal fade" id="edit-new-client-modal">
             <form role="form" id="edit-client-form">
                 @csrf
-                <div class="modal-dialog modal-xl">
+                <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Edit Client</h4>
+                            <h4 class="modal-title">Update Client Details</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">×</span>
                             </button>
                         </div>
                         <div class="modal-body">
                             <div class="container mt-3">
-                                <div class="row">
-                                    <div class="col-lg-4">
-                                        <div class="form-group edit_firstname">
-                                            <label for="edit_firstname">First Name</label><span class="required">*</span>
-                                            <input type="text" name="edit_firstname" class="form-control" id="edit_firstname">
-                                        </div>
-                                        <div class="form-group edit_middlename">
-                                            <label for="edit_middlename">Middle Name</label>
-                                            <input type="text" name="edit_middlename" class="form-control" id="edit_middlename">
-                                        </div>
-                                        <div class="form-group edit_lastname">
-                                            <label for="edit_lastname">Last Name</label><span class="required">*</span>
-                                            <input type="text" name="edit_lastname" class="form-control" id="edit_lastname">
-                                        </div>
-                                        <div class="form-group edit_birthday">
-                                            <label for="edit_birthday">Date Of Birth</label>
-                                            <input name="edit_birthday" id="edit_birthday" type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="mm/dd/yyyy" data-mask>
-                                        </div>
-                                        <div class="form-group edit_landline">
-                                            <label>Phone</label>
-                                            <input name="edit_landline" id="edit_landline" type="text" class="form-control" data-inputmask="'mask': '999 999 999'" data-mask>
-                                        </div>
-                                        <div class="form-group edit_mobileNo">
-                                            <label>Mobile</label>
-                                            <input name="edit_mobileNo" id="edit_mobileNo" type="text" class="form-control" data-inputmask="'mask': '(9999) 999-9999'" data-mask>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4" style="border-left:solid 1px #e9ecef;border-right:solid 1px #e9ecef;">
-                                        <div class="form-group edit_address">
-                                            <label for="edit_address">Address</label><span class="required">*</span>
-                                            <input type="text" name="edit_address" class="form-control" id="edit_address">
-                                        </div>
-                                        <div class="form-group edit_region">
-                                            <label for="edit_region">Region</label><span class="required">*</span>
-                                            <select name="edit_region" id="edit_region" class="form-control" style="width: 100%;">
-                                                <option value="">Select a Region</option>
-                                                @foreach($regions as $region)
-                                                    <option value="{{$region->regCode}}">{{$region->regDesc}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <div class="form-group edit_state">
-                                            <label for="edit_state">State</label><span class="required">*</span>
-                                            <select name="edit_state" class="form-control" id="edit_state">
-
-                                            </select>
-                                        </div>
-                                        <div class="form-group edit_city">
-                                            <label for="edit_city">City</label><span class="required">*</span>
-                                            <select name="edit_city" class="form-control" id="edit_city">
-
-                                            </select>
-                                        </div>
-                                        <div class="form-group edit_postalcode">
-                                            <label for="edit_postalcode">Postal Code</label><span class="required">*</span>
-                                            <input type="text" name="edit_postalcode" class="form-control" id="edit_postalcode">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4">
-                                        <div class="form-group edit_email">
-                                            <label for="edit_email">Email</label><span class="required">*</span>
-                                            <input type="edit_email" name="edit_email" class="form-control" id="edit_email">
-                                        </div>
-                                        <div class="form-group edit_username">
-                                            <label for="edit_username">Username</label><span class="required">*</span>
-                                            <input type="text" name="edit_username" class="form-control" id="edit_username">
-                                        </div>
-                                        <div class="form-group edit_password">
-                                            <label for="edit_password">Password</label><span class="required">*</span>
-                                            <input type="password" name="edit_password" class="form-control" id="edit_password">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="password_confirmation">Re-type Password</label><span class="required">*</span>
-                                            <input type="password" name="password_confirmation" class="form-control" id="password_confirmation">
-                                        </div>
-                                    </div>
-                                </div>
+                               <div class="form-group">
+                                   <input type="hidden" class="edit-user-id">
+                                   <select class="form-control" name="option" id="select-edit-form">
+                                       <option value="">-- Select details to be updated --</option>
+                                       <option value="personal">Personal Information</option>
+                                       <option value="billing">Billing Address</option>
+                                       <option value="access">Access Details</option>
+                                   </select>
+                               </div>
+                                <div class="form-content"></div>
                             </div>
                             <div class="modal-footer justify-content-between">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

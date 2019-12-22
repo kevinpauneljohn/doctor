@@ -62,3 +62,30 @@ $(document).on('submit','#client-form',function(form){
 
     );
 });
+
+
+/***************Edit client section**************************/
+$(document).on('click','.edit-client', function () {
+    let id = this.id;
+    $('.edit-user-id').val(id);
+});
+$(document).on('change','#select-edit-form',function () {
+    let data = $('#select-edit-form').val();
+    let id = $('.edit-user-id').val();
+
+    $.ajax({
+        'url' : '/client-form',
+        'headers': {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        'type' : 'POST',
+        'data' : {
+            'option':data,
+            'id': id,
+        },
+        success: function(result){
+            $('.form-content').html(result);
+        },error: function(xhr, status, error){
+        console.log("error: "+error+" status: "+status+" xhr: "+xhr);
+        }
+    });
+});
+/***************End Edit client section**********************/
