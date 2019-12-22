@@ -32,7 +32,7 @@ Route::group(['middleware' => ['auth']], function(){
 
 
 /*client*/
-Route::get('/clients','ClientController@index')->name('clients.index')->middleware(['auth','permission:view client']);
+Route::get('/clients','ClientController@index')->name('clients.index')->middleware(['auth']);
 Route::post('/clients','ClientController@store')->name('clients.store')->middleware(['auth','permission:add client']);
 Route::put('/clients/{client}','ClientController@update')->name('clients.update')->middleware(['auth','permission:edit client']);
 Route::get('/clients/{client}','ClientController@show')->name('clients.show')->middleware(['auth']);
