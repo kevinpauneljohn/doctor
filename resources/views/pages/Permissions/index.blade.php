@@ -156,14 +156,14 @@
                     <div class="modal-body">
                         <strong style="margin-bottom: 20px;">Set/Remove Role</strong>
                         <div class="form-group clearfix">
-{{--                            @foreach($roles as $role)--}}
-{{--                                <div class="icheck-primary">--}}
-{{--                                    <input name="roles[]" type="checkbox" id="checkboxPrimary-{{$role->id}}" value="{{$role->name}}">--}}
-{{--                                    <label for="checkboxPrimary-{{$role->id}}">--}}
-{{--                                        {{$role->name}}--}}
-{{--                                    </label>--}}
-{{--                                </div>--}}
-{{--                                @endforeach--}}
+                            @foreach($roles as $role)
+                                <div class="icheck-primary">
+                                    <input name="roles[]" type="checkbox" id="checkboxPrimary-{{$role->id}}" value="{{$role->name}}">
+                                    <label for="checkboxPrimary-{{$role->id}}">
+                                        {{$role->name}}
+                                    </label>
+                                </div>
+                                @endforeach
                         </div>
                     </div>
                     <div class="modal-footer justify-content-between">

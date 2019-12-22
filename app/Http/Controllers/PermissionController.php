@@ -7,7 +7,7 @@ use Spatie\Permission\Models\Permission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Role;
-
+use Yajra\DataTables\DataTables;
 
 class PermissionController extends Controller
 {
@@ -18,9 +18,8 @@ class PermissionController extends Controller
      */
     public function index()
     {
-        $roles = Role::all();
         return view('Pages.Permissions.index')->with([
-            'roles' => $roles
+            'roles' => Role::all()
         ]);
     }
 
