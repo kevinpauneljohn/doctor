@@ -51,9 +51,3 @@ $(document).ready(function () {
         })
     });
 });
-
-// $(document).on('change','#phil-region',function(){
-//
-// });
-// /*display the list of cities when region dropdowm change event triggered*/
-// $(document).on('change');

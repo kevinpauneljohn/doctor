@@ -23,3 +23,8 @@
         <label>Mobile</label>
         <input name="mobileNo" id="mobileNo" type="text" class="form-control" data-inputmask="'mask': '(9999) 999-9999'" data-mask value="{{$user->mobileNo}}">
     </div>
+
+
+    <script>
+        $('[data-mask]').inputmask();
+    </script>

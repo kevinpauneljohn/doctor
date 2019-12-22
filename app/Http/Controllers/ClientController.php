@@ -104,7 +104,8 @@ class ClientController extends Controller
             $user->refregion = $request->region;
             $user->refprovince = $request->state;
             $user->refcitymun = $request->city;
-            $user->status = 0;
+            $user->postalcode = $request->postalcode;
+            $user->status = 'offline';
             $user->category = 'client';
             $user->assignRole(['owner','client admin']);
 
@@ -154,7 +155,13 @@ class ClientController extends Controller
     public function editForm(Request $request)
     {
         $view = "";
+        $users = User::find($request->id);
         $region = DB::table('refregion')->get();
+        $state = DB::table('refprovince')
+            ->where('regCode','=', $users->refregion)->get();
+        $city = DB::table('refcitymun')
+            ->where('provCode','=', $users->refprovince)->get();
+
         if($request->option == 'personal')
         {
             $view = 'pages.Users.Client.forms.editPersonalinformation';
@@ -168,8 +175,10 @@ class ClientController extends Controller
             $view = 'pages.Users.Client.forms.editAccess';
         }
         return view($view)->with([
-            'user'  => User::find($request->id),
+            'user'  => $users,
             'regions' => $region,
+            'states' => $state,
+            'cities' => $city,
         ]);
     }
 

@@ -15,9 +15,10 @@ class AddBirthdayAndAddressToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('birthday')->after('landline')->nullable();
-            $table->integer('refregion')->after('address')->nullable();
-            $table->integer('refprovince')->after('refregion')->nullable();
-            $table->integer('refcitymun')->after('refprovince')->nullable();
+            $table->string('refregion')->after('address')->nullable();
+            $table->string('refprovince')->after('refregion')->nullable();
+            $table->string('refcitymun')->after('refprovince')->nullable();
+            $table->string('postalcode')->after('refcitymun')->nullable();
         });
     }
 
