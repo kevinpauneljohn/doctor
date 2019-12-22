@@ -18,10 +18,9 @@ class PermissionController extends Controller
      */
     public function index()
     {
-        return 'hello';
-//        return view('Pages.Permissions.index')->with([
-//            'roles' => \App\Role::all()
-//        ]);
+        return view('Pages.Permissions.index')->with([
+            'roles' => \App\Role::all()
+        ]);
     }
 
     /**
