@@ -27,4 +27,5 @@
 
     <script>
         $('[data-mask]').inputmask();
+
     </script>
