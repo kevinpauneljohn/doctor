@@ -32,7 +32,7 @@ Route::group(['middleware' => ['auth']], function(){
 
 
 /*client*/
-Route::get('/clients','ClientController@index')->name('clients.index')->middleware(['auth']);
+Route::get('/clients','ClientController@index')->name('clients.index')->middleware(['auth','permission:view client']);
 Route::post('/clients','ClientController@store')->name('clients.store')->middleware(['auth','permission:add client']);
 Route::put('/clients/{client}','ClientController@update')->name('clients.update')->middleware(['auth','permission:edit client']);
 Route::get('/clients/{client}','ClientController@show')->name('clients.show')->middleware(['auth']);
@@ -42,7 +42,7 @@ Route::post('/client-form','ClientController@editForm')->name('client.form')->mi
 /*end client*/
 
 /*permissions*/
-Route::get('/permissions','PermissionController@index')->name('permissions.index')->middleware(['auth','permission:view permission']);
+Route::get('/permissions','PermissionController@index')->name('permissions.index')->middleware(['auth']);
 Route::post('/permissions','PermissionController@store')->name('permissions.store')->middleware(['auth','permission:add permission']);
 Route::put('/permissions/{permission}','PermissionController@update')->name('permissions.update')->middleware(['auth','permission:edit permission']);
 Route::get('/permissions/{permission}','PermissionController@show')->name('permissions.show')->middleware(['auth','permission:assign role to permission']);
