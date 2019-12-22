@@ -5,6 +5,7 @@ namespace App\Http\Controllers\CustomAuth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Spatie\Activitylog\Models\Activity;
 
 class LoginController extends Controller
 {
@@ -45,6 +46,7 @@ class LoginController extends Controller
 
         if(Auth::attempt($credential))
         {
+            activity()->causedBy(auth()->user()->id)->withProperties(['username' => auth()->user()->username])->log('user logged in');
             return redirect(route('dashboard'));
         }
         return back()->with(['success' => false, 'message' => 'Invalid Credential'])->withInput();
