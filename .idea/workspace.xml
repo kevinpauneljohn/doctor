@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd92ee8b-f0b2-409c-8792-6b9b977a0257" name="Default Changelist" comment="create license key for clients">
+    <list default="true" id="fd92ee8b-f0b2-409c-8792-6b9b977a0257" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomAuth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomAuth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/Users/Client/forms/editAccess.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/Users/Client/forms/editBilling.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/Users/Client/forms/editBilling.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/Users/Client/forms/editPersonalinformation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/Users/Client/forms/editPersonalinformation.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/Users/Client/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/Users/Client/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,14 +17,14 @@
     </execution>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.49122807">
+    <splitter split-orientation="horizontal" split-proportion="0.2532418">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/views/pages/Users/Client/index.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="117">
-                  <caret line="179" column="65" selection-start-line="179" selection-start-column="51" selection-end-line="179" selection-end-column="65" />
+                <state relative-caret-position="66">
+                  <caret line="176" column="34" lean-forward="true" selection-start-line="176" selection-start-column="34" selection-end-line="176" selection-end-column="50" />
                 </state>
               </provider>
             </entry>
@@ -45,11 +38,9 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/views/pages/Users/Client/forms/editBilling.blade.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-937" />
-              </provider>
+              <provider selected="true" editor-type-id="text-editor" />
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
@@ -80,8 +71,17 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/js/client.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-291">
-                  <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="140" selection-end-column="3" />
+                <state relative-caret-position="1817">
+                  <caret line="121" column="38" lean-forward="true" selection-start-line="121" selection-start-column="38" selection-end-line="121" selection-end-column="38" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/js/role.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="357">
+                  <caret line="33" column="19" selection-start-line="25" selection-start-column="16" selection-end-line="33" selection-end-column="19" />
                 </state>
               </provider>
             </entry>
@@ -494,21 +494,7 @@
       <workItem from="1576483479342" duration="1483000" />
       <workItem from="1576601265593" duration="244000" />
       <workItem from="1576991354107" duration="8150000" />
-      <workItem from="1577015342770" duration="14572000" />
-    </task>
-    <task id="LOCAL-00006" summary="Created Landing Page Controller">
-      <created>1575620517707</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1575620517707</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Created Landing Page Controller">
-      <created>1575648993340</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1575648993340</updated>
+      <workItem from="1577015342770" duration="17035000" />
     </task>
     <task id="LOCAL-00008" summary="Created Landing Page Controller">
       <created>1575657201861</created>
@@ -839,11 +825,25 @@
       <option name="project" value="LOCAL" />
       <updated>1577035999767</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="create license key for clients">
+      <created>1577076613864</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1577076613864</updated>
+    </task>
+    <task id="LOCAL-00056" summary="create license key for clients">
+      <created>1577088099025</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1577088099025</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175077000" />
+    <option name="totallyTimeSpent" value="177540000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -1109,13 +1109,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/role.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_12_15_053051_add_birthday_and_address_to_users_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1256,12 +1249,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/Users/Client/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="179" column="65" selection-start-line="179" selection-start-column="51" selection-end-line="179" selection-end-column="65" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/Users/Client/forms/editBilling.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/Users/Client/forms/editPersonalinformation.blade.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1270,15 +1259,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/Users/Client/forms/editBilling.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/Users/Client/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-937" />
+        <state relative-caret-position="66">
+          <caret line="176" column="34" lean-forward="true" selection-start-line="176" selection-start-column="34" selection-end-line="176" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/role.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="33" column="19" selection-start-line="25" selection-start-column="16" selection-end-line="33" selection-end-column="19" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-291">
-          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="140" selection-end-column="3" />
+        <state relative-caret-position="1817">
+          <caret line="121" column="38" lean-forward="true" selection-start-line="121" selection-start-column="38" selection-end-line="121" selection-end-column="38" />
         </state>
       </provider>
     </entry>
