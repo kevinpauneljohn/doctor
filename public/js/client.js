@@ -9,6 +9,18 @@ function clear_errors()
     }
 }
 
+
+function modal_clear_errors()
+{
+    let i;
+    for (i = 0; i < arguments.length; i++) {
+
+        if($('#edit-client-form #'+arguments[i]).val().length > 0){
+            $('.'+arguments[i]).closest('div.'+arguments[i]).removeClass('has-error').find('.text-danger').remove();
+        }
+    }
+}
+
 $(document).on('submit','#client-form',function(form){
     form.preventDefault();
 
@@ -103,10 +115,24 @@ $(document).on('submit','#edit-client-form', function (form) {
         'type' : 'POST',
         'data' : data,
         success: function(result){
-            console.log(result);
+            // console.log(result);
+
+            if(result.success === true)
+            {
+                setTimeout(function(){
+                    /*$('#role_form').trigger('reset');
+                    $('#roles').modal('toggle');*/
+                    toastr.success('User details Successfully updated!')
+
+                    setTimeout(function(){
+                        location.reload();
+                    },1500);
+                });
+            }
 
             $.each(result, function (key, value) {
-                var element = $('#'+key);
+                // console.log(value);
+                var element = $('#edit-client-form #'+key);
 
                 element.closest('div.'+key)
                     .addClass(value.length > 0 ? 'has-error' : 'has-success')
@@ -114,7 +140,6 @@ $(document).on('submit','#edit-client-form', function (form) {
                     .remove();
                 element.after('<p class="text-danger">'+value+'</p>');
             });
-
         },error: function(xhr, status, error){
             console.log("error: "+error+" status: "+status+" xhr: "+xhr);
         }
@@ -122,7 +147,7 @@ $(document).on('submit','#edit-client-form', function (form) {
 
     if(selectForm === 'personal')
     {
-        clear_errors(
+        modal_clear_errors(
             'firstname',
             'lastname',
             'birthday',
@@ -130,7 +155,7 @@ $(document).on('submit','#edit-client-form', function (form) {
             'mobileNo',
         );
     }else if (selectForm === 'billing'){
-        clear_errors(
+        modal_clear_errors(
             'address',
             'region',
             'state',
