@@ -1,4 +1,5 @@
 
+    <input type="hidden" name="url" id="url" value="clients">
     <div class="form-group firstname">
         <label for="firstname">First Name</label><span class="required">*</span>
         <input type="text" name="firstname" class="form-control" id="firstname" value="{{$user->firstname}}">

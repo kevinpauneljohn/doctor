@@ -176,6 +176,8 @@
         <div class="modal fade" id="edit-new-client-modal">
             <form role="form" id="edit-client-form">
                 @csrf
+                @method('PUT')
+                <input type="hidden" name="id" id="updateClientId">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -192,7 +194,6 @@
                                        <option value="">-- Select details to be updated --</option>
                                        <option value="personal">Personal Information</option>
                                        <option value="billing">Billing Address</option>
-                                       <option value="access">Access Details</option>
                                    </select>
                                </div>
                                 <div class="form-content"></div>

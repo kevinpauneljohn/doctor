@@ -60,6 +60,7 @@ class LoginController extends Controller
      * */
     public function logout(Request $request)
     {
+        activity()->causedBy(auth()->user()->id)->withProperties(['username' => auth()->user()->username])->log('user logged out');
         Auth::logout();
 
         return redirect(route('login'));

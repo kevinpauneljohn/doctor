@@ -82,10 +82,61 @@ $(document).on('change','#select-edit-form',function () {
             'id': id,
         },
         success: function(result){
+            $('#updateClientId').val(id);
             $('.form-content').html(result);
         },error: function(xhr, status, error){
         console.log("error: "+error+" status: "+status+" xhr: "+xhr);
         }
     });
+});
+
+$(document).on('submit','#edit-client-form', function (form) {
+    form.preventDefault();
+
+    let data = $('#edit-client-form').serialize();
+    let id = $('#updateClientId').val();
+    let selectForm = $('#select-edit-form').val();
+
+    $.ajax({
+        'url' : '/clients/'+id,
+        'headers': {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        'type' : 'POST',
+        'data' : data,
+        success: function(result){
+            console.log(result);
+
+            $.each(result, function (key, value) {
+                var element = $('#'+key);
+
+                element.closest('div.'+key)
+                    .addClass(value.length > 0 ? 'has-error' : 'has-success')
+                    .find('.text-danger')
+                    .remove();
+                element.after('<p class="text-danger">'+value+'</p>');
+            });
+
+        },error: function(xhr, status, error){
+            console.log("error: "+error+" status: "+status+" xhr: "+xhr);
+        }
+    });
+
+    if(selectForm === 'personal')
+    {
+        clear_errors(
+            'firstname',
+            'lastname',
+            'birthday',
+            'landline',
+            'mobileNo',
+        );
+    }else if (selectForm === 'billing'){
+        clear_errors(
+            'address',
+            'region',
+            'state',
+            'city',
+        );
+    }
+
 });
 /***************End Edit client section**********************/

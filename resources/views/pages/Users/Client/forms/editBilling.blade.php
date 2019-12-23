@@ -1,4 +1,3 @@
-<h2 class="modal-form-title">Billing Address</h2>
 <div class="form-group address">
     <label for="address">Address</label><span class="required">*</span>
     <input type="text" name="address" class="form-control" id="address" value="{{$user->address}}">

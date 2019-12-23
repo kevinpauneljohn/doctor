@@ -80,7 +80,6 @@ class ClientController extends Controller
             'username'      => 'required|unique:users,username',
             'email'         => 'required|unique:users,email',
             'password'      => 'required|confirmed',
-            'landline'      => 'required',
             'mobileNo'      => 'required',
             'address'      => 'required',
             'region'      => 'required',
@@ -152,6 +151,14 @@ class ClientController extends Controller
         //
     }
 
+    /**
+     * Dec. 23, 2019
+     * @author john kevin paunel
+     * Display the form depending on the selected value
+     * route: client.form
+     * @param Request $request
+     * @return mixed
+     * */
     public function editForm(Request $request)
     {
         $view = "";
@@ -170,10 +177,6 @@ class ClientController extends Controller
         {
             $view = 'pages.Users.Client.forms.editBilling';
         }
-        else if($request->option == 'access')
-        {
-            $view = 'pages.Users.Client.forms.editAccess';
-        }
         return view($view)->with([
             'user'  => $users,
             'regions' => $region,
@@ -191,7 +194,54 @@ class ClientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validation = "";
+        if($request->option === "personal")
+        {
+            $validation = [
+                'firstname'     => 'required',
+                'lastname'      => 'required',
+                'birthday'      => 'required',
+                'landline'      => 'required',
+                'mobileNo'      => 'required',
+            ];
+        }else if($request->option === "billing")
+        {
+            $validation = [
+                'address'       => 'required',
+                'region'        => 'required',
+                'state'         => 'required',
+                'city'          => 'required',
+                'postalcode'    => 'required',
+            ];
+        }
+        $validator = Validator::make($request->all(), $validation);
+
+        if($validator->passes())
+        {
+            $user = User::find($id);
+            if($request->option === "personal")
+            {
+                $user->firstname = $request->firstname;
+                $user->middlename = $request->middlename;
+                $user->lastname = $request->lastname;
+                $user->birthday = $request->birthday;
+                $user->mobileNo = $request->mobileNo;
+                $user->landline = $request->landline;
+            }else if($request->option === "billing")
+            {
+                $user->address = $request->address;
+                $user->refregion = $request->region;
+                $user->refprovince = $request->state;
+                $user->refcitymun = $request->city;
+                $user->postalcode = $request->postalcode;
+            }
+
+            if($user->save())
+            {
+                return response()->json(['success' => true]);
+            }
+        }
+        return response()->json($validator->errors());
     }
 
     /**
