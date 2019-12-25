@@ -4,7 +4,7 @@
     <list default="true" id="fd92ee8b-f0b2-409c-8792-6b9b977a0257" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/Users/Client/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/Users/Client/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/License.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +25,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/views/pages/Users/Client/index.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="964">
-                  <caret line="211" column="39" lean-forward="true" selection-start-line="174" selection-start-column="7" selection-end-line="211" selection-end-column="39" />
+                <state relative-caret-position="1780">
+                  <caret line="211" column="39" selection-start-line="174" selection-start-column="7" selection-end-line="211" selection-end-column="39" />
                 </state>
               </provider>
             </entry>
@@ -44,16 +44,16 @@
             <entry file="file://$PROJECT_DIR$/resources/views/pages/Users/Client/forms/editBilling.blade.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state>
-                  <caret lean-forward="true" selection-end-line="31" selection-end-column="6" />
+                  <caret selection-end-line="31" selection-end-column="6" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClientController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="219">
-                  <caret line="131" column="5" lean-forward="true" selection-start-line="131" selection-start-column="5" selection-end-line="131" selection-end-column="5" />
+                <state relative-caret-position="202">
+                  <caret line="33" column="39" lean-forward="true" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
                   <folding>
                     <element signature="e#40#56#0#PHP" expanded="true" />
                   </folding>
@@ -61,11 +61,20 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/database/migrations/2019_12_25_185730_add_owner_column_to_users_table.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="442">
+                  <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/views/pages/Users/Client/profile.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="117">
-                  <caret line="270" column="7" selection-start-line="270" selection-start-column="7" selection-end-line="292" selection-end-column="14" />
+                <state relative-caret-position="644">
+                  <caret line="310" column="65" selection-start-line="310" selection-start-column="65" selection-end-line="310" selection-end-column="65" />
                 </state>
               </provider>
             </entry>
@@ -86,11 +95,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/js/client.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1052">
-                  <caret line="109" column="41" selection-start-line="109" selection-start-column="25" selection-end-line="109" selection-end-column="41" />
+                <state relative-caret-position="-459">
+                  <caret line="27" selection-start-line="27" selection-end-line="27" />
                 </state>
               </provider>
             </entry>
@@ -99,7 +108,7 @@
             <entry file="file://$PROJECT_DIR$/app/User.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="182">
-                  <caret line="54" column="21" lean-forward="true" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
+                  <caret line="54" column="21" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
                   <folding>
                     <element signature="e#23#47#0#PHP" expanded="true" />
                   </folding>
@@ -107,10 +116,10 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/js/address.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="46">
+                <state relative-caret-position="250">
                   <caret line="23" selection-start-line="23" selection-end-line="24" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
@@ -153,8 +162,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/LandingPageController.php" />
-        <option value="$PROJECT_DIR$/resources/views/vendor/adminlte/login.blade.php" />
         <option value="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ClinicController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_12_08_065432_add_soft_delete_to_roles_table.php" />
@@ -202,8 +209,10 @@
         <option value="$PROJECT_DIR$/app/Role.php" />
         <option value="$PROJECT_DIR$/app/Permission.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/Users/Client/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/Users/Client/profile.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_12_25_185326_create_licenses_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_12_25_185730_add_owner_column_to_users_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" />
       </list>
     </option>
   </component>
@@ -486,21 +495,7 @@
       <workItem from="1576601265593" duration="244000" />
       <workItem from="1576991354107" duration="8150000" />
       <workItem from="1577015342770" duration="17861000" />
-      <workItem from="1577270838319" duration="18193000" />
-    </task>
-    <task id="LOCAL-00012" summary="added Roles Controller">
-      <created>1575719531697</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1575719531699</updated>
-    </task>
-    <task id="LOCAL-00013" summary="added Roles Controller">
-      <created>1575789328320</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1575789328322</updated>
+      <workItem from="1577270838319" duration="20771000" />
     </task>
     <task id="LOCAL-00014" summary="added Roles Controller">
       <created>1575794190986</created>
@@ -831,17 +826,31 @@
       <option name="project" value="LOCAL" />
       <updated>1577277268094</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="create license key for clients">
+      <created>1577290752834</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1577290752834</updated>
+    </task>
+    <task id="LOCAL-00062" summary="create license key for clients">
+      <created>1577292345001</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1577292345001</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="196559000" />
+    <option name="totallyTimeSpent" value="199137000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.08456376" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.087248325" />
       <window_info id="Structure" order="1" sideWeight="0.50141644" side_tool="true" weight="0.13489933" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -885,30 +894,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="create license key for clients" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClinicController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-          <folding>
-            <element signature="e#40#55#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/web-forms2.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="507" column="22" selection-start-line="507" selection-start-column="22" selection-end-line="507" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/add_client_tab_layout.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="647">
@@ -1197,7 +1182,7 @@
     <entry file="file://$PROJECT_DIR$/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
-          <caret line="54" column="21" lean-forward="true" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
+          <caret line="54" column="21" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
           <folding>
             <element signature="e#23#47#0#PHP" expanded="true" />
           </folding>
@@ -1211,13 +1196,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1052">
-          <caret line="109" column="41" selection-start-line="109" selection-start-column="25" selection-end-line="109" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/adminlte.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
@@ -1227,7 +1205,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/address.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
+        <state relative-caret-position="250">
           <caret line="23" selection-start-line="23" selection-end-line="24" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -1235,34 +1213,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/Users/Client/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="964">
-          <caret line="211" column="39" lean-forward="true" selection-start-line="174" selection-start-column="7" selection-end-line="211" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/Users/Client/forms/editBilling.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret lean-forward="true" selection-end-line="31" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClientController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="131" column="5" lean-forward="true" selection-start-line="131" selection-start-column="5" selection-end-line="131" selection-end-column="5" />
-          <folding>
-            <element signature="e#40#56#0#PHP" expanded="true" />
-          </folding>
+          <caret selection-end-line="31" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/Users/Client/profile.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="270" column="7" selection-start-line="270" selection-start-column="7" selection-end-line="292" selection-end-column="14" />
+        <state relative-caret-position="644">
+          <caret line="310" column="65" selection-start-line="310" selection-start-column="65" selection-end-line="310" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-459">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/License.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_12_25_185326_create_licenses_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_12_25_185730_add_owner_column_to_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/Users/Client/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1780">
+          <caret line="211" column="39" selection-start-line="174" selection-start-column="7" selection-end-line="211" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClientController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="33" column="39" lean-forward="true" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+          <folding>
+            <element signature="e#40#56#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

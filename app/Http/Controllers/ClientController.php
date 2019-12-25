@@ -26,7 +26,10 @@ class ClientController extends Controller
 
     public function clientList()
     {
-        $clients = User::where('category','client')->get();
+        $clients = User::where([
+            ['category','=','client'],
+            ['owner','=',1],
+        ])->get();
 
         return DataTables::of($clients)
             ->addColumn('clinics',function($client){
@@ -106,6 +109,7 @@ class ClientController extends Controller
             $user->postalcode = $request->postalcode;
             $user->status = 'offline';
             $user->category = 'client';
+            $user->owner = 1;
             $user->assignRole(['owner','client admin']);
 
 
