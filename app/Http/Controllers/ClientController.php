@@ -108,14 +108,16 @@ class ClientController extends Controller
             $user->category = 'client';
             $user->assignRole(['owner','client admin']);
 
+
             if($user->save())
             {
-                $license = new License();
-                $license->license = $this->generate_license_key();
-                $license->user_id = $user->id;
-                $license->save();
+                return response()->json(['success' => true]);
+                /*this code is suppose to generate license key*/
+//                $license = new License();
+//                $license->license = $this->generate_license_key();
+//                $license->user_id = $user->id;
+//                $license->save();
             }
-            return response()->json(['success' => true]);
         }
         return response()->json($validator->errors());
     }
@@ -134,7 +136,7 @@ class ClientController extends Controller
             return view('pages.Users.Client.profile')->with([
                 'user'  => User::find($id),
                 'address' => new AddressController(),
-                'license' => DB::table('licenses')->where('user_id',$id)->first()->license,
+//                'license' => DB::table('licenses')->where('user_id',$id)->first()->license,
             ]);
         }
         return abort(404);
@@ -257,43 +259,43 @@ class ClientController extends Controller
 
     /*custom codes*/
 
-    /**
-     * Dec. 15, 2019
-     * @author john kevin paunel
-     * generate license key for the client
-     * */
-    function generate_license_key() {
-
-        $tokens = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-        $segment_chars = 5;
-        $num_segments = 4;
-        $key_string = '';
-
-        for ($i = 0; $i < $num_segments; $i++) {
-
-            $segment = '';
-
-            for ($j = 0; $j < $segment_chars; $j++) {
-                $segment .= $tokens[rand(0, 35)];
-            }
-
-            $key_string .= $segment;
-
-            if ($i < ($num_segments - 1)) {
-                $key_string .= '-';
-            }
-
-        }
-
-        /*check if license already exists*/
-        $unique_license = License::where('license',$key_string)->count();
-        if($unique_license > 0)
-        {
-            /*generate license key if its already exists*/
-            return $this->generate_license_key();
-        }else{
-            return $key_string;
-        }
-
-    }
+//    /**
+//     * Dec. 15, 2019
+//     * @author john kevin paunel
+//     * generate license key for the client
+//     * */
+//    function generate_license_key() {
+//
+//        $tokens = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+//        $segment_chars = 5;
+//        $num_segments = 4;
+//        $key_string = '';
+//
+//        for ($i = 0; $i < $num_segments; $i++) {
+//
+//            $segment = '';
+//
+//            for ($j = 0; $j < $segment_chars; $j++) {
+//                $segment .= $tokens[rand(0, 35)];
+//            }
+//
+//            $key_string .= $segment;
+//
+//            if ($i < ($num_segments - 1)) {
+//                $key_string .= '-';
+//            }
+//
+//        }
+//
+//        /*check if license already exists*/
+//        $unique_license = License::where('license',$key_string)->count();
+//        if($unique_license > 0)
+//        {
+//            /*generate license key if its already exists*/
+//            return $this->generate_license_key();
+//        }else{
+//            return $key_string;
+//        }
+//
+//    }
 }

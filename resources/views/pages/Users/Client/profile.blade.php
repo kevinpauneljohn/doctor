@@ -75,7 +75,7 @@
 
                     <strong><i class="fas fa-id-card mr-1"></i> License</strong>
 
-                    <p class="text-muted">{{$license}}</p>
+{{--                    <p class="text-muted">{{$license}}</p>--}}
                 </div>
                 <!-- /.card-body -->
             </div>
