@@ -130,12 +130,22 @@ class ClientController extends Controller
      */
     public function show($id)
     {
+        $users = User::find($id);
+        $region = DB::table('refregion')->get();
+        $state = DB::table('refprovince')
+            ->where('regCode','=', $users->refregion)->get();
+        $city = DB::table('refcitymun')
+            ->where('provCode','=', $users->refprovince)->get();
+
         $client = User::where('id',$id)->count();
         if($client > 0)
         {
             return view('pages.Users.Client.profile')->with([
                 'user'  => User::find($id),
                 'address' => new AddressController(),
+                'regions' => $region,
+                'states' => $state,
+                'cities' => $city,
 //                'license' => DB::table('licenses')->where('user_id',$id)->first()->license,
             ]);
         }
