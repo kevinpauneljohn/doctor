@@ -111,7 +111,6 @@ $(document).on('submit','#edit-client-form', function (form) {
 
     $.ajax({
         'url' : '/clients/'+id,
-        'headers': {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
         'type' : 'POST',
         'data' : data,
         success: function(result){
