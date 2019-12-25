@@ -187,7 +187,7 @@
             <form role="form" id="edit-client-address-form">
                 @csrf
                 @method('PUT')
-                <input type="hidden" name="option" value="personal" id="select-edit-form">
+                <input type="hidden" name="option" value="billing" id="select-edit-form">
                 <input type="hidden" name="id" id="updateClientId" value="{{$user->id}}">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -268,29 +268,68 @@
 
     @can('edit client')
         <script>
-        // $(document).ready(function(){
-        // var btn = $('.action-btn');
-        // var editAddressBtn = $('.address-action-btn');
-        // var userProfile = $('.user-profile');
-        // var address = $('.address-container');
-        //
-        // btn.css("visibility","hidden");
-        // editAddressBtn.css("visibility","hidden");
-        //
-        // userProfile.mouseover(function(){
-        // btn.css("visibility","visible");
-        // });
-        // userProfile.mouseout(function(){
-        // btn.css("visibility","hidden");
-        // });
-        //
-        // address.mouseover(function(){
-        // editAddressBtn.css("visibility","visible");
-        // });
-        // address.mouseout(function(){
-        // editAddressBtn.css("visibility","hidden");
-        // });
-        // });
+            function modal_clear_errors()
+            {
+                let i;
+                for (i = 0; i < arguments.length; i++) {
+
+                    if($('#edit-client-address-form #'+arguments[i]).val().length > 0){
+                        $('.'+arguments[i]).closest('div.'+arguments[i]).removeClass('has-error').find('.text-danger').remove();
+                    }
+                }
+            }
+
+            $(document).on('submit','#edit-client-address-form', function (form) {
+                form.preventDefault();
+
+                let data = $('#edit-client-address-form').serialize();
+                let id = $('#updateClientId').val();
+
+                $.ajax({
+                    'url' : '/clients/'+id,
+                    'headers': {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                    'type' : 'POST',
+                    'data' : data,
+                    success: function(result){
+                        // console.log(result);
+
+                        if(result.success === true)
+                        {
+                            setTimeout(function(){
+                                /*$('#role_form').trigger('reset');
+                                $('#roles').modal('toggle');*/
+                                toastr.success('User details Successfully updated!')
+
+                                setTimeout(function(){
+                                    location.reload();
+                                },1500);
+                            });
+                        }
+
+                        $.each(result, function (key, value) {
+                            // console.log(value);
+                            var element = $('#edit-client-address-form #'+key);
+
+                            element.closest('div.'+key)
+                                .addClass(value.length > 0 ? 'has-error' : 'has-success')
+                                .find('.text-danger')
+                                .remove();
+                            element.after('<p class="text-danger">'+value+'</p>');
+                        });
+                    },error: function(xhr, status, error){
+                        console.log("error: "+error+" status: "+status+" xhr: "+xhr);
+                    }
+                });
+
+
+                    modal_clear_errors(
+                        'address',
+                        'region',
+                        'state',
+                        'city',
+                    );
+
+            });
         </script>
     @endcan
 @stop
