@@ -196,7 +196,7 @@
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">×</span>
                             </button>
-                        </div>
+                            </div>
                         <div class="modal-body">
                             <div class="container mt-3">
                                 <div class="form-group address">

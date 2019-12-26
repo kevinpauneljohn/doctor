@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddOwnerColumnToUsersTable extends Migration
+class CreateOauthPersonalAccessClientsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class AddOwnerColumnToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->boolean('owner')->nullable();
+        Schema::create('oauth_personal_access_clients', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('client_id')->index();
+            $table->timestamps();
         });
     }
 
@@ -25,8 +27,6 @@ class AddOwnerColumnToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('owner');
-        });
+        Schema::dropIfExists('oauth_personal_access_clients');
     }
 }
