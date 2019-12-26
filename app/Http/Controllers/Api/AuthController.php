@@ -36,6 +36,7 @@ class AuthController extends Controller
             //activity()->causedBy(auth()->user()->id)->withProperties(['username' => auth()->user()->username])->log('user logged in');
             return response()->json([
                 'user' => auth()->user(),
+                'roles' => auth()->user()->getRoleNames(),
                 'access_token' => $accessToken,
                 'success'   => true,
                 ]);
