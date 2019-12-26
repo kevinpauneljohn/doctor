@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd92ee8b-f0b2-409c-8792-6b9b977a0257" name="Default Changelist" comment="create license key for clients">
+    <list default="true" id="fd92ee8b-f0b2-409c-8792-6b9b977a0257" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,8 +45,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="573">
-                  <caret line="42" column="87" selection-start-line="42" selection-start-column="87" selection-end-line="42" selection-end-column="87" />
+                <state relative-caret-position="437">
+                  <caret line="38" column="18" lean-forward="true" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="60" />
                   <folding>
                     <element signature="e#44#80#0#PHP" expanded="true" />
                   </folding>
@@ -482,21 +480,7 @@
       <workItem from="1577270838319" duration="22247000" />
       <workItem from="1577334427715" duration="8989000" />
       <workItem from="1577357274098" duration="42000" />
-      <workItem from="1577367457545" duration="3811000" />
-    </task>
-    <task id="LOCAL-00016" summary="added Roles Controller">
-      <created>1575797604327</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1575797604330</updated>
-    </task>
-    <task id="LOCAL-00017" summary="added Permissions Controller and add_soft_delete migrations">
-      <created>1575800392690</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1575800392690</updated>
+      <workItem from="1577367457545" duration="4826000" />
     </task>
     <task id="LOCAL-00018" summary="added Permissions Controller and add_soft_delete migrations">
       <created>1575801813869</created>
@@ -827,11 +811,25 @@
       <option name="project" value="LOCAL" />
       <updated>1577336138595</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="create license key for clients">
+      <created>1577371383759</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1577371383761</updated>
+    </task>
+    <task id="LOCAL-00066" summary="create license key for clients">
+      <created>1577371914080</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1577371914080</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213455000" />
+    <option name="totallyTimeSpent" value="214470000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -1242,8 +1240,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="42" column="87" selection-start-line="42" selection-start-column="87" selection-end-line="42" selection-end-column="87" />
+        <state relative-caret-position="437">
+          <caret line="38" column="18" lean-forward="true" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="60" />
           <folding>
             <element signature="e#44#80#0#PHP" expanded="true" />
           </folding>
