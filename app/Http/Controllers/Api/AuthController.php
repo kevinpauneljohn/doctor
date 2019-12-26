@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 
 class AuthController extends Controller
@@ -13,7 +15,7 @@ class AuthController extends Controller
      * Dec. 26, 2019
      * @author john kevin paunel
      * authenticated the username and password submitted
-     * route: login.authenticate
+     * api route: login
      * @param Request $request
      * @return mixed
      * */
@@ -34,8 +36,9 @@ class AuthController extends Controller
             activity()->causedBy(auth()->user()->id)->withProperties(['username' => auth()->user()->username])->log('user logged in');
             $accessToken = auth()->user()->createToken('authToken')->accessToken;
             //activity()->causedBy(auth()->user()->id)->withProperties(['username' => auth()->user()->username])->log('user logged in');
+            $user = DB::table('users')->where('id',auth()->user()->id)->get();
             return response()->json([
-                'user' => auth()->user(),
+                'user' => $user,
                 'roles' => auth()->user()->getRoleNames(),
                 'access_token' => $accessToken,
                 'success'   => true,
@@ -43,4 +46,6 @@ class AuthController extends Controller
         }
         return response()->json(['message' => 'invalid credentials', 'success' => false]);
     }
+
+
 }

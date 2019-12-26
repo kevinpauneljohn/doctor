@@ -12,7 +12,7 @@
 */
 
 Route::get('/','LandingPageController');
-//Route::get('api/auth','Api\AuthController@authenticate');
+Route::get('/api/auth','Api\AuthController@checkUsers');
 /*------------------Custom auth------------------------*/
 Route::get('/login','CustomAuth\LoginController@login')->name('login');
 Route::post('/login','CustomAuth\LoginController@authenticate')->name('login.authenticate');
