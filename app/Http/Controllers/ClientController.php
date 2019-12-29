@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\License;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -112,7 +111,7 @@ class ClientController extends Controller
             $user->status = 'offline';
             $user->category = 'client';
             $user->owner = 1;
-            $user->assignRole(['owner','client admin']);
+            $user->assignRole(['owner','admin']);
 
 
             if($user->save())
