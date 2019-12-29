@@ -55,6 +55,9 @@ $(document).on('submit','#client-form',function(form){
             });
         },error: function(xhr, status, error){
             console.log("error: "+error+" status: "+status+" xhr: "+xhr);
+            $.each(xhr, function (key1, value1) {
+                console.log('key: '+key1+' value: '+value1);
+            });
         }
     });
     clear_errors(
