@@ -15,9 +15,13 @@ class RoleSeeder extends Seeder
     {
         Role::create(['name' => 'super admin']);
         Role::create(['name' => 'admin']);
-        Role::create(['name' => 'client admin']);
         Role::create(['name' => 'owner']);
         Role::create(['name' => 'co-owner']);
+        Role::create(['name' => 'medical doctor']);
+        Role::create(['name' => 'HR']);
+
+        Role::create(['name' => 'medical staff']);
+        Role::create(['name' => 'employee']);
 
         Permission::create(['name' => 'view role'])->assignRole('super admin');
         Permission::create(['name' => 'add role'])->assignRole('super admin');
