@@ -117,11 +117,6 @@ class ClientController extends Controller
             if($user->save())
             {
                 return response()->json(['success' => true]);
-                /*this code is suppose to generate license key*/
-//                $license = new License();
-//                $license->license = $this->generate_license_key();
-//                $license->user_id = $user->id;
-//                $license->save();
             }
         }
         return response()->json($validator->errors());
