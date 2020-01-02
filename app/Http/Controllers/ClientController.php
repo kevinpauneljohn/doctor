@@ -67,6 +67,13 @@ class ClientController extends Controller
         //
     }
 
+    public function save_token($user)
+    {
+        $userToken = User::find($user->id);
+        $userToken->api_token = $userToken->createToken('authToken')->accessToken;
+        $userToken->save();
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -115,9 +122,7 @@ class ClientController extends Controller
 
             if($user->save())
             {
-                $userToken = User::find($user->id);
-                $userToken->api_token = $userToken->createToken('authToken')->accessToken;
-                $userToken->save();
+                $this->save_token($user);
                 return response()->json(['success' => true, 'user' => $user->id]);
             }
         }
