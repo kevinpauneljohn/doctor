@@ -4,7 +4,6 @@
     <list default="true" id="fd92ee8b-f0b2-409c-8792-6b9b977a0257" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +18,7 @@
     </execution>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4611111">
+    <splitter split-orientation="horizontal" split-proportion="0.27708334">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -83,8 +82,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClientController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="101" column="49" lean-forward="true" selection-start-line="101" selection-start-column="49" selection-end-line="101" selection-end-column="49" />
+                <state relative-caret-position="476">
+                  <caret line="118" column="35" selection-start-line="118" selection-start-column="35" selection-end-line="118" selection-end-column="35" />
                   <folding>
                     <element signature="e#40#53#0#PHP" expanded="true" />
                   </folding>
@@ -480,21 +479,7 @@
       <workItem from="1577635780883" duration="9904000" />
       <workItem from="1577743231561" duration="534000" />
       <workItem from="1577744794637" duration="2511000" />
-      <workItem from="1577944201095" duration="3506000" />
-    </task>
-    <task id="LOCAL-00025" summary="updated the permission js checkbox">
-      <created>1575890535253</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1575890535258</updated>
-    </task>
-    <task id="LOCAL-00026" summary="updated the permission js checkbox">
-      <created>1575911088755</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1575911088759</updated>
+      <workItem from="1577944201095" duration="4255000" />
     </task>
     <task id="LOCAL-00027" summary="updated the permission js checkbox">
       <created>1575914936541</created>
@@ -825,11 +810,25 @@
       <option name="project" value="LOCAL" />
       <updated>1577644823832</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="create license key for clients">
+      <created>1577947720508</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1577947720509</updated>
+    </task>
+    <task id="LOCAL-00075" summary="create license key for clients">
+      <created>1577948157251</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1577948157251</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="236544000" />
+    <option name="totallyTimeSpent" value="237293000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -1243,8 +1242,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClientController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="101" column="49" lean-forward="true" selection-start-line="101" selection-start-column="49" selection-end-line="101" selection-end-column="49" />
+        <state relative-caret-position="476">
+          <caret line="118" column="35" selection-start-line="118" selection-start-column="35" selection-end-line="118" selection-end-column="35" />
           <folding>
             <element signature="e#40#53#0#PHP" expanded="true" />
           </folding>

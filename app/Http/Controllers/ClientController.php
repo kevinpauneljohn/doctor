@@ -110,12 +110,13 @@ class ClientController extends Controller
             $user->category = 'client';
             $user->owner = 1;
             $user->assignRole(['owner','admin']);
-            $user->api_token = $user->createToken('authToken')->accessToken;
+
 
             if($user->save())
             {
-//                $userToken = User::find($user->id);
-
+                $userToken = User::find($user->id);
+                $userToken->api_token = $user->createToken('authToken')->accessToken;
+                $userToken->save();
                 return response()->json(['success' => true]);
             }
         }
