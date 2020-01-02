@@ -37,56 +37,26 @@ class UserApiController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'firstname'     => 'required',
-            'lastname'      => 'required',
-            'birthday'      => 'required',
-            'landline'      => 'required',
-            'username'      => 'required|unique:users,username',
-            'email'         => 'required|unique:users,email|email',
-            'password'      => 'required|confirmed',
-            'mobileNo'      => 'required',
-            'address'      => 'required',
-            'region'      => 'required',
-            'state'      => 'required',
-            'city'      => 'required',
-        ]);
-
-        if($validator->passes())
+        $medical_staff = new User();
+        $medical_staff->firstname = $request->firstname;
+        $medical_staff->middlename = $request->middlename;
+        $medical_staff->lastname = $request->lastname;
+        $medical_staff->mobileNo = $request->mobileNo;
+        $medical_staff->address = $request->address;
+        $medical_staff->refprovince = $request->province;
+        $medical_staff->refcitymun = $request->city;
+        $medical_staff->status = 'offline';
+        $medical_staff->category = 'client';
+        $medical_staff->assignRole('medical staff');
+        foreach ($request->position as $role)
         {
-            $user = new User();
-            $user->firstname = $request->firstname;
-            $user->middlename = $request->middlename;
-            $user->lastname = $request->lastname;
-            $user->username = $request->username;
-            $user->email = $request->email;
-            $user->password = bcrypt($request->password);
-            $user->mobileNo = $request->mobileNo;
-            $user->landline = $request->landline;
-            $user->birthday = $request->birthday;
-            $user->address = $request->address;
-            $user->refregion = $request->region;
-            $user->refprovince = $request->state;
-            $user->refcitymun = $request->city;
-            $user->postalcode = $request->postalcode;
-            $user->status = 'offline';
-            $user->category = 'client';
-            $user->owner = 1;
-            $user->assignRole(['owner','admin']);
-
-
-            if($user->save())
-            {
-                $accessToken = $user->createToken('authToken')->accessToken;
-                return response()->json([
-                    'user' => $user,
-                    'roles' => $user->getRoleNames(),
-                    'access_token' => $accessToken,
-                    'success'   => true,
-                ]);
-            }
+            $medical_staff->assignRole($role);
         }
-        return response()->json($validator->errors());
+
+        if($medical_staff->save())
+        {
+            return response()->json(['success' => true]);
+        }
     }
 
     /**

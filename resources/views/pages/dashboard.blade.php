@@ -10,6 +10,7 @@
     <p>Welcome to this beautiful admin panel.</p>
     <i class="fa fa-home"></i>
 
+
 @stop
 
 @section('css')
