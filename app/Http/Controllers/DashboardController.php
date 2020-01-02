@@ -16,6 +16,6 @@ class DashboardController extends Controller
     public function dashboard()
     {
 //        return view('pages.dashboard');
-        return User::find('ea25402f-6dc8-4960-a062-18a98b65674c')->createToken('authToken')->accessToken;
+        return auth()->user()->createToken('authToken')->accessToken;
     }
 }
