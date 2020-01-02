@@ -95,7 +95,7 @@
             <entry file="file://$PROJECT_DIR$/database/migrations/2019_12_29_163638_add_api_token_to_users_table.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="238">
-                  <caret line="16" column="60" lean-forward="true" selection-start-line="15" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
+                  <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
                 </state>
               </provider>
             </entry>
@@ -506,21 +506,7 @@
       <workItem from="1577635780883" duration="9904000" />
       <workItem from="1577743231561" duration="534000" />
       <workItem from="1577744794637" duration="2511000" />
-      <workItem from="1577944201095" duration="6440000" />
-    </task>
-    <task id="LOCAL-00035" summary="create license key for clients">
-      <created>1577003410421</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1577003410421</updated>
-    </task>
-    <task id="LOCAL-00036" summary="create license key for clients">
-      <created>1577020871745</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1577020871745</updated>
+      <workItem from="1577944201095" duration="6652000" />
     </task>
     <task id="LOCAL-00037" summary="create license key for clients">
       <created>1577022373666</created>
@@ -851,11 +837,25 @@
       <option name="project" value="LOCAL" />
       <updated>1577950528569</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="create license key for clients">
+      <created>1577950654087</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1577950654087</updated>
+    </task>
+    <task id="LOCAL-00085" summary="create license key for clients">
+      <created>1577950737386</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1577950737386</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="239478000" />
+    <option name="totallyTimeSpent" value="239690000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -1273,7 +1273,7 @@
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_12_29_163638_add_api_token_to_users_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="16" column="60" lean-forward="true" selection-start-line="15" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
+          <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
         </state>
       </provider>
     </entry>
