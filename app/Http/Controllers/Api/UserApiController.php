@@ -37,26 +37,41 @@ class UserApiController extends Controller
      */
     public function store(Request $request)
     {
-        $medical_staff = new User();
-        $medical_staff->firstname = $request->firstname;
-        $medical_staff->middlename = $request->middlename;
-        $medical_staff->lastname = $request->lastname;
-        $medical_staff->mobileNo = $request->mobileNo;
-        $medical_staff->address = $request->address;
-        $medical_staff->refprovince = $request->province;
-        $medical_staff->refcitymun = $request->city;
-        $medical_staff->status = 'offline';
-        $medical_staff->category = 'client';
-        $medical_staff->assignRole('medical staff');
-        foreach ($request->position as $role)
-        {
-            $medical_staff->assignRole($role);
-        }
+        $validator = Validator::make($request->all(),[
+//            'clinic'    => 'required',
+            'position'  => 'required',
+            'firstname' => 'required',
+            'lastname'  => 'required',
+            'mobileNo'  => 'required',
+            'address'  => 'required',
+            'province'  => 'required',
+            'city'  => 'required',
+        ]);
 
-        if($medical_staff->save())
+        if($validator->passes())
         {
-            return response()->json(['success' => true]);
+            $medical_staff = new User();
+            $medical_staff->firstname = $request->firstname;
+            $medical_staff->middlename = $request->middlename;
+            $medical_staff->lastname = $request->lastname;
+            $medical_staff->mobileNo = $request->mobileNo;
+            $medical_staff->address = $request->address;
+            $medical_staff->refprovince = $request->province;
+            $medical_staff->refcitymun = $request->city;
+            $medical_staff->status = 'offline';
+            $medical_staff->category = 'client';
+//            $medical_staff->assignRole('medical staff');
+//            foreach ($request->position as $role)
+//            {
+//                $medical_staff->assignRole($role);
+//            }
+
+            if($medical_staff->save())
+            {
+                return response()->json(['success' => true]);
+            }
         }
+        return response()->json($validator->errors());
     }
 
     /**
