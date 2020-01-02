@@ -69,9 +69,9 @@ class ClientController extends Controller
 
     public function save_token($user)
     {
-        $userToken = User::find($user->id);
-        $userToken->api_token = $userToken->createToken('authToken')->accessToken;
-        $userToken->save();
+//        $userToken = User::find($user->id);
+//        $userToken->api_token = $userToken;
+//        $userToken->save();
     }
 
     /**
@@ -122,8 +122,7 @@ class ClientController extends Controller
 
             if($user->save())
             {
-                $this->save_token($user);
-                return response()->json(['success' => true, 'user' => $user->id]);
+                return response()->json(['success' => true, 'access_token' => $user->createToken('authToken')->accessToken]);
             }
         }
         return response()->json($validator->errors());
