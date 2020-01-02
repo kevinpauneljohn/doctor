@@ -9,6 +9,8 @@
 @section('content')
     <p>Welcome to this beautiful admin panel.</p>
     <i class="fa fa-home"></i>
+
+{{--    {{auth()->user()->createToken('authToken')->accessToken}}--}}
 @stop
 
 @section('css')
