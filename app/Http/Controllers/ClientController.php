@@ -116,9 +116,9 @@ class ClientController extends Controller
 
             if($user->save())
             {
-//                $userToken = User::find($user->id);
-//                $userToken->api_token = $user->createToken('authToken')->accessToken;
-//                $userToken->save();
+                $userToken = User::find($user->id);
+                $userToken->api_token = $userToken->createToken('authToken')->accessToken;
+                $userToken->save();
                 return response()->json(['success' => true, 'user' => $user->id]);
             }
         }
