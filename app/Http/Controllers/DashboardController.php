@@ -16,6 +16,6 @@ class DashboardController extends Controller
     public function dashboard()
     {
 //        return view('pages.dashboard');
-        return User::find('def93d36-87e1-4f68-a8a9-4a3cc63a62ac');
+        return User::find('ea25402f-6dc8-4960-a062-18a98b65674c');
     }
 }
