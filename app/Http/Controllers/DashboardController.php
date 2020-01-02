@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -15,6 +16,6 @@ class DashboardController extends Controller
     public function dashboard()
     {
 //        return view('pages.dashboard');
-        return \App\User::find('def93d36-87e1-4f68-a8a9-4a3cc63a62ac')->createToken('authToken')->accessToken;
+        return User::find('def93d36-87e1-4f68-a8a9-4a3cc63a62ac');
     }
 }
