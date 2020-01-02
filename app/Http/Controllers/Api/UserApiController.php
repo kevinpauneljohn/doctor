@@ -68,6 +68,10 @@ class UserApiController extends Controller
 
             if($medical_staff->save())
             {
+                $access_token = $medical_staff->createToken('authToken')->accessToken;
+                $userToken  = User::find($medical_staff->id);
+                $userToken->api_token = $access_token;
+                $userToken->save();
                 return response()->json(['success' => true]);
             }
         }
