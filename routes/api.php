@@ -19,7 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['middleware' => 'auth:api'], function (){
 
 });
-Route::get('/test','Api\AuthController@testApi')->middleware(['auth:api','role:owner']);
+Route::get('/test','Api\AuthController@testApi')->middleware(['auth:api','role:ownerss']);
 Route::post('/login','Api\AuthController@authenticate');
 Route::post('/users','Api\UserApiController@store');
 
