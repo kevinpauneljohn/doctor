@@ -19,7 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['middleware' => 'auth:api'], function (){
 
 });
-Route::post('/users','Api\UserApiController@store')->name('users.store')->middleware(['auth:api','permission:add medical staff']);
+Route::post('/userClients','Api\UserApiController@store')->name('userClients.store')->middleware(['auth:api','permission:add medical staff']);
 Route::post('/login','Api\AuthController@authenticate');
 Route::post('/users','Api\UserApiController@store');
 
