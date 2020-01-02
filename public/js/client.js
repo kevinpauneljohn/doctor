@@ -33,16 +33,16 @@ $(document).on('submit','#client-form',function(form){
         success: function(result)
         {
             console.log(result);
-            if(result.success === true)
-            {
-                setTimeout(function(){
-                    toastr.success('New Client Successfully Added!')
-
-                    setTimeout(function(){
-                        location.reload();
-                    },1500);
-                });
-            }
+            // if(result.success === true)
+            // {
+            //     setTimeout(function(){
+            //         toastr.success('New Client Successfully Added!')
+            //
+            //         setTimeout(function(){
+            //             location.reload();
+            //         },1500);
+            //     });
+            // }
 
             $.each(result, function (key, value) {
                 var element = $('#'+key);
