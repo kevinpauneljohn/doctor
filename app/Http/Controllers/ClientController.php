@@ -99,7 +99,7 @@ class ClientController extends Controller
             $user->username = $request->username;
             $user->email = $request->email;
             $user->password = bcrypt($request->password);
-            $user->api_token = Str::random(60);
+            $user->api_token = $user->createToken('authToken')->accessToken;
             $user->mobileNo = $request->mobileNo;
             $user->landline = $request->landline;
             $user->birthday = $request->birthday;
@@ -116,10 +116,7 @@ class ClientController extends Controller
 
             if($user->save())
             {
-                $userToken = User::find($user->id);
-                $userToken->api_token = $userToken->createToken('authToken')->accessToken;
-                $userToken->save();
-                return response()->json(['success' => true, 'user' => $user->id]);
+                return response()->json(['success' => true]);
             }
         }
         return response()->json($validator->errors());
