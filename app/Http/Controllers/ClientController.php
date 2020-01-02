@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\DataTables;
-use Illuminate\Support\Str;
 
 class ClientController extends Controller
 {
@@ -65,13 +64,6 @@ class ClientController extends Controller
     public function create()
     {
         //
-    }
-
-    public function save_token($user)
-    {
-//        $userToken = User::find($user->id);
-//        $userToken->api_token = $userToken;
-//        $userToken->save();
     }
 
     /**
