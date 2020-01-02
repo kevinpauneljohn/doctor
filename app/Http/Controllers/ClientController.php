@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\DataTables;
+use Illuminate\Support\Str;
 
 class ClientController extends Controller
 {
@@ -98,6 +99,7 @@ class ClientController extends Controller
             $user->username = $request->username;
             $user->email = $request->email;
             $user->password = bcrypt($request->password);
+            $user->api_token = Str::random(60);
             $user->mobileNo = $request->mobileNo;
             $user->landline = $request->landline;
             $user->birthday = $request->birthday;
@@ -114,9 +116,6 @@ class ClientController extends Controller
 
             if($user->save())
             {
-                $userToken = User::find($user->id);
-                $userToken->api_token = $user->createToken('authToken')->accessToken;
-                $userToken->save();
                 return response()->json(['success' => true]);
             }
         }
