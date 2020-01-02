@@ -18,7 +18,7 @@
     </execution>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.44827586">
+    <splitter split-orientation="horizontal" split-proportion="0.8789435">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -57,8 +57,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/routes/api.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="357">
-                  <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+                <state relative-caret-position="425">
+                  <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
                 </state>
               </provider>
             </entry>
@@ -82,8 +82,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
-                  <caret line="54" column="1027" lean-forward="true" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="1027" />
+                <state relative-caret-position="170">
+                  <caret line="40" selection-start-line="39" selection-end-line="40" />
                   <folding>
                     <element signature="e#44#80#0#PHP" expanded="true" />
                   </folding>
@@ -479,21 +479,7 @@
       <workItem from="1577635780883" duration="9904000" />
       <workItem from="1577743231561" duration="534000" />
       <workItem from="1577744794637" duration="2511000" />
-      <workItem from="1577944201095" duration="20650000" />
-    </task>
-    <task id="LOCAL-00063" summary="create license key for clients">
-      <created>1577300676281</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1577300676281</updated>
-    </task>
-    <task id="LOCAL-00064" summary="create license key for clients">
-      <created>1577336138587</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1577336138595</updated>
+      <workItem from="1577944201095" duration="21086000" />
     </task>
     <task id="LOCAL-00065" summary="create license key for clients">
       <created>1577371383759</created>
@@ -824,11 +810,25 @@
       <option name="project" value="LOCAL" />
       <updated>1577980551154</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="create license key for clients">
+      <created>1577980985364</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1577980985364</updated>
+    </task>
+    <task id="LOCAL-00113" summary="create license key for clients">
+      <created>1577981295580</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1577981295580</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253688000" />
+    <option name="totallyTimeSpent" value="254124000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -1206,16 +1206,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="16" column="63" lean-forward="true" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
-          <folding>
-            <element signature="e#7#389#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/AuthServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="531">
@@ -1235,18 +1225,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="54" column="1027" lean-forward="true" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="1027" />
+        <state relative-caret-position="170">
+          <caret line="40" selection-start-line="39" selection-end-line="40" />
           <folding>
             <element signature="e#44#80#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="16" column="63" lean-forward="true" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+        <state relative-caret-position="425">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
