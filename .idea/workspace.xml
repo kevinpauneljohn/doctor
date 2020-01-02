@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fd92ee8b-f0b2-409c-8792-6b9b977a0257" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_29_163638_add_api_token_to_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_29_163638_add_api_token_to_users_table.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,14 +79,23 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClientController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="437">
-                  <caret line="105" column="47" lean-forward="true" selection-start-line="105" selection-start-column="47" selection-end-line="105" selection-end-column="47" />
+                <state relative-caret-position="199">
+                  <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
                   <folding>
                     <element signature="e#40#53#0#PHP" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/database/migrations/2019_12_29_163638_add_api_token_to_users_table.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="238">
+                  <caret line="16" column="60" lean-forward="true" selection-start-line="15" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
                 </state>
               </provider>
             </entry>
@@ -183,7 +193,6 @@
         <option value="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_12_29_163638_add_api_token_to_users_table.php" />
         <option value="$PROJECT_DIR$/config/auth.php" />
         <option value="$PROJECT_DIR$/database/seeds/RoleSeeder.php" />
         <option value="$PROJECT_DIR$/public/js/client.js" />
@@ -193,6 +202,7 @@
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_12_29_163638_add_api_token_to_users_table.php" />
       </list>
     </option>
   </component>
@@ -496,21 +506,7 @@
       <workItem from="1577635780883" duration="9904000" />
       <workItem from="1577743231561" duration="534000" />
       <workItem from="1577744794637" duration="2511000" />
-      <workItem from="1577944201095" duration="6263000" />
-    </task>
-    <task id="LOCAL-00033" summary="create license key for clients">
-      <created>1576389422859</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1576389422859</updated>
-    </task>
-    <task id="LOCAL-00034" summary="create license key for clients">
-      <created>1576398573548</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1576398573548</updated>
+      <workItem from="1577944201095" duration="6440000" />
     </task>
     <task id="LOCAL-00035" summary="create license key for clients">
       <created>1577003410421</created>
@@ -841,11 +837,25 @@
       <option name="project" value="LOCAL" />
       <updated>1577950088299</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="create license key for clients">
+      <created>1577950472462</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1577950472462</updated>
+    </task>
+    <task id="LOCAL-00083" summary="create license key for clients">
+      <created>1577950528569</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1577950528569</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="239301000" />
+    <option name="totallyTimeSpent" value="239478000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -1089,13 +1099,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_12_29_163638_add_api_token_to_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="31" column="44" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/app.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1259,11 +1262,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClientController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="105" column="47" lean-forward="true" selection-start-line="105" selection-start-column="47" selection-end-line="105" selection-end-column="47" />
+        <state relative-caret-position="199">
+          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
           <folding>
             <element signature="e#40#53#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_12_29_163638_add_api_token_to_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" column="60" lean-forward="true" selection-start-line="15" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
         </state>
       </provider>
     </entry>
