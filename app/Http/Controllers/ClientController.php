@@ -122,7 +122,7 @@ class ClientController extends Controller
 
             if($user->save())
             {
-                return response()->json(['success' => true, 'access_token' => $user->createToken('authToken')->accessToken]);
+                return response()->json(['success' => true]);
             }
         }
         return response()->json($validator->errors());
