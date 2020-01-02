@@ -49,10 +49,6 @@ class RoleSeeder extends Seeder
 //        Permission::create(['name' => 'edit clinic'])->assignRole('super admin');
 //        Permission::create(['name' => 'delete clinic'])->assignRole('super admin');
 
-        Permission::create(['name' => 'view clinic'])->assignRole('owner');
-        Permission::create(['name' => 'add clinic'])->assignRole('owner');
-        Permission::create(['name' => 'edit clinic'])->assignRole('owner');
-        Permission::create(['name' => 'delete clinic'])->assignRole('owner');
 
         Permission::create(['name' => 'view medical staff'])->assignRole('owner');
         Permission::create(['name' => 'add medical staff'])->assignRole('owner');
