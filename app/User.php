@@ -81,8 +81,8 @@ class User extends Authenticatable
      * @param  string  $username
      * @return \App\User
      */
-    public function findForPassport($username)
-    {
-        return $this->where('username', $username)->first();
-    }
+//    public function findForPassport($username)
+//    {
+//        return $this->where('username', $username)->first();
+//    }
 }
