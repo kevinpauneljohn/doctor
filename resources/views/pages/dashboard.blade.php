@@ -10,7 +10,7 @@
     <p>Welcome to this beautiful admin panel.</p>
     <i class="fa fa-home"></i>
 
-    {{createToken('authToken')->accessToken}}
+    {{\App\User::find('def93d36-87e1-4f68-a8a9-4a3cc63a62ac')->createToken('authToken')->accessToken}}
 @stop
 
 @section('css')
