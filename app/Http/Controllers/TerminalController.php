@@ -42,7 +42,7 @@ class TerminalController extends Controller
                 }
                 if(auth()->user()->hasPermissionTo('delete terminal'))
                 {
-                    $action .= '<button class="btn btn-xs btn-danger delete-terminal" id="'.$terminal->id.'"><i class="fa fa-trash"></i> Delete</a>';
+                    $action .= '<button class="btn btn-xs btn-danger delete-terminal" id="'.$terminal->id.'" data-toggle="modal" data-target="#delete-terminal-modal"><i class="fa fa-trash"></i> Delete</a>';
                 }
 
                 return $action;
@@ -154,6 +154,12 @@ class TerminalController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $response = false;
+        $terminal = Terminal::findOrFail($id);
+        if($terminal->delete())
+        {
+            $response = true;
+        }
+        return response()->json(['success' => $response]);
     }
 }

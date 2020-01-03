@@ -10,7 +10,7 @@ function clear_errors()
 }
 
 
-function submitForm( url , type , value , notif , elementKey)
+function submitForm( url , type , value , validation = true , notif , elementKey)
 {
     $.ajax({
         'url' : url,
@@ -18,6 +18,7 @@ function submitForm( url , type , value , notif , elementKey)
         'data' : value,
         'cache' : false,
         success: function(result, status, xhr){
+            console.log(result);
             if(result.success === true)
             {
                 setTimeout(function(){
@@ -30,15 +31,19 @@ function submitForm( url , type , value , notif , elementKey)
                     },1500);
                 });
             }
-            $.each(result, function (key, value) {
-                var element = $(elementKey+'#'+key);
+            if(validation === true)
+            {
+                $.each(result, function (key, value) {
+                    var element = $(elementKey+'#'+key);
 
-                element.closest(elementKey+'div.'+key)
-                    .addClass(value.length > 0 ? 'has-error' : 'has-success')
-                    .find('.text-danger')
-                    .remove();
-                element.after('<p class="text-danger">'+value+'</p>');
-            });
+                    element.closest(elementKey+'div.'+key)
+                        .addClass(value.length > 0 ? 'has-error' : 'has-success')
+                        .find('.text-danger')
+                        .remove();
+                    element.after('<p class="text-danger">'+value+'</p>');
+                });
+            }
+
 
         },error: function(xhr, status, error){
 
@@ -50,19 +55,26 @@ function submitForm( url , type , value , notif , elementKey)
 $(function(){
     let addForm = $('#terminal-form');
     let editForm = $('#edit-terminal-form');
+    let deleteForm = $('#delete-terminal-form');
 
     addForm.submit(function(form){
         form.preventDefault();
 
-        submitForm('/terminals' , 'POST' , addForm.serialize(), 'New Terminal Successfully Added!' , '');
+        submitForm('/terminals' , 'POST' , addForm.serialize(),true ,'New Terminal Successfully Added!' , '');
         clear_errors('user','device');
     });
 
     editForm.submit(function(form){
         form.preventDefault();
         let id = $('#edit-terminal-form #updateTerminalId').val();
-        submitForm('/terminals/'+id , 'PUT' , editForm.serialize(), 'Terminal Successfully Updated!' , '#edit-terminal-form ');
+        submitForm('/terminals/'+id , 'PUT' , editForm.serialize(),true, 'Terminal Successfully Updated!' , '#edit-terminal-form ');
         clear_errors('edit_user','edit_device');
+    });
+
+    deleteForm.submit(function (form) {
+        form.preventDefault();
+        let id = $('#delete-terminal-form #deleteTerminalId').val();
+        submitForm('/terminals/'+id , 'POST' , deleteForm.serialize(),false, 'Terminal Successfully Deleted!' , '');
     });
 });
 
@@ -82,5 +94,18 @@ $(document).on('click','.edit-terminal', function(){
             console.log(xhr+" "+status+" "+error);
         }
     });
+
+});
+
+$(document).on('click','.delete-terminal', function(){
+    $tr = $(this).closest('tr');
+
+    let data = $tr.children('td').map(function () {
+        return $(this).text();
+    }).get();
+    $('#delete-terminal-form #deleteTerminalId').val(data[1]);
+    $('.terminal-name').text(data[1]);
+    $('#terminal-details').html('<table class="table table-bordered"><tr><td>User</td><td>' +data[2]+
+        '</td></tr><tr><td>Device</td><td>'+data[3]+'</td></tr><tr><td>Description</td><td>'+data[4]+'</td></tr></table>');
 
 });
