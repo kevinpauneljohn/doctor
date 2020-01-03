@@ -9,44 +9,65 @@ function clear_errors()
     }
 }
 
-$(document).ready(function(){
+
+function submitForm( url , type , value , notif , elementKey)
+{
+    $.ajax({
+        'url' : url,
+        'type' : type,
+        'data' : value,
+        'cache' : false,
+        success: function(result, status, xhr){
+            console.log(result);
+            if(result.success === true)
+            {
+                setTimeout(function(){
+                    /*$('#role_form').trigger('reset');
+                    $('#roles').modal('toggle');*/
+                    toastr.success(notif);
+
+                    setTimeout(function(){
+                        location.reload();
+                    },1500);
+                });
+            }
+            $.each(result, function (key, value) {
+                var element = $(elementKey+'#'+key);
+
+                element.closest(elementKey+'div.'+key)
+                    .addClass(value.length > 0 ? 'has-error' : 'has-success')
+                    .find('.text-danger')
+                    .remove();
+                element.after('<p class="text-danger">'+value+'</p>');
+            });
+
+        },error: function(xhr, status, error){
+
+        }
+    });
+}
+
+
+$(function(){
     let addForm = $('#terminal-form');
+    let editForm = $('#edit-terminal-form');
 
     addForm.submit(function(form){
         form.preventDefault();
 
-        $.ajax({
-            'url' : '/terminals',
-            'type' : 'POST',
-            'data' : addForm.serialize(),
-            'cache' : false,
-            success: function(result, status, xhr){
-                if(result.success === true)
-                {
-                    setTimeout(function(){
-                        /*$('#role_form').trigger('reset');
-                        $('#roles').modal('toggle');*/
-                        toastr.success('New Terminal Successfully Added!')
-
-                        setTimeout(function(){
-                            location.reload();
-                        },1500);
-                    });
-                }
-                $.each(result, function (key, value) {
-                    var element = $('#'+key);
-
-                    element.closest('div.'+key)
-                        .addClass(value.length > 0 ? 'has-error' : 'has-success')
-                        .find('.text-danger')
-                        .remove();
-                    element.after('<p class="text-danger">'+value+'</p>');
-                });
-
-            },error: function(xhr, status, error){
-
-            }
-        });
+        submitForm('/terminals' , 'POST' , addForm.serialize(), 'New Terminal Successfully Added!' , '');
         clear_errors('user','device');
     });
+
+    editForm.submit(function(form){
+        form.preventDefault();
+        let id = $('#edit-terminal-form #updateTerminalId').val();
+        submitForm('/terminals/'+id , 'PUT' , addForm.serialize(), 'Terminal Successfully Updated!' , '');
+        clear_errors('edit_user','edit_device');
+    });
+});
+
+$(document).on('click','.edit-terminal', function(){
+    let id = this.id;
+    $('#edit-terminal-form #updateTerminalId').val(id);
 });

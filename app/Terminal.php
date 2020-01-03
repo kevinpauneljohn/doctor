@@ -11,8 +11,8 @@ class Terminal extends Model
 {
     use SoftDeletes, LogsActivity, UsesUuid;
 
-    protected $fillable = ['user_id','device'];
-    protected static $logAttributes = ['user_id','device'];
+    protected $fillable = ['user_id','device','description'];
+    protected static $logAttributes = ['user_id','device','description'];
 
     /**
      * Jan. 03, 2020

@@ -34,18 +34,14 @@ class TerminalController extends Controller
             })
             ->addColumn('action', function ($terminal) {
                 $action ="";
-                if(auth()->user()->hasPermissionTo('view terminal'))
-                {
-                    $action .= '<a href="'.route('clients.show',['client' => $terminal->id]).'"><button class="btn btn-xs btn-success view-client" id="'.$terminal->id.'"><i class="fa fa-eye"></i> View</button> </a>&nbsp;';
-                }
 
                 if(auth()->user()->hasPermissionTo('edit terminal'))
                 {
-                    $action .= '<button class="btn btn-xs btn-primary edit-client" id="'.$terminal->id.'" data-toggle="modal" data-target="#edit-new-client-modal"><i class="fa fa-edit"></i> Edit</button> &nbsp;';
+                    $action .= '<button class="btn btn-xs btn-primary edit-terminal" id="'.$terminal->id.'" data-toggle="modal" data-target="#edit-terminal-modal"><i class="fa fa-edit"></i> Edit</button> &nbsp;';
                 }
                 if(auth()->user()->hasPermissionTo('delete terminal'))
                 {
-                    $action .= '<button class="btn btn-xs btn-danger delete-client" id="'.$terminal->id.'"><i class="fa fa-trash"></i> Delete</a>';
+                    $action .= '<button class="btn btn-xs btn-danger delete-terminal" id="'.$terminal->id.'"><i class="fa fa-trash"></i> Delete</a>';
                 }
 
                 return $action;
@@ -79,16 +75,16 @@ class TerminalController extends Controller
 
         if($validator->passes())
         {
-            $response = response()->json(['success' => false]);
+            $response = false;
             $terminal = new Terminal();
             $terminal->user_id = $request->user;
             $terminal->device = $request->device;
             $terminal->description = $request->description;
             if($terminal->save())
             {
-                $response = response()->json(['success' => true]);
+                $response = true;
             }
-            return $response;
+            return response()->json(['success' => $response]);
         }
         return response()->json($validator->errors());
     }
@@ -124,7 +120,28 @@ class TerminalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'edit_user' => 'required',
+            'edit_device' => 'required',
+        ]);
+
+        if($validator->passes())
+        {
+            $response = false;
+            $terminal = Terminal::find($id);
+            $terminal->user_id = $request->edit_user;
+            $terminal->device= $request->edit_device;
+            $terminal->description= $request->edit_description;
+
+            if($terminal->save())
+            {
+                $response = true;
+            }
+
+            return response()->json(['success' => $response]);
+        }
+
+        return response()->json($validator->errors());
     }
 
     /**

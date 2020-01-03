@@ -105,6 +105,61 @@
         </div>
         <!--end add new client modal-->
     @endcan
+
+    @can('edit terminal')
+        <!--edit client modal-->
+        <div class="modal fade" id="edit-terminal-modal">
+            <form role="form" id="edit-terminal-form">
+                @csrf
+                @method('PUT')
+                <input type="hidden" name="id" id="updateTerminalId">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Update Terminal Details</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container mt-3">
+                                <div class="form-group edit_user">
+                                    <label for="edit_user">Username</label><span class="required">*</span>
+                                    <select class="form-control" name="edit_user" id="edit_user" style="width: 100%;">
+                                        <option value=""> -- Select User -- </option>
+                                        @foreach($users as $user)
+                                            <option value="{{$user->id}}">{{$user->username}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group edit_device">
+                                    <label for="edit_device">Device</label><span class="required">*</span>
+                                    <select class="form-control" name="edit_device" id="edit_device" style="width: 100%;">
+                                        <option value=""> -- Select Device -- </option>
+                                        <option value="Desktop">Desktop</option>
+                                        <option value="Laptop">Laptop</option>
+                                        <option value="Tablet">Tablet</option>
+                                        <option value="Mobile Phone">Mobile Phone</option>
+                                    </select>
+                                </div>
+                                <div class="form-group edit_description">
+                                    <label for="edit_description">Description</label>
+                                    <textarea class="form-control" name="edit_description" id="edit_description"></textarea>
+                                </div>
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </form>
+        </div>
+        <!--end add new client modal-->
+    @endcan
 @stop
 
 @section('css')
