@@ -34,6 +34,8 @@ function submitForm( url , type , value , notif , elementKey)
             $.each(result, function (key, value) {
                 var element = $(elementKey+'#'+key);
 
+                console.log(element);
+
                 element.closest(elementKey+'div.'+key)
                     .addClass(value.length > 0 ? 'has-error' : 'has-success')
                     .find('.text-danger')
@@ -62,7 +64,7 @@ $(function(){
     editForm.submit(function(form){
         form.preventDefault();
         let id = $('#edit-terminal-form #updateTerminalId').val();
-        submitForm('/terminals/'+id , 'PUT' , addForm.serialize(), 'Terminal Successfully Updated!' , '');
+        submitForm('/terminals/'+id , 'PUT' , editForm.serialize(), 'Terminal Successfully Updated!' , '#edit-terminal-form ');
         clear_errors('edit_user','edit_device');
     });
 });
@@ -70,4 +72,18 @@ $(function(){
 $(document).on('click','.edit-terminal', function(){
     let id = this.id;
     $('#edit-terminal-form #updateTerminalId').val(id);
+
+    $.ajax({
+        'url' : '/terminals/'+id,
+        'type' : 'GET',
+        'cache' : false,
+        success: function (result) {
+            $('#edit_user').val(result.user_id);
+            $('#edit_device').val(result.device);
+            $('#edit_description').val(result.description);
+        },error: function(xhr, status, error){
+            console.log(xhr+" "+status+" "+error);
+        }
+    });
+
 });

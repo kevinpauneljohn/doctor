@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Terminal;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\DataTables;
 
@@ -97,7 +98,8 @@ class TerminalController extends Controller
      */
     public function show($id)
     {
-        //
+        $terminal = Terminal::findOrFail($id);
+        return $terminal;
     }
 
     /**
