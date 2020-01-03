@@ -26,17 +26,14 @@
         </div>
         <div class="card-body">
             <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                <table id="roles-list" class="table table-bordered table-striped" role="grid">
+                <table id="terminals-list" class="table table-bordered table-striped" role="grid">
                     <thead>
                     <tr role="row">
                         <th>Date Registered</th>
-                        <th>First Name</th>
-                        <th>Middle Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
-                        <th>Mobile No</th>
-                        <th>Phone</th>
-                        <th>Clinics</th>
+                        <th>Terminal ID</th>
+                        <th>User</th>
+                        <th>Device</th>
+                        <th width="30%">Description</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -44,13 +41,10 @@
                     <tfoot>
                     <tr>
                         <th>Date Registered</th>
-                        <th>First Name</th>
-                        <th>Middle Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
-                        <th>Mobile No</th>
-                        <th>Phone</th>
-                        <th>Clinics</th>
+                        <th>Terminal ID</th>
+                        <th>User</th>
+                        <th>Device</th>
+                        <th>Description</th>
                         <th>Action</th>
                     </tr>
                     </tfoot>
@@ -135,19 +129,16 @@
         <Script src="{{asset('js/terminal.js')}}"></Script>
         <script>
             $(function() {
-                $('#roles-list').DataTable({
+                $('#terminals-list').DataTable({
                     processing: true,
                     serverSide: true,
-                    ajax: '{!! route('clients.list') !!}',
+                    ajax: '{!! route('terminals.list') !!}',
                     columns: [
                         { data: 'created_at', name: 'created_at'},
-                        { data: 'firstname', name: 'firstname'},
-                        { data: 'middlename', name: 'middlename'},
-                        { data: 'lastname', name: 'lastname'},
+                        { data: 'id', name: 'id'},
                         { data: 'username', name: 'username'},
-                        { data: 'mobileNo', name: 'mobileNo'},
-                        { data: 'landline', name: 'landline'},
-                        { data: 'clinics', name: 'clinics'},
+                        { data: 'device', name: 'device'},
+                        { data: 'description', name: 'description'},
                         { data: 'action', name: 'action', orderable: false, searchable: false}
                     ],
                     responsive:true,

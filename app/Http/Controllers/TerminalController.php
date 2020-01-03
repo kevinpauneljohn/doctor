@@ -6,6 +6,7 @@ use App\Terminal;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Yajra\DataTables\DataTables;
 
 class TerminalController extends Controller
 {
@@ -20,6 +21,37 @@ class TerminalController extends Controller
         return view('pages.Terminals.index')->with([
             'users'     => $users,
         ]);
+    }
+
+    public function terminalList()
+    {
+        $terminals = Terminal::all();
+
+        return DataTables::of($terminals)
+            ->addColumn('username',function($terminal){
+                $username = User::find($terminal->user_id)->username;
+                return $username;
+            })
+            ->addColumn('action', function ($terminal) {
+                $action ="";
+                if(auth()->user()->hasPermissionTo('view terminal'))
+                {
+                    $action .= '<a href="'.route('clients.show',['client' => $terminal->id]).'"><button class="btn btn-xs btn-success view-client" id="'.$terminal->id.'"><i class="fa fa-eye"></i> View</button> </a>&nbsp;';
+                }
+
+                if(auth()->user()->hasPermissionTo('edit terminal'))
+                {
+                    $action .= '<button class="btn btn-xs btn-primary edit-client" id="'.$terminal->id.'" data-toggle="modal" data-target="#edit-new-client-modal"><i class="fa fa-edit"></i> Edit</button> &nbsp;';
+                }
+                if(auth()->user()->hasPermissionTo('delete terminal'))
+                {
+                    $action .= '<button class="btn btn-xs btn-danger delete-client" id="'.$terminal->id.'"><i class="fa fa-trash"></i> Delete</a>';
+                }
+
+                return $action;
+            })
+            ->rawColumns(['action'])
+            ->make(true);
     }
 
     /**

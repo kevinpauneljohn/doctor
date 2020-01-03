@@ -36,9 +36,9 @@ Route::get('/terminals','TerminalController@index')->name('terminals.index')->mi
 Route::post('/terminals','TerminalController@store')->name('terminals.store')->middleware(['auth','permission:add terminal']);
 Route::put('/terminals/{terminal}','TerminalController@update')->name('terminals.update')->middleware(['auth','permission:edit terminal']);
 Route::get('/terminals/{terminal}','TerminalController@show')->name('terminals.show')->middleware(['auth','permission:view terminal']);
-Route::get('/terminals-list','TerminalController@clientList')->name('terminals.list')->middleware(['auth','permission:view terminal']);
+Route::get('/terminals-list','TerminalController@terminalList')->name('terminals.list')->middleware(['auth','permission:view terminal']);
 
-Route::post('/client-form','TerminalController@editForm')->name('terminals.form')->middleware(['auth','permission:edit client']);
+//Route::post('/terminals-form','TerminalController@editForm')->name('terminals.form')->middleware(['auth','permission:edit client']);
 /*end terminal*/
 
 /*client*/
