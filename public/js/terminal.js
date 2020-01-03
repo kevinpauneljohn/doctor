@@ -18,7 +18,6 @@ function submitForm( url , type , value , notif , elementKey)
         'data' : value,
         'cache' : false,
         success: function(result, status, xhr){
-            console.log(result);
             if(result.success === true)
             {
                 setTimeout(function(){
@@ -33,8 +32,6 @@ function submitForm( url , type , value , notif , elementKey)
             }
             $.each(result, function (key, value) {
                 var element = $(elementKey+'#'+key);
-
-                console.log(element);
 
                 element.closest(elementKey+'div.'+key)
                     .addClass(value.length > 0 ? 'has-error' : 'has-success')
