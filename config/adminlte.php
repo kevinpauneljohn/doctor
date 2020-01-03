@@ -234,6 +234,12 @@ return [
                 ],
             ],
         ],
+        [
+            'text'    => 'Terminals',
+            'icon'    => 'fa fa-fw fa-desktop',
+            'route'     => 'terminals.index',
+            'can'  => 'view terminal',
+        ],
     ],
 
     /*

@@ -31,11 +31,21 @@ Route::group(['middleware' => ['auth']], function(){
 });
 
 
+/*terminal*/
+Route::get('/terminals','TerminalController@index')->name('terminals.index')->middleware(['auth','permission:view terminal']);
+Route::post('/terminals','TerminalController@store')->name('terminals.store')->middleware(['auth','permission:add terminal']);
+Route::put('/terminals/{terminal}','TerminalController@update')->name('terminals.update')->middleware(['auth','permission:edit terminal']);
+Route::get('/terminals/{terminal}','TerminalController@show')->name('terminals.show')->middleware(['auth','permission:view terminal']);
+Route::get('/terminals-list','TerminalController@clientList')->name('terminals.list')->middleware(['auth','permission:view terminal']);
+
+Route::post('/client-form','TerminalController@editForm')->name('terminals.form')->middleware(['auth','permission:edit client']);
+/*end terminal*/
+
 /*client*/
 Route::get('/clients','ClientController@index')->name('clients.index')->middleware(['auth','permission:view client']);
 Route::post('/clients','ClientController@store')->name('clients.store')->middleware(['auth','permission:add client']);
 Route::put('/clients/{client}','ClientController@update')->name('clients.update')->middleware(['auth','permission:edit client']);
-Route::get('/clients/{client}','ClientController@show')->name('clients.show')->middleware(['auth']);
+Route::get('/clients/{client}','ClientController@show')->name('clients.show')->middleware(['auth','permission:view client']);
 Route::get('/clients-list','ClientController@clientList')->name('clients.list')->middleware(['auth','permission:view client']);
 
 Route::post('/client-form','ClientController@editForm')->name('client.form')->middleware(['auth','permission:edit client']);
