@@ -20,7 +20,7 @@
     <div class="card">
         <div class="card-header">
             @can('add terminal')
-                <button type="button" class="btn bg-gradient-primary btn-sm" data-toggle="modal" data-target="#add-new-client-modal"><i class="fa fa-plus-circle"></i> Add New</button>
+                <button type="button" class="btn bg-gradient-primary btn-sm" data-toggle="modal" data-target="#add-new-terminal-modal"><i class="fa fa-plus-circle"></i> Add New</button>
             @endcan
 
         </div>
@@ -61,8 +61,8 @@
 
     @can('add terminal')
         <!--add new client modal-->
-        <div class="modal fade" id="add-new-client-modal">
-            <form role="form" id="client-form">
+        <div class="modal fade" id="add-new-terminal-modal">
+            <form role="form" id="terminal-form">
                 @csrf
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -127,13 +127,12 @@
 @stop
 
 @section('js')
-    @can('view user')
+    @can('view terminal')
         <script src="{{asset('vendor/datatables/js/dataTables.bootstrap4.min.js')}}"></script>
         <script src="{{asset('vendor/inputmask/min/jquery.inputmask.bundle.min.js')}}"></script>
         <script src="{{asset('vendor/inputmask/inputmask/inputmask.date.extensions.js')}}"></script>
         <script src="{{asset('vendor/select2/js/select2.full.min.js')}}"></script>
-        <Script src="{{asset('js/client.js')}}"></Script>
-        <Script src="{{asset('js/address.js')}}"></Script>
+        <Script src="{{asset('js/terminal.js')}}"></Script>
         <script>
             $(function() {
                 $('#roles-list').DataTable({

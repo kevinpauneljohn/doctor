@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Terminal;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class TerminalController extends Controller
 {
@@ -38,7 +40,25 @@ class TerminalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(),[
+            'user'      => 'required',
+            'device'    => 'required',
+        ]);
+
+        if($validator->passes())
+        {
+            $response = response()->json(['success' => false]);
+            $terminal = new Terminal();
+            $terminal->user_id = $request->user;
+            $terminal->device = $request->device;
+            $terminal->description = $request->description;
+            if($terminal->save())
+            {
+                $response = response()->json(['success' => true]);
+            }
+            return $response;
+        }
+        return response()->json($validator->errors());
     }
 
     /**
