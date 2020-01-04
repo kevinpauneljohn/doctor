@@ -31,7 +31,7 @@
                     <tr role="row">
                         <th>Date Registered</th>
                         <th>Terminal ID</th>
-                        <th>User</th>
+                        <th>Username</th>
                         <th>Device</th>
                         <th width="30%">Description</th>
                         <th>Action</th>
@@ -42,7 +42,7 @@
                     <tr>
                         <th>Date Registered</th>
                         <th>Terminal ID</th>
-                        <th>User</th>
+                        <th>Username</th>
                         <th>Device</th>
                         <th>Description</th>
                         <th>Action</th>

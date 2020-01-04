@@ -85,4 +85,9 @@ class User extends Authenticatable
 //    {
 //        return $this->where('username', $username)->first();
 //    }
+
+        public function terminals()
+        {
+            return $this->hasMany(Terminal::class);
+        }
 }

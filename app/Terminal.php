@@ -21,6 +21,6 @@ class Terminal extends Model
      * */
     public function users()
     {
-
+        return $this->belongsTo(User::class);
     }
 }
