@@ -11,7 +11,13 @@ class ThresholdController extends Controller
     public function save(Request $request)
     {
         $threshold = DB::table('thresholds')->insert($request->all());
-        return response()->json(['success' => $threshold]);
+        if($threshold)
+        {
+            return 1;
+        }else{
+            return 2;
+        }
+        //return response()->json(['success' => $threshold]);
 //        return response()->json(['success' => $request->all()]);
     }
 }
