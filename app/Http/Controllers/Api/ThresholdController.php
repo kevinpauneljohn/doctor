@@ -12,5 +12,6 @@ class ThresholdController extends Controller
     {
         $threshold = DB::table('thresholds')->insert($request->all());
         return response()->json(['success' => $threshold]);
+//        return response()->json(['success' => $request->all()]);
     }
 }
