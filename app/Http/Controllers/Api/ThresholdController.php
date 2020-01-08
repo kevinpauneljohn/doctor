@@ -17,7 +17,5 @@ class ThresholdController extends Controller
         }else{
             return 2;
         }
-        //return response()->json(['success' => $threshold]);
-//        return response()->json(['success' => $request->all()]);
     }
 }
