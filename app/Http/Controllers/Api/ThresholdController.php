@@ -29,7 +29,7 @@ class ThresholdController extends Controller
 
         $terminals = Terminal::all();
         $test = array('test' => 'working');
-        return ;
+        return $test;
 
 //        $threshold = 0;
 //        foreach($terminals as $terminal)
