@@ -28,7 +28,8 @@ class ThresholdController extends Controller
 //        ])->get();
 
         $terminals = Terminal::all();
-        return "test";
+        $test = array('test' => 'working');
+        return ;
 
 //        $threshold = 0;
 //        foreach($terminals as $terminal)
