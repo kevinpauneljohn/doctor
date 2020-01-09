@@ -82,3 +82,22 @@ Route::group(['middleware' => ['auth','permission:view role']],function (){
 Route::group(['middleware' => ['auth','permission:view permission']],function (){
     Route::get('/permissions-list','PermissionController@permissionList')->name('permissions.list');
 });
+
+Route::get('/test',function (){
+    $threshold = \App\Threshold::all();
+
+    foreach ($threshold as $key => $a)
+    {
+        $value = json_decode($a->data) ;
+        return $value->clinic_id;
+        //return $a->data;
+
+//        $ctr = 1;
+//        foreach ($value->roles as $role)
+//        {
+//            $roleUser[$ctr] = $role->name;
+//            $ctr++;
+//        }
+//        return $roleUser;
+    }
+});

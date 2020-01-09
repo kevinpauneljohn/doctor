@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\ClinicUser;
 use App\Http\Controllers\Controller;
 use App\Terminal;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -24,7 +26,7 @@ class ThresholdController extends Controller
             ['id','!=',$request->terminal_id],
         ])->get();
 
-
+        $threshold = 0;
         foreach($terminals as $terminal)
         {
             /*insert request data to each receiver terminal*/
@@ -38,11 +40,52 @@ class ThresholdController extends Controller
                 'updated_at'     => $request->updated_at,
             ]);
         }
+        $user_data = array($request->data);
+        $this->sync_to_server($user_data);
         if($threshold)
-        {
             return 1;
-        }else{
-            return 0;
+
+    }
+
+
+    /**
+     * Jan. 09, 2020
+     * @author john kevin paunel
+     * sync the data to server
+     * @param array $user_data
+     * @return void
+     * */
+    public function sync_to_server($user_data)
+    {
+        foreach ($user_data as $data_column => $column)
+        {
+            $object = json_decode($column);
+            /*users*/
+            $user = DB::table('users')->insert([
+                'id'    => $object->user_id,
+                'firstname' => $object->firstname,
+                'middlename' => $object->middlename,
+                'lastname' => $object->lastname,
+                'mobileNo' => $object->mobileNo,
+                'address' => $object->address,
+                'refprovince' => $object->refprovince,
+                'refcitymun' => $object->refcitymun,
+                'status' => $object->status,
+                'category' => $object->category,
+                'created_at'    => $object->created_at,
+                'created_at'    => $object->created_at,
+            ]);
+
+            $user = User::find($object->user_id);
+            foreach ($object->roles as $role)
+            {
+                $user->assignRole($role->name);
+            }
+
+            $clinic = new ClinicUser();
+            $clinic->clinic_id = $object->clinic_id;
+            $clinic->user_id = $object->user_id;
+            $clinic->save();
         }
     }
 }
