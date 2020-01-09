@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fd92ee8b-f0b2-409c-8792-6b9b977a0257" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ThresholdController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ThresholdController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +18,7 @@
     </execution>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.43942815">
+    <splitter split-orientation="horizontal" split-proportion="0.1">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
@@ -84,14 +85,23 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ThresholdController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="23" selection-start-line="23" selection-end-line="23" />
+                <state relative-caret-position="306">
+                  <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
                   <folding>
                     <element signature="e#44#80#0#PHP" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_09_012332_add_receiver_terminal_column_to_thresholds_table.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="238">
+                  <caret line="16" column="60" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
                 </state>
               </provider>
             </entry>
@@ -130,7 +140,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/pages/Users/Client/forms/editBilling.blade.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/database/migrations/2019_12_15_043119_create_licenses_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_12_22_140316_create_activity_log_table.php" />
@@ -181,6 +190,7 @@
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Threshold.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/ThresholdController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_01_09_012332_add_receiver_terminal_column_to_thresholds_table.php" />
       </list>
     </option>
   </component>
@@ -361,6 +371,17 @@
             <path>
               <item name="doctor" type="b2602c69:ProjectViewProjectNode" />
               <item name="doctor" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="doctor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="doctor" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="doctor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="doctor" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -478,21 +499,7 @@
       <workItem from="1578455265207" duration="3626000" />
       <workItem from="1578463038226" duration="516000" />
       <workItem from="1578465432343" duration="5514000" />
-      <workItem from="1578475922046" duration="599000" />
-    </task>
-    <task id="LOCAL-00097" summary="create license key for clients">
-      <created>1577961687009</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1577961687009</updated>
-    </task>
-    <task id="LOCAL-00098" summary="create license key for clients">
-      <created>1577961777621</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1577961777621</updated>
+      <workItem from="1578475922046" duration="3871000" />
     </task>
     <task id="LOCAL-00099" summary="create license key for clients">
       <created>1577963216839</created>
@@ -823,17 +830,31 @@
       <option name="project" value="LOCAL" />
       <updated>1578471796411</updated>
     </task>
-    <option name="localTasksCounter" value="146" />
+    <task id="LOCAL-00146" summary="create license key for clients">
+      <created>1578477199560</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1578477199560</updated>
+    </task>
+    <task id="LOCAL-00147" summary="create license key for clients">
+      <created>1578477294373</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1578477294373</updated>
+    </task>
+    <option name="localTasksCounter" value="148" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="306409000" />
+    <option name="totallyTimeSpent" value="309681000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.10939597" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.14899328" />
       <window_info id="Structure" order="1" sideWeight="0.50141644" side_tool="true" weight="0.13489933" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -878,16 +899,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="create license key for clients" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LandingPageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Traits/UsesUuid.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1256,11 +1267,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ThresholdController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="306">
+          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
           <folding>
             <element signature="e#44#80#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_09_012332_add_receiver_terminal_column_to_thresholds_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" column="60" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
         </state>
       </provider>
     </entry>
