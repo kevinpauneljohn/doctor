@@ -28,23 +28,21 @@ class ThresholdController extends Controller
 //        ])->get();
 
         $terminals = Terminal::all();
-        $test = array('test' => 'working');
-        return json_encode($test);
 
-//        $threshold = 0;
-//        foreach($terminals as $terminal)
-//        {
-//            /*insert request data to each receiver terminal*/
-//            $threshold = DB::table('thresholds')->insert([
-//                'causer_id'     => $request->causer_id,
-//                'terminal_id'     => $request->terminal_id,
-//                'data'     => $request->data,
-//                'action'     => $request->action,
-//                'receiver_terminal'     => $terminal->id,
-//                'created_at'     => $request->created_at,
-//                'updated_at'     => $request->updated_at,
-//            ]);
-//        }
+        $threshold = 0;
+        foreach($terminals as $terminal)
+        {
+            /*insert request data to each receiver terminal*/
+            $threshold = DB::table('thresholds')->insert([
+                'causer_id'     => $request->causer_id,
+                'terminal_id'     => $request->terminal_id,
+                'data'     => $request->data,
+                'action'     => $request->action,
+                'receiver_terminal'     => $terminal->id,
+                'created_at'     => $request->created_at,
+                'updated_at'     => $request->updated_at,
+            ]);
+        }
 //        $user_data = array($request->data);
 //        $this->sync_to_server($user_data);
 //        if($threshold)
