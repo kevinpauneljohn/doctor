@@ -21,6 +21,7 @@ class ThresholdController extends Controller
      * */
     public function save(Request $request)
     {
+        return $request->all();
         /*retrieve all receiver terminals*/
 //        $terminals = Terminal::where([
 //            ['user_id','=',$request->causer_id],
@@ -46,7 +47,7 @@ class ThresholdController extends Controller
 //        $user_data = array($request->data);
 //        $this->sync_to_server($user_data);
 //        if($threshold)
-            return response()->json($request->all());
+
 
     }
 
