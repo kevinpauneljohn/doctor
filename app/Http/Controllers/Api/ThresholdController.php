@@ -6,6 +6,7 @@ use App\ClinicUser;
 use App\Http\Controllers\Controller;
 use App\Terminal;
 use App\User;
+use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -43,9 +44,9 @@ class ThresholdController extends Controller
             ]);
         }
         $user_data = array($request->data);
-        $this->sync_to_server($user_data);
-        if($threshold)
-            return 1;
+        return $this->sync_to_server($user_data);
+//        if($threshold)
+//            return 1;
 
     }
 
@@ -55,7 +56,7 @@ class ThresholdController extends Controller
      * @author john kevin paunel
      * sync the data to server
      * @param array $user_data
-     * @return void
+     * @return Response
      * */
     public function sync_to_server($user_data)
     {
@@ -89,5 +90,6 @@ class ThresholdController extends Controller
             $clinic->user_id = $object->user_id;
             $clinic->save();
         }
+        return response()->json(['success' => true]);
     }
 }
