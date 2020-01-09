@@ -38,7 +38,7 @@ class ThresholdController extends Controller
                 'terminal_id'     => $request->terminal_id,
                 'data'     => $request->data,
                 'action'     => $request->action,
-                'receiver_terminal'     => $request->terminal_id,
+                'receiver_terminal'     => $terminal->id,
                 'created_at'     => $request->created_at,
                 'updated_at'     => $request->updated_at,
             ]);
