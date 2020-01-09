@@ -21,10 +21,12 @@ class ThresholdController extends Controller
     public function save(Request $request)
     {
         /*retrieve all receiver terminals*/
-        $terminals = Terminal::where([
-            ['user_id','=',$request->causer_id],
-            ['id','!=',$request->terminal_id],
-        ])->get();
+//        $terminals = Terminal::where([
+//            ['user_id','=',$request->causer_id],
+//            ['id','!=',$request->terminal_id],
+//        ])->get();
+
+        $terminals = Terminal::all();
 
         $threshold = 0;
         foreach($terminals as $terminal)
