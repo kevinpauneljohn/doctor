@@ -17,7 +17,7 @@ class CreateThresholdsTable extends Migration
             $table->bigIncrements('id');
             $table->uuid('causer_id');
             $table->uuid('terminal_id');
-            $table->json('data');
+            $table->text('data');
             $table->string('action');
             $table->timestamps();
         });
