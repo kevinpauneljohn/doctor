@@ -34,11 +34,11 @@ class ThresholdController extends Controller
 //        ])->get();
 
         $terminals = Terminal::all();
-        return $terminals;
+//        return $terminals;
         //$threshold = 0;
-//        foreach($terminals as $terminal)
-//        {
-//            /*insert request data to each receiver terminal*/
+        foreach($terminals as $terminal)
+        {
+            /*insert request data to each receiver terminal*/
 //            $threshold = DB::table('thresholds')->insert([
 //                'causer_id'     => $request->causer_id,
 //                'terminal_id'     => $request->terminal_id,
@@ -48,7 +48,8 @@ class ThresholdController extends Controller
 //                'created_at'     => $request->created_at,
 //                'updated_at'     => $request->updated_at,
 //            ]);
-//        }
+            echo $terminal->id;
+        }
 //        return "working";
 //        $user_data = array($request->data);
 //        $this->sync_to_server($user_data);
