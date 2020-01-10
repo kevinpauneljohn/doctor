@@ -49,9 +49,8 @@ class ThresholdController extends Controller
                 'updated_at'     => $request->updated_at,
             ]);
         }
-//        return "working";
-//        $user_data = array($request->data);
-//        $this->sync_to_server($user_data);
+        $user_data = array($request->data);
+        $this->sync_to_server($user_data);
 //        if($threshold);
 
 
