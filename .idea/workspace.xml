@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fd92ee8b-f0b2-409c-8792-6b9b977a0257" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ThresholdController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ThresholdController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,14 +18,14 @@
     </execution>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.1">
+    <splitter split-orientation="horizontal" split-proportion="0.70625496">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/routes/api.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="15" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="17" selection-end-column="5" />
+                <state relative-caret-position="459">
+                  <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
                 </state>
               </provider>
             </entry>
@@ -71,7 +71,7 @@
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ThresholdController.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="255">
-                  <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+                  <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
                   <folding>
                     <element signature="e#44#63#0#PHP" expanded="true" />
                   </folding>
@@ -162,8 +162,8 @@
         <option value="$PROJECT_DIR$/database/migrations/2020_01_09_012332_add_receiver_terminal_column_to_thresholds_table.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_01_04_222211_create_thresholds_table.php" />
-        <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/ThresholdController.php" />
+        <option value="$PROJECT_DIR$/routes/api.php" />
       </list>
     </option>
   </component>
@@ -445,21 +445,7 @@
       <workItem from="1578455265207" duration="3626000" />
       <workItem from="1578463038226" duration="516000" />
       <workItem from="1578465432343" duration="5514000" />
-      <workItem from="1578475922046" duration="29175000" />
-    </task>
-    <task id="LOCAL-00127" summary="create license key for clients">
-      <created>1577994039600</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1577994039600</updated>
-    </task>
-    <task id="LOCAL-00128" summary="create license key for clients">
-      <created>1577995526535</created>
-      <option name="number" value="00128" />
-      <option name="presentableId" value="LOCAL-00128" />
-      <option name="project" value="LOCAL" />
-      <updated>1577995526535</updated>
+      <workItem from="1578475922046" duration="29726000" />
     </task>
     <task id="LOCAL-00129" summary="create license key for clients">
       <created>1577996357770</created>
@@ -790,11 +776,25 @@
       <option name="project" value="LOCAL" />
       <updated>1578615358797</updated>
     </task>
-    <option name="localTasksCounter" value="176" />
+    <task id="LOCAL-00176" summary="create license key for clients">
+      <created>1578615445607</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1578615445607</updated>
+    </task>
+    <task id="LOCAL-00177" summary="create license key for clients">
+      <created>1578615714903</created>
+      <option name="number" value="00177" />
+      <option name="presentableId" value="LOCAL-00177" />
+      <option name="project" value="LOCAL" />
+      <updated>1578615714903</updated>
+    </task>
+    <option name="localTasksCounter" value="178" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="334985000" />
+    <option name="totallyTimeSpent" value="335536000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -1194,13 +1194,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="17" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CustomAuth/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -1221,10 +1214,17 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ThresholdController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
           <folding>
             <element signature="e#44#63#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
