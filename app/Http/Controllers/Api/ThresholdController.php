@@ -26,7 +26,7 @@ class ThresholdController extends Controller
 //    }
     public function save(Request $request)
     {
-        return $request->all();
+        //return $request->causer_id;
         /*retrieve all receiver terminals*/
 //        $terminals = Terminal::where([
 //            ['user_id','=',$request->causer_id],
@@ -39,24 +39,15 @@ class ThresholdController extends Controller
         foreach($terminals as $terminal)
         {
             /*insert request data to each receiver terminal*/
-//            $threshold = DB::table('thresholds')->insert([
-//                'causer_id'     => $request->causer_id,
-//                'terminal_id'     => $request->terminal_id,
-//                'data'     => $request->data,
-//                'action'     => $request->action,
-//                'receiver_terminal'     => $terminal->id,
-//                'created_at'     => $request->created_at,
-//                'updated_at'     => $request->updated_at,
-//            ]);
-//            $threshold = DB::table('thresholds')->insert([
-//                'causer_id'     => '7b85a214-cb5e-4ee3-853d-08572d682bee',
-//                'terminal_id'     => '12cafcbc-a9ec-43fd-8cee-57b0dad82c5c',
-//                'data'     => 'test',
-//                'action'     => 'created medical staff',
-//                'receiver_terminal'     => '12cafcbc-a9ec-43fd-8cee-57b0dad82c5c',
-//                'created_at'     => '2020-01-09 06:03:58',
-//                'updated_at'     => '2020-01-09 06:03:58',
-//            ]);
+            $threshold = DB::table('thresholds')->insert([
+                'causer_id'     => $request->causer_id,
+                'terminal_id'     => $request->terminal_id,
+                'data'     => $request->data,
+                'action'     => $request->action,
+                'receiver_terminal'     => $terminal->id,
+                'created_at'     => $request->created_at,
+                'updated_at'     => $request->updated_at,
+            ]);
         }
 //        return "working";
 //        $user_data = array($request->data);
