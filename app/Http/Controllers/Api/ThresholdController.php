@@ -39,16 +39,15 @@ class ThresholdController extends Controller
         foreach($terminals as $terminal)
         {
             /*insert request data to each receiver terminal*/
-//            $threshold = DB::table('thresholds')->insert([
-//                'causer_id'     => $request->causer_id,
-//                'terminal_id'     => $request->terminal_id,
-//                'data'     => $request->data,
-//                'action'     => $request->action,
-//                'receiver_terminal'     => $terminal->id,
-//                'created_at'     => $request->created_at,
-//                'updated_at'     => $request->updated_at,
-//            ]);
-            echo $terminal->id;
+            $threshold = DB::table('thresholds')->insert([
+                'causer_id'     => $request->causer_id,
+                'terminal_id'     => $request->terminal_id,
+                'data'     => $request->data,
+                'action'     => $request->action,
+                'receiver_terminal'     => $terminal->id,
+                'created_at'     => $request->created_at,
+                'updated_at'     => $request->updated_at,
+            ]);
         }
 //        return "working";
 //        $user_data = array($request->data);
