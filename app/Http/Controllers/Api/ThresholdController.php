@@ -51,9 +51,7 @@ class ThresholdController extends Controller
         }
         $user_data = array($request->data);
         $this->sync_to_server($user_data);
-//        if($threshold);
-
-
+        return 1;
     }
 
 
