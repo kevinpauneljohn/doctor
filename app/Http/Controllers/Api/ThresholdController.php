@@ -21,7 +21,8 @@ class ThresholdController extends Controller
      * */
     public function save(Request $request)
     {
-        return "working";
+        //return "working";
+        return $request->all();
     }
 //    public function save(Request $request)
 //    {
