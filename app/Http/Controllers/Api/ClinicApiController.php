@@ -22,5 +22,6 @@ class ClinicApiController extends Controller
 //            'updated_at'    => $request->updated_at,
 //        ]);
         $clinic = DB::table('clinics')->insert($request->all());
+        return $clinic;
     }
 }
