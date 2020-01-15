@@ -10,7 +10,7 @@ class ClinicApiController extends Controller
 {
     public function store(Request $request)
     {
-        //return $request->all();
-        $clinic = DB::table('clinics')->insert($request->all());
+        return $request->all();
+        //$clinic = DB::table('clinics')->insert($request->all());
     }
 }
