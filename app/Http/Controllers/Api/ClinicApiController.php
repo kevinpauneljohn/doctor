@@ -54,9 +54,10 @@ class ClinicApiController extends Controller
 
         DB::table('thresholds')->insert([
             'causer_id'     => $request->user_id,
+            'table'     => 'clinics',
             'terminal_id'     => $request->terminal_id,
-            'data'     => "test",
-            'action'     => $request->action,
+            'data'     => $request->all(),
+            'action'     => "created",
             'receiver_terminal'     => $request->terminal_id,
             'created_at'     => '2020-01-09 22:55:35',
             'updated_at'     => '2020-01-09 22:55:35',
