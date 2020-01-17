@@ -51,13 +51,19 @@ class ClinicApiController extends Controller
 //            ['id','!=',$request->terminal_id],
 //        ])->get();
 
-        $threshold = new Threshold();
-        $threshold->causer_id = $request->user_id;
-        $threshold->terminal_id = $request->terminal_id;
-        $threshold->data = json_encode($request->all());
-        $threshold->action = 'created';
-        $threshold->receiver_terminal = $request->terminal_id;
-        $threshold->save();
+        $terminals = Terminal::all();
+
+        foreach ($terminals as $terminal)
+        {
+            $threshold = new Threshold();
+            $threshold->causer_id = $request->user_id;
+            $threshold->terminal_id = $request->terminal_id;
+            $threshold->data = json_encode($request->all());
+            $threshold->action = $request->action;
+            $threshold->receiver_terminal = $terminal->id;
+            $threshold->save();
+        }
+
 
         return $this;
     }

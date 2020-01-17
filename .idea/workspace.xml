@@ -18,7 +18,7 @@
     </execution>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.49131122">
+    <splitter split-orientation="horizontal" split-proportion="0.33096367">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -67,7 +67,7 @@
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ThresholdController.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="101">
-                  <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="46" selection-end-column="15" />
+                  <caret line="38" column="25" lean-forward="true" selection-start-line="38" selection-start-column="25" selection-end-line="46" selection-end-column="15" />
                   <folding>
                     <element signature="e#44#63#0#PHP" expanded="true" />
                   </folding>
@@ -91,8 +91,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ClinicApiController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+                <state relative-caret-position="271">
+                  <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
                   <folding>
                     <element signature="e#44#80#0#PHP" expanded="true" />
                   </folding>
@@ -477,21 +477,7 @@
       <workItem from="1578772337401" duration="698000" />
       <workItem from="1579076121321" duration="1220000" />
       <workItem from="1579087722852" duration="9986000" />
-      <workItem from="1579222741901" duration="6403000" />
-    </task>
-    <task id="LOCAL-00172" summary="create license key for clients">
-      <created>1578612967323</created>
-      <option name="number" value="00172" />
-      <option name="presentableId" value="LOCAL-00172" />
-      <option name="project" value="LOCAL" />
-      <updated>1578612967323</updated>
-    </task>
-    <task id="LOCAL-00173" summary="create license key for clients">
-      <created>1578613741982</created>
-      <option name="number" value="00173" />
-      <option name="presentableId" value="LOCAL-00173" />
-      <option name="project" value="LOCAL" />
-      <updated>1578613741982</updated>
+      <workItem from="1579222741901" duration="6864000" />
     </task>
     <task id="LOCAL-00174" summary="create license key for clients">
       <created>1578614843618</created>
@@ -822,11 +808,25 @@
       <option name="project" value="LOCAL" />
       <updated>1579229488954</updated>
     </task>
-    <option name="localTasksCounter" value="221" />
+    <task id="LOCAL-00221" summary="create license key for clients">
+      <created>1579229847594</created>
+      <option name="number" value="00221" />
+      <option name="presentableId" value="LOCAL-00221" />
+      <option name="project" value="LOCAL" />
+      <updated>1579229847594</updated>
+    </task>
+    <task id="LOCAL-00222" summary="create license key for clients">
+      <created>1579230013254</created>
+      <option name="number" value="00222" />
+      <option name="presentableId" value="LOCAL-00222" />
+      <option name="project" value="LOCAL" />
+      <updated>1579230013254</updated>
+    </task>
+    <option name="localTasksCounter" value="223" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="362461000" />
+    <option name="totallyTimeSpent" value="362922000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -1250,7 +1250,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ThresholdController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="101">
-          <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="46" selection-end-column="15" />
+          <caret line="38" column="25" lean-forward="true" selection-start-line="38" selection-start-column="25" selection-end-line="46" selection-end-column="15" />
           <folding>
             <element signature="e#44#63#0#PHP" expanded="true" />
           </folding>
@@ -1259,8 +1259,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ClinicApiController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+        <state relative-caret-position="271">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
           <folding>
             <element signature="e#44#80#0#PHP" expanded="true" />
           </folding>
