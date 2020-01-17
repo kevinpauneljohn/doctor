@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Terminal;
-use App\Threshold;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -21,49 +20,31 @@ class ClinicApiController extends Controller
     public function store(Request $request)
     {
 
-//        $this->save($request);
-//            $this->threshold($request);
-
-        $threshold = new Threshold();
-        $threshold->causer_id = $request->user_id;
-        $threshold->terminal_id = $request->terminal_id;
-        $threshold->data = $request->all();
-        $threshold->action = "created";
-        $threshold->receiver_terminal = $request->terminal_id;
-        $threshold->save();
+        ///$this->store($request)->save($request);
 
         return $request->all();
     }
 
-    protected function save($request)
+    public function save($request)
     {
-//        DB::table('clinics')->insert([
-//            'id'            => $request->id,
-//            'name'          => $request->name,
-//            'address'       => $request->address,
-//            'state'         => $request->state,
-//            'city'          => $request->city,
-//            'landline'      => $request->landline,
-//            'mobile'        => $request->mobile,
-//            'user_id'       => $request->user_id,
-//            'status'        => $request->status,
-//            'created_at'    => $request->created_at,
-//            'updated_at'    => $request->updated_at,
-//        ]);
+        DB::table('clinics')->insert([
+            'id'            => $request->id,
+            'name'          => $request->name,
+            'address'       => $request->address,
+            'state'         => $request->state,
+            'city'          => $request->city,
+            'landline'      => $request->landline,
+            'mobile'        => $request->mobile,
+            'user_id'       => $request->user_id,
+            'status'        => $request->status,
+            'created_at'    => $request->created_at,
+            'updated_at'    => $request->updated_at,
+        ]);
 
-//        $threshold = new Threshold();
-//        $threshold->causer_id = $request->user_id;
-//        $threshold->table = "clinics";
-//        $threshold->terminal_id = $request->terminal_id;
-//        $threshold->data = $request->all();
-//        $threshold->action = "created";
-//        $threshold->receiver_terminal = $request->terminal_id;
-//        $threshold->save();
 
-        return $this;
     }
 
-    protected function threshold($request)
+    public function threshold($request)
     {
         /*retrieve all receiver terminals*/
 //        $terminals = Terminal::where([
@@ -71,14 +52,15 @@ class ClinicApiController extends Controller
 //            ['id','!=',$request->terminal_id],
 //        ])->get();
 
-//        $threshold = new Threshold();
-//        $threshold->causer_id = $request->user_id;
-//        $threshold->table = "clinics";
-//        $threshold->terminal_id = $request->terminal_id;
-//        $threshold->data = $request->all();
-//        $threshold->action = "created";
-//        $threshold->receiver_terminal = $request->terminal_id;
-//        $threshold->save();
+        DB::table('thresholds')->insert([
+            'causer_id'     => $request->user_id,
+            'terminal_id'     => $request->terminal_id,
+            'data'     => "test",
+            'action'     => $request->action,
+            'receiver_terminal'     => $request->terminal_id,
+            'created_at'     => '2020-01-09 22:55:35',
+            'updated_at'     => '2020-01-09 22:55:35',
+        ]);
 
         return $this;
     }
