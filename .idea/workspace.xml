@@ -91,8 +91,11 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ClinicApiController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="560">
-                  <caret line="62" column="27" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
+                <state relative-caret-position="288">
+                  <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+                  <folding>
+                    <element signature="e#44#80#0#PHP" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -474,21 +477,7 @@
       <workItem from="1578772337401" duration="698000" />
       <workItem from="1579076121321" duration="1220000" />
       <workItem from="1579087722852" duration="9986000" />
-      <workItem from="1579222741901" duration="4030000" />
-    </task>
-    <task id="LOCAL-00158" summary="create license key for clients">
-      <created>1578608401758</created>
-      <option name="number" value="00158" />
-      <option name="presentableId" value="LOCAL-00158" />
-      <option name="project" value="LOCAL" />
-      <updated>1578608401759</updated>
-    </task>
-    <task id="LOCAL-00159" summary="create license key for clients">
-      <created>1578608506654</created>
-      <option name="number" value="00159" />
-      <option name="presentableId" value="LOCAL-00159" />
-      <option name="project" value="LOCAL" />
-      <updated>1578608506654</updated>
+      <workItem from="1579222741901" duration="4354000" />
     </task>
     <task id="LOCAL-00160" summary="create license key for clients">
       <created>1578608613712</created>
@@ -819,11 +808,25 @@
       <option name="project" value="LOCAL" />
       <updated>1579227072445</updated>
     </task>
-    <option name="localTasksCounter" value="207" />
+    <task id="LOCAL-00207" summary="create license key for clients">
+      <created>1579227470518</created>
+      <option name="number" value="00207" />
+      <option name="presentableId" value="LOCAL-00207" />
+      <option name="project" value="LOCAL" />
+      <updated>1579227470518</updated>
+    </task>
+    <task id="LOCAL-00208" summary="create license key for clients">
+      <created>1579227606201</created>
+      <option name="number" value="00208" />
+      <option name="presentableId" value="LOCAL-00208" />
+      <option name="project" value="LOCAL" />
+      <updated>1579227606201</updated>
+    </task>
+    <option name="localTasksCounter" value="209" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="360088000" />
+    <option name="totallyTimeSpent" value="360412000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -1256,8 +1259,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ClinicApiController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="62" column="27" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
+        <state relative-caret-position="288">
+          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+          <folding>
+            <element signature="e#44#80#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
