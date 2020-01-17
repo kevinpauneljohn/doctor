@@ -59,8 +59,8 @@ class ClinicApiController extends Controller
             'data'     => $request->all(),
             'action'     => "created",
             'receiver_terminal'     => $request->terminal_id,
-            'created_at'     => '2020-01-09 22:55:35',
-            'updated_at'     => '2020-01-09 22:55:35',
+            'created_at'     => date('Y-m-d h:i:s', strtotime($request->created_at)),
+            'updated_at'     => date('Y-m-d h:i:s', strtotime($request->updated_at)),
         ]);
 
         return $this;
