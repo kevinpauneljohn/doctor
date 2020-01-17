@@ -20,7 +20,12 @@ class ClinicApiController extends Controller
      * */
     public function store(Request $request)
     {
-        $terminals = Terminal::where('user_id',$request->user_id)->get();
+        //$terminals = Terminal::where('user_id',$request->user_id)->get();
+
+        $terminals = Terminal::where([
+            ['user_id','=',$request->user_id],
+            ['id','!=',$request->terminal_id],
+        ])->get();
 
         foreach ($terminals as $terminal)
         {
@@ -65,10 +70,10 @@ class ClinicApiController extends Controller
     public function threshold($request)
     {
         /*retrieve all receiver terminals*/
-//        $terminals = Terminal::where([
-//            ['user_id','=',$request->causer_id],
-//            ['id','!=',$request->terminal_id],
-//        ])->get();
+        $terminals = Terminal::where([
+            ['user_id','=',$request->causer_id],
+            ['id','!=',$request->terminal_id],
+        ])->get();
 
         $terminals = Terminal::all();
 
