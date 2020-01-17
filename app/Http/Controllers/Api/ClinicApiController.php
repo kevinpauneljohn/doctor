@@ -88,11 +88,7 @@ class ClinicApiController extends Controller
 
     public function updateClinic(Request $request)
     {
-        if($this->update($request)->threshold($request))
-        {
-            return 1;
-        }
-        return 0;
+        return $request->all();
     }
 
     public function update($request)
