@@ -20,7 +20,13 @@ class ClinicApiController extends Controller
      * */
     public function store(Request $request)
     {
-        $this->threshold($request)->save($request);
+        $terminals = Terminal::all();
+
+        foreach ($terminals as $terminal)
+        {
+            echo $terminal."<br/>";
+        }
+        //$this->threshold($request)->save($request);
         return $request->all();
     }
 
