@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Clinic;
 use App\Http\Controllers\Controller;
 use App\Terminal;
 use App\Threshold;
@@ -129,11 +130,17 @@ class ClinicApiController extends Controller
 
     public function deleteClinic(Request $request)
     {
-        return $request->all();
+        if($this->delete($request)->threshold($request))
+        {
+            return 1;
+        }
+        return 0;
     }
 
-    public function deleted($request)
+    public function delete($request)
     {
+        $clinic = Clinic::find($request->id);
+        $clinic->delete();
         return $this;
     }
 }
