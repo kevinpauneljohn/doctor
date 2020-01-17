@@ -22,9 +22,9 @@ class ClinicApiController extends Controller
     {
         if($this->save($request)->threshold($request))
         {
-            return response()->json(['success' => true]);
+            return 1;
         }
-        return response()->json(['success' => false]);
+        return 0;
     }
 
     /**
