@@ -126,4 +126,14 @@ class ClinicApiController extends Controller
 
         return $this;
     }
+
+    public function deleteClinic(Request $request)
+    {
+        return $request->all();
+    }
+
+    public function deleted($request)
+    {
+        return $this;
+    }
 }
