@@ -24,24 +24,33 @@ class ClinicApiController extends Controller
         $this->save($request);
             $this->threshold($request);
 
-        return $request;
+        return $request->all();
     }
 
     protected function save($request)
     {
-        DB::table('clinics')->insert([
-            'id'            => $request->id,
-            'name'          => $request->name,
-            'address'       => $request->address,
-            'state'         => $request->state,
-            'city'          => $request->city,
-            'landline'      => $request->landline,
-            'mobile'        => $request->mobile,
-            'user_id'       => $request->user_id,
-            'status'        => $request->status,
-            'created_at'    => $request->created_at,
-            'updated_at'    => $request->updated_at,
-        ]);
+//        DB::table('clinics')->insert([
+//            'id'            => $request->id,
+//            'name'          => $request->name,
+//            'address'       => $request->address,
+//            'state'         => $request->state,
+//            'city'          => $request->city,
+//            'landline'      => $request->landline,
+//            'mobile'        => $request->mobile,
+//            'user_id'       => $request->user_id,
+//            'status'        => $request->status,
+//            'created_at'    => $request->created_at,
+//            'updated_at'    => $request->updated_at,
+//        ]);
+
+        $threshold = new Threshold();
+        $threshold->causer_id = $request->user_id;
+        $threshold->table = "clinics";
+        $threshold->terminal_id = $request->terminal_id;
+        $threshold->data = $request->all();
+        $threshold->action = "created";
+        $threshold->receiver_terminal = $request->terminal_id;
+        $threshold->save();
 
         return $this;
     }
@@ -54,14 +63,14 @@ class ClinicApiController extends Controller
 //            ['id','!=',$request->terminal_id],
 //        ])->get();
 
-        $threshold = new Threshold();
-        $threshold->causer_id = $request->user_id;
-        $threshold->table = "clinics";
-        $threshold->terminal_id = $request->terminal_id;
-        $threshold->data = $request->all();
-        $threshold->action = "created";
-        $threshold->receiver_terminal = $request->terminal_id;
-        $threshold->save();
+//        $threshold = new Threshold();
+//        $threshold->causer_id = $request->user_id;
+//        $threshold->table = "clinics";
+//        $threshold->terminal_id = $request->terminal_id;
+//        $threshold->data = $request->all();
+//        $threshold->action = "created";
+//        $threshold->receiver_terminal = $request->terminal_id;
+//        $threshold->save();
 
         return $this;
     }
