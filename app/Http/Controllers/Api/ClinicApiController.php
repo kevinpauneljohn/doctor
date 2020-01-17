@@ -26,7 +26,7 @@ class ClinicApiController extends Controller
         return $request;
     }
 
-    public function save($request)
+    protected function save($request)
     {
         DB::table('clinics')->insert([
             'id'            => $request->id,
@@ -45,7 +45,7 @@ class ClinicApiController extends Controller
         return $this;
     }
 
-    public function threshold($request)
+    protected function threshold($request)
     {
         /*retrieve all receiver terminals*/
 //        $terminals = Terminal::where([
