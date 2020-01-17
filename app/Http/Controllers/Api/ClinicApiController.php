@@ -20,11 +20,19 @@ class ClinicApiController extends Controller
      * */
     public function store(Request $request)
     {
-        $terminals = Terminal::all();
+        $terminals = Terminal::where('user_id',$request->user_id);
 
         foreach ($terminals as $terminal)
         {
-            echo $terminal."<br/>";
+            DB::table('thresholds')->insert([
+                'causer_id'     => $request->user_id,
+                'terminal_id'     => $request->terminal_id,
+                'data'     => json_encode($request->all()),
+                'action'     => $request->action,
+                'receiver_terminal'     => $terminal->id,
+                'created_at'     => $request->created_at,
+                'updated_at'     => $request->updated_at,
+            ]);
         }
         //$this->threshold($request)->save($request);
         return $request->all();
