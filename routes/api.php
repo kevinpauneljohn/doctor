@@ -21,6 +21,7 @@ Route::group(['middleware' => 'auth:api'], function (){
 });
 Route::post('/userClients','Api\UserApiController@store')->name('userClients.store')->middleware(['auth:api','permission:add medical staff']);
 Route::post('/create-clinic','Api\ClinicApiController@store')->name('server.clinic.store')->middleware(['auth:api','permission:add clinic']);
+Route::post('/edit-clinic','Api\ClinicApiController@update')->name('server.clinic.edit')->middleware(['auth:api','permission:edit clinic']);
 Route::get('/test','Api\AuthController@testApi')->middleware(['auth:api']);
 Route::post('/threshold','Api\ThresholdController@save')->middleware(['auth:api']);
 Route::post('/login','Api\AuthController@authenticate');
