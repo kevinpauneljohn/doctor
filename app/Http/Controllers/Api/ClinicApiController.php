@@ -19,20 +19,19 @@ class ClinicApiController extends Controller
      * */
     public function store(Request $request)
     {
-//        $clinic = DB::table('clinics')->insert([
-//            'id'            => $request->id,
-//            'name'          => $request->name,
-//            'address'       => $request->address,
-//            'state'         => $request->state,
-//            'city'          => $request->city,
-//            'landline'      => $request->landline,
-//            'mobile'        => $request->mobile,
-//            'user_id'       => $request->user_id,
-//            'status'        => $request->status,
-//            'created_at'    => $request->created_at,
-//            'updated_at'    => $request->updated_at,
-//            'terminal_id'   => $request->terminal_id,
-//        ]);
+        $clinic = DB::table('clinics')->insert([
+            'id'            => $request->id,
+            'name'          => $request->name,
+            'address'       => $request->address,
+            'state'         => $request->state,
+            'city'          => $request->city,
+            'landline'      => $request->landline,
+            'mobile'        => $request->mobile,
+            'user_id'       => $request->user_id,
+            'status'        => $request->status,
+            'created_at'    => $request->created_at,
+            'updated_at'    => $request->updated_at,
+        ]);
         return $request->all();
     }
 
