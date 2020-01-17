@@ -20,11 +20,9 @@ class ClinicApiController extends Controller
      * */
     public function store(Request $request)
     {
-        if($this->save($request)->threshold($request))
-        {
+        $this->save($request)->threshold($request);
             return 1;
-        }
-        return 0;
+
     }
 
     /**
@@ -86,8 +84,27 @@ class ClinicApiController extends Controller
         return $this;
     }
 
-    public function update(Request $request)
+    public function updateClinic(Request $request)
     {
-        return $request->all();
+        return $this;
+    }
+
+    public function update($request)
+    {
+        DB::table('clinics')->where('id',$request->id)
+            ->update([
+                'name'          => $request->name,
+                'address'       => $request->address,
+                'state'         => $request->state,
+                'city'          => $request->city,
+                'landline'      => $request->landline,
+                'mobile'        => $request->mobile,
+                'user_id'       => $request->user_id,
+                'status'        => $request->status,
+                'created_at'    => $request->created_at,
+                'updated_at'    => $request->updated_at,
+            ]);
+
+        return $this;
     }
 }
