@@ -21,7 +21,7 @@ class ClinicApiController extends Controller
     public function store(Request $request)
     {
 
-        $this->threshold($request);
+        $this->threshold($request)->save($request);
 
         return $request->all();
     }
