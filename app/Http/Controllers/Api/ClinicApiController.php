@@ -86,6 +86,14 @@ class ClinicApiController extends Controller
         return $this;
     }
 
+
+    /**
+     * Jan. 17, 2020
+     * @author john kevin paunel
+     * this will process the update
+     * @param Request $request
+     * @return int
+     * */
     public function updateClinic(Request $request)
     {
         if($this->update($request)->threshold($request))
@@ -95,6 +103,11 @@ class ClinicApiController extends Controller
         return 0;
     }
 
+    /**
+     * Jan. 17, 2020
+     * @author john kevin paunel
+     * update the clinic data
+     * */
     public function update($request)
     {
         DB::table('clinics')->where('id',$request->id)
