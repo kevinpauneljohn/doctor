@@ -22,8 +22,8 @@ class ClinicApiController extends Controller
     {
         $terminals = Terminal::where('user_id',$request->user_id);
 
-        foreach ($terminals as $terminal)
-        {
+//        foreach ($terminals as $terminal)
+//        {
 //            $threshold = DB::table('thresholds')->insert([
 ////                'causer_id'     => $request->user_id,
 ////                'terminal_id'     => $request->terminal_id,
@@ -33,13 +33,13 @@ class ClinicApiController extends Controller
 ////                'created_at'     => $request->created_at,
 ////                'updated_at'     => $request->updated_at,
 ////            ]);
-            echo $terminal->id."<br/>";
-        }
+            //echo $terminal->id."<br/>";
+        //}
 //        if($threshold)
 //        {
 //            return "1";
 //        }
-        //return "0";
+        return $terminals;
         //$this->threshold($request)->save($request);
 //        return $request->all();
     }
