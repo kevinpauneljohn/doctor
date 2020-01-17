@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Terminal;
+use App\Threshold;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -21,7 +22,13 @@ class ClinicApiController extends Controller
     {
 
         ///$this->store($request)->save($request);
-
+        $threshold = new Threshold();
+        $threshold->causer_id = $request->user_id;
+        $threshold->terminal_id = $request->terminal_id;
+        $threshold->data = $request->user_id;
+        $threshold->action = 'created';
+        $threshold->receiver_terminal = $request->terminal_id;
+        $threshold->save();
         return $request->all();
     }
 
