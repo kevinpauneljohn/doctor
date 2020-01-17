@@ -22,7 +22,7 @@ class ClinicApiController extends Controller
 
         $this->save($request)->threshold($request);
 
-        return $request->all();
+        return $request;
     }
 
     public function save($request)
