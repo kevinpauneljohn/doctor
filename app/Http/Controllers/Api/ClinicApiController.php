@@ -88,7 +88,7 @@ class ClinicApiController extends Controller
 
     public function updateClinic(Request $request)
     {
-        return $request->all();
+        return $request->id;
     }
 
     public function update($request)
