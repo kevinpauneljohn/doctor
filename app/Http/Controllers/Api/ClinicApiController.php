@@ -21,14 +21,8 @@ class ClinicApiController extends Controller
     public function store(Request $request)
     {
 
-        ///$this->store($request)->save($request);
-        $threshold = new Threshold();
-        $threshold->causer_id = $request->user_id;
-        $threshold->terminal_id = $request->terminal_id;
-        $threshold->data = $request->user_id;
-        $threshold->action = 'created';
-        $threshold->receiver_terminal = $request->terminal_id;
-        $threshold->save();
+        $this->threshold($request);
+
         return $request->all();
     }
 
@@ -48,7 +42,7 @@ class ClinicApiController extends Controller
             'updated_at'    => $request->updated_at,
         ]);
 
-
+        return $this;
     }
 
     public function threshold($request)
@@ -59,15 +53,13 @@ class ClinicApiController extends Controller
 //            ['id','!=',$request->terminal_id],
 //        ])->get();
 
-        DB::table('thresholds')->insert([
-            'causer_id'     => $request->user_id,
-            'terminal_id'     => $request->terminal_id,
-            'data'     => "test",
-            'action'     => $request->action,
-            'receiver_terminal'     => $request->terminal_id,
-            'created_at'     => '2020-01-09 22:55:35',
-            'updated_at'     => '2020-01-09 22:55:35',
-        ]);
+        $threshold = new Threshold();
+        $threshold->causer_id = $request->user_id;
+        $threshold->terminal_id = $request->terminal_id;
+        $threshold->data = $request->user_id;
+        $threshold->action = 'created';
+        $threshold->receiver_terminal = $request->terminal_id;
+        $threshold->save();
 
         return $this;
     }
