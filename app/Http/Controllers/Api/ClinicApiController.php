@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Terminal;
+use App\Threshold;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -52,16 +53,14 @@ class ClinicApiController extends Controller
 //            ['id','!=',$request->terminal_id],
 //        ])->get();
 
-        DB::table('thresholds')->insert([
-            'causer_id'     => $request->user_id,
-            'table'     => 'clinics',
-            'terminal_id'     => $request->terminal_id,
-            'data'     => $request->all(),
-            'action'     => "created",
-            'receiver_terminal'     => $request->terminal_id,
-            'created_at'     => date('Y-m-d h:i:s', strtotime($request->created_at)),
-            'updated_at'     => date('Y-m-d h:i:s', strtotime($request->updated_at)),
-        ]);
+        $threshold = new Threshold();
+        $threshold->causer_id = $request->user_id;
+        $threshold->table = "clinics";
+        $threshold->terminal_id = $request->terminal_id;
+        $threshold->data = $request->all();
+        $threshold->action = "created";
+        $threshold->receiver_terminal = $request->terminal_id;
+        $threshold->save();
 
         return $this;
     }
