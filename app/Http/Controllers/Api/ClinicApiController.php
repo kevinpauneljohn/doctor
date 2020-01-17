@@ -19,7 +19,15 @@ class ClinicApiController extends Controller
      * */
     public function store(Request $request)
     {
-        $clinic = DB::table('clinics')->insert([
+
+        $this->save($request)->threshold($request);
+
+        return $request->all();
+    }
+
+    public function save($request)
+    {
+        DB::table('clinics')->insert([
             'id'            => $request->id,
             'name'          => $request->name,
             'address'       => $request->address,
@@ -32,15 +40,28 @@ class ClinicApiController extends Controller
             'created_at'    => $request->created_at,
             'updated_at'    => $request->updated_at,
         ]);
-        return $request->all();
+
+        return $this;
     }
 
-    public function threshold(Request $request)
+    public function threshold($request)
     {
         /*retrieve all receiver terminals*/
-        $terminals = Terminal::where([
-            ['user_id','=',$request->causer_id],
-            ['id','!=',$request->terminal_id],
-        ])->get();
+//        $terminals = Terminal::where([
+//            ['user_id','=',$request->causer_id],
+//            ['id','!=',$request->terminal_id],
+//        ])->get();
+
+        DB::table('thresholds')->insert([
+            'causer_id'     => $request->user_id,
+            'terminal_id'     => $request->terminal_id,
+            'data'     => "test",
+            'action'     => $request->action,
+            'receiver_terminal'     => $request->terminal_id,
+            'created_at'     => '2020-01-09 22:55:35',
+            'updated_at'     => '2020-01-09 22:55:35',
+        ]);
+
+        return $this;
     }
 }

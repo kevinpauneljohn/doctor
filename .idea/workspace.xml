@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd92ee8b-f0b2-409c-8792-6b9b977a0257" name="Default Changelist" comment="create license key for clients">
+    <list default="true" id="fd92ee8b-f0b2-409c-8792-6b9b977a0257" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ClinicApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ClinicApiController.php" afterDir="false" />
     </list>
@@ -18,7 +18,7 @@
     </execution>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.40679306">
+    <splitter split-orientation="horizontal" split-proportion="0.17535545">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -66,8 +66,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ThresholdController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="274">
-                  <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="32" selection-end-column="18" />
+                <state relative-caret-position="254">
+                  <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="46" selection-end-column="15" />
                   <folding>
                     <element signature="e#44#63#0#PHP" expanded="true" />
                   </folding>
@@ -91,8 +91,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ClinicApiController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="203">
-                  <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="34" selection-end-column="13" />
+                <state relative-caret-position="220">
+                  <caret line="46" column="39" lean-forward="true" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
                 </state>
               </provider>
             </entry>
@@ -474,21 +474,7 @@
       <workItem from="1578772337401" duration="698000" />
       <workItem from="1579076121321" duration="1220000" />
       <workItem from="1579087722852" duration="9986000" />
-      <workItem from="1579222741901" duration="2245000" />
-    </task>
-    <task id="LOCAL-00152" summary="create license key for clients">
-      <created>1578606387546</created>
-      <option name="number" value="00152" />
-      <option name="presentableId" value="LOCAL-00152" />
-      <option name="project" value="LOCAL" />
-      <updated>1578606387547</updated>
-    </task>
-    <task id="LOCAL-00153" summary="create license key for clients">
-      <created>1578606648931</created>
-      <option name="number" value="00153" />
-      <option name="presentableId" value="LOCAL-00153" />
-      <option name="project" value="LOCAL" />
-      <updated>1578606648931</updated>
+      <workItem from="1579222741901" duration="3036000" />
     </task>
     <task id="LOCAL-00154" summary="create license key for clients">
       <created>1578607193048</created>
@@ -819,11 +805,25 @@
       <option name="project" value="LOCAL" />
       <updated>1579141660357</updated>
     </task>
-    <option name="localTasksCounter" value="201" />
+    <task id="LOCAL-00201" summary="create license key for clients">
+      <created>1579225687237</created>
+      <option name="number" value="00201" />
+      <option name="presentableId" value="LOCAL-00201" />
+      <option name="project" value="LOCAL" />
+      <updated>1579225687237</updated>
+    </task>
+    <task id="LOCAL-00202" summary="create license key for clients">
+      <created>1579225782884</created>
+      <option name="number" value="00202" />
+      <option name="presentableId" value="LOCAL-00202" />
+      <option name="project" value="LOCAL" />
+      <updated>1579225782884</updated>
+    </task>
+    <option name="localTasksCounter" value="203" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="358303000" />
+    <option name="totallyTimeSpent" value="359094000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -1237,16 +1237,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ThresholdController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="32" selection-end-column="18" />
-          <folding>
-            <element signature="e#44#63#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserApiController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
@@ -1254,10 +1244,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ThresholdController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="46" selection-end-column="15" />
+          <folding>
+            <element signature="e#44#63#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ClinicApiController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="34" selection-end-column="13" />
+        <state relative-caret-position="220">
+          <caret line="46" column="39" lean-forward="true" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
         </state>
       </provider>
     </entry>
