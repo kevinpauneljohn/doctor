@@ -21,8 +21,16 @@ class ClinicApiController extends Controller
     public function store(Request $request)
     {
 
-        $this->save($request);
-            $this->threshold($request);
+//        $this->save($request);
+//            $this->threshold($request);
+
+        $threshold = new Threshold();
+        $threshold->causer_id = $request->user_id;
+        $threshold->terminal_id = $request->terminal_id;
+        $threshold->data = $request->all();
+        $threshold->action = "created";
+        $threshold->receiver_terminal = $request->terminal_id;
+        $threshold->save();
 
         return $request->all();
     }
@@ -43,14 +51,14 @@ class ClinicApiController extends Controller
 //            'updated_at'    => $request->updated_at,
 //        ]);
 
-        $threshold = new Threshold();
-        $threshold->causer_id = $request->user_id;
-        $threshold->table = "clinics";
-        $threshold->terminal_id = $request->terminal_id;
-        $threshold->data = $request->all();
-        $threshold->action = "created";
-        $threshold->receiver_terminal = $request->terminal_id;
-        $threshold->save();
+//        $threshold = new Threshold();
+//        $threshold->causer_id = $request->user_id;
+//        $threshold->table = "clinics";
+//        $threshold->terminal_id = $request->terminal_id;
+//        $threshold->data = $request->all();
+//        $threshold->action = "created";
+//        $threshold->receiver_terminal = $request->terminal_id;
+//        $threshold->save();
 
         return $this;
     }
