@@ -56,7 +56,7 @@ class ClinicApiController extends Controller
         $threshold = new Threshold();
         $threshold->causer_id = $request->user_id;
         $threshold->terminal_id = $request->terminal_id;
-        $threshold->data = $request->all();
+        $threshold->data = json_decode($request->all());
         $threshold->action = 'created';
         $threshold->receiver_terminal = $request->terminal_id;
         $threshold->save();
