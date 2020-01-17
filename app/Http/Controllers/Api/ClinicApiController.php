@@ -24,7 +24,7 @@ class ClinicApiController extends Controller
 
         foreach ($terminals as $terminal)
         {
-            DB::table('thresholds')->insert([
+            $threshold = DB::table('thresholds')->insert([
                 'causer_id'     => $request->user_id,
                 'terminal_id'     => $request->terminal_id,
                 'data'     => json_encode($request->all()),
