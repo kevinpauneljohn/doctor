@@ -69,9 +69,10 @@ class ClinicApiController extends Controller
                 /*save the data to threshold*/
                 $threshold = DB::table('thresholds')->insert([
                     'causer_id'     => $request->user_id,
-                    'terminal_id'     => $request->terminal_id,
-                    'data'     => json_encode($request->all()),
-                    'action'     => $request->action,
+                    'table'         => 'clinics',
+                    'terminal_id'   => $request->terminal_id,
+                    'data'          => json_encode($request->all()),
+                    'action'        => $request->action,
                     'receiver_terminal'     => $terminal->id,
                     'created_at'     => $request->created_at,
                     'updated_at'     => $request->updated_at,
