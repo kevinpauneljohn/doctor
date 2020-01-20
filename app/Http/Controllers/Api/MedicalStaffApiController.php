@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\ClinicUser;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
@@ -12,13 +13,12 @@ class MedicalStaffApiController extends Controller
     public function createMedicalStaff(Request $request)
     {
         $staff = new User();
-        $this->staff($staff, $request)->role($staff,$request);
-//        foreach ($request->roles as $role)
-//        {
-//            return response()->json(['message' => $role['name']]);
-//        }
+        if($this->staff($staff, $request)->role($staff,$request)->assignToClinic($request))
+        {
+            return 1;
+        }
 
-        return response()->json(['message' => 'done']);
+        return 0;
 
     }
 
@@ -61,6 +61,16 @@ class MedicalStaffApiController extends Controller
         {
             $staff->assignRole($role['name']);
         }
+        return $this;
+    }
+
+    public function assignToClinic($request)
+    {
+        $clinic = new ClinicUser();
+        $clinic->clinic_id = $request->clinic_id;
+        $clinic->user_id = $request->user_id;
+        $clinic->save();
+
         return $this;
     }
 }
