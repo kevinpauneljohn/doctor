@@ -11,12 +11,12 @@ class MedicalStaffApiController extends Controller
 {
     public function createMedicalStaff(Request $request)
     {
-//        $staff = new User();
-//        $this->staff($staff, $request)->role($staff,$request);
-        foreach ($request->roles as $role)
-        {
-            return response()->json(['message' => $role['name']]);
-        }
+        $staff = new User();
+        $this->staff($staff, $request)->role($staff,$request);
+//        foreach ($request->roles as $role)
+//        {
+//            return response()->json(['message' => $role['name']]);
+//        }
 
         //return 'working';
 
@@ -42,6 +42,11 @@ class MedicalStaffApiController extends Controller
         $staff->status = $request->status;
         $staff->category = $request->category;
         $staff->save();
+
+        foreach ($request->roles as $role)
+        {
+            $staff->assignRole($role['name']);
+        }
 
         return $this;
     }
