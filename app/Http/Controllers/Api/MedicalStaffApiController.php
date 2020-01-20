@@ -10,8 +10,7 @@ class MedicalStaffApiController extends Controller
 {
     public function createMedicalStaff(Request $request)
     {
-        $this->staff($request);
-        return 1;
+        return $request->all();
     }
 
     public function staff($request)
