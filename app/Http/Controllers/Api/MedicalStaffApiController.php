@@ -52,7 +52,7 @@ class MedicalStaffApiController extends Controller
     public function role($request)
     {
         $medical_staff = User::find($request->user_id);
-        foreach ($request->position as $role)
+        foreach ($request->roles as $role)
         {
             $medical_staff->assignRole($role);
         }
