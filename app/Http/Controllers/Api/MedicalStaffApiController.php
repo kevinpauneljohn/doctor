@@ -23,7 +23,7 @@ class MedicalStaffApiController extends Controller
      * */
     public function staff($request)
     {
-        DB::table('users')->insert([
+        $staff = DB::table('users')->insert([
             'id'    => $request->user_id,
             'firstname'    => $request->firstname,
             'middlename'    => $request->middlename,
@@ -37,7 +37,7 @@ class MedicalStaffApiController extends Controller
             'created_at'    => $request->created_at,
             'updated_at'    => $request->updated_at,
         ]);
-
+        $this->role($staff,$request);
         return $this;
     }
 
@@ -45,16 +45,14 @@ class MedicalStaffApiController extends Controller
      * Jan. 121, 2020
      * @author john kevin paunel
      * add role to medical staff
-     * @param object $medical_staff
      * @param Request $request
      * @return mixed
      * */
-    public function role($request)
+    public function role($staff,$request)
     {
-        $medical_staff = User::find($request->user_id);
         foreach ($request->roles as $role)
         {
-            $medical_staff->assignRole($role);
+            $staff->assignRole($role);
         }
         return $this;
     }
