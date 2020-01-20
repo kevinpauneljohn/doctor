@@ -15,7 +15,8 @@ class MedicalStaffApiController extends Controller
         //$this->staff($staff, $request);
 
 //        return $request->roles;
-        foreach ($request->roles as $role)
+        $position = json_encode($request->roles);
+        foreach ($position as $role)
         {
             return $role->name;
         }
