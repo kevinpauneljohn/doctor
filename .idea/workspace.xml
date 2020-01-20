@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd92ee8b-f0b2-409c-8792-6b9b977a0257" name="Default Changelist" comment="">
+    <list default="true" id="fd92ee8b-f0b2-409c-8792-6b9b977a0257" name="Default Changelist" comment="create license key for clients">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/MedicalStaffApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/MedicalStaffApiController.php" afterDir="false" />
     </list>
@@ -88,8 +88,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/MedicalStaffApiController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+                <state relative-caret-position="238">
+                  <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
                 </state>
               </provider>
             </entry>
@@ -478,21 +478,7 @@
       <workItem from="1579222741901" duration="24644000" />
       <workItem from="1579326735964" duration="3369000" />
       <workItem from="1579511988620" duration="1914000" />
-      <workItem from="1579519131141" duration="1667000" />
-    </task>
-    <task id="LOCAL-00213" summary="create license key for clients">
-      <created>1579228674856</created>
-      <option name="number" value="00213" />
-      <option name="presentableId" value="LOCAL-00213" />
-      <option name="project" value="LOCAL" />
-      <updated>1579228674856</updated>
-    </task>
-    <task id="LOCAL-00214" summary="create license key for clients">
-      <created>1579228842586</created>
-      <option name="number" value="00214" />
-      <option name="presentableId" value="LOCAL-00214" />
-      <option name="project" value="LOCAL" />
-      <updated>1579228842586</updated>
+      <workItem from="1579519131141" duration="2109000" />
     </task>
     <task id="LOCAL-00215" summary="create license key for clients">
       <created>1579228937977</created>
@@ -823,11 +809,25 @@
       <option name="project" value="LOCAL" />
       <updated>1579531620872</updated>
     </task>
-    <option name="localTasksCounter" value="262" />
+    <task id="LOCAL-00262" summary="create license key for clients">
+      <created>1579531816159</created>
+      <option name="number" value="00262" />
+      <option name="presentableId" value="LOCAL-00262" />
+      <option name="project" value="LOCAL" />
+      <updated>1579531816159</updated>
+    </task>
+    <task id="LOCAL-00263" summary="create license key for clients">
+      <created>1579532053387</created>
+      <option name="number" value="00263" />
+      <option name="presentableId" value="LOCAL-00263" />
+      <option name="project" value="LOCAL" />
+      <updated>1579532053387</updated>
+    </task>
+    <option name="localTasksCounter" value="264" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="387652000" />
+    <option name="totallyTimeSpent" value="388094000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -1263,8 +1263,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/MedicalStaffApiController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+        <state relative-caret-position="238">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
         </state>
       </provider>
     </entry>
