@@ -14,12 +14,12 @@ class MedicalStaffApiController extends Controller
         $staff = new User();
         //$this->staff($staff, $request);
 
-//        return $request->roles;
-        $position = json_encode($request->roles);
-        foreach ($position as $role)
-        {
-            return $role->name;
-        }
+        var_dump($request->roles) ;
+//        $position = json_encode($request->roles);
+//        foreach ($position as $role)
+//        {
+//            return $role->name;
+//        }
     }
 
     /**
