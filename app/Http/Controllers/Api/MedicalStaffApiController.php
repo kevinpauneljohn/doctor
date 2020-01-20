@@ -9,6 +9,6 @@ class MedicalStaffApiController extends Controller
 {
     public function createMedicalStaff(Request $request)
     {
-        return $request->medical_staff['firstname'];
+        return $request->medical_staff->firstname;
     }
 }
