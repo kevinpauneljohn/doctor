@@ -12,7 +12,7 @@ class MedicalStaffApiController extends Controller
     public function createMedicalStaff(Request $request)
     {
         $staff = new User();
-        $this->staff($staff, $request)->role($staff, $request);
+        $this->staff($staff, $request);
 
         return 1;
     }
