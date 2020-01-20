@@ -24,7 +24,7 @@ class MedicalStaffApiController extends Controller
     public function staff($request)
     {
         DB::table('users')->insert([
-            'id'    => $request->id,
+            'id'    => $request->user_id,
             'firstname'    => $request->firstname,
             'middlename'    => $request->middlename,
             'lastname'    => $request->lastname,
