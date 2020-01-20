@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -13,6 +14,13 @@ class MedicalStaffApiController extends Controller
         $this->staff($request);
     }
 
+    /**
+     * Jan. 21, 2020
+     * @author john kevin paunel
+     * create new medical staff
+     * @param object $request
+     * @return mixed
+     * */
     public function staff($request)
     {
         DB::table('users')->insert([
@@ -30,6 +38,24 @@ class MedicalStaffApiController extends Controller
             'updated_at'    => $request->updated_at,
         ]);
 
+        return $this;
+    }
+
+    /**
+     * Jan. 121, 2020
+     * @author john kevin paunel
+     * add role to medical staff
+     * @param object $medical_staff
+     * @param Request $request
+     * @return mixed
+     * */
+    public function role($request)
+    {
+        $medical_staff = User::find($request->user_id);
+        foreach ($request->position as $role)
+        {
+            $medical_staff->assignRole($role);
+        }
         return $this;
     }
 }
