@@ -268,45 +268,4 @@ class ClientController extends Controller
         //
     }
 
-    /*custom codes*/
-
-//    /**
-//     * Dec. 15, 2019
-//     * @author john kevin paunel
-//     * generate license key for the client
-//     * */
-//    function generate_license_key() {
-//
-//        $tokens = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-//        $segment_chars = 5;
-//        $num_segments = 4;
-//        $key_string = '';
-//
-//        for ($i = 0; $i < $num_segments; $i++) {
-//
-//            $segment = '';
-//
-//            for ($j = 0; $j < $segment_chars; $j++) {
-//                $segment .= $tokens[rand(0, 35)];
-//            }
-//
-//            $key_string .= $segment;
-//
-//            if ($i < ($num_segments - 1)) {
-//                $key_string .= '-';
-//            }
-//
-//        }
-//
-//        /*check if license already exists*/
-//        $unique_license = License::where('license',$key_string)->count();
-//        if($unique_license > 0)
-//        {
-//            /*generate license key if its already exists*/
-//            return $this->generate_license_key();
-//        }else{
-//            return $key_string;
-//        }
-//
-//    }
 }
