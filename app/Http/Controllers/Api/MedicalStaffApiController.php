@@ -41,7 +41,7 @@ class MedicalStaffApiController extends Controller
         $staff->refcitymun = $request->refcitymun;
         $staff->status = $request->status;
         $staff->category = $request->category;
-        //$staff->assignRole('medical staff');
+        $staff->assignRole('medical staff');/*Default role for medical staff*/
         $staff->save();
 
 
