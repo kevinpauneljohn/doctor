@@ -13,7 +13,7 @@ class MedicalStaffApiController extends Controller
 
         foreach ($medicalStaff as $staff)
         {
-            return $staff;
+            return $staff['firstname'];
         }
     }
 }
