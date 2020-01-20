@@ -11,8 +11,7 @@ class MedicalStaffApiController extends Controller
 {
     public function createMedicalStaff(Request $request)
     {
-        $staff = new User();
-        $this->staff($staff, $request)->role($staff,$request);
+        $this->staff($request);
 //        foreach ($request->roles as $role)
 //        {
 //            return response()->json(['message' => $role['name']]);
@@ -29,8 +28,9 @@ class MedicalStaffApiController extends Controller
      * @param object $request
      * @return mixed
      * */
-    public function staff($staff, $request)
+    public function staff($request)
     {
+        $staff = new User();
         $staff->id = $request->user_id;
         $staff->firstname = $request->firstname;
         $staff->middlename = $request->middlename;
@@ -41,12 +41,12 @@ class MedicalStaffApiController extends Controller
         $staff->refcitymun = $request->refcitymun;
         $staff->status = $request->status;
         $staff->category = $request->category;
-        $staff->save();
-
         foreach ($request->roles as $role)
         {
             $staff->assignRole($role['name']);
         }
+        $staff->save();
+
 
         return $this;
     }
