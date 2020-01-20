@@ -12,14 +12,8 @@ class MedicalStaffApiController extends Controller
     public function createMedicalStaff(Request $request)
     {
         $staff = new User();
-        //$this->staff($staff, $request);
+        $this->staff($staff, $request);
 
-        var_dump($request->roles) ;
-//        $position = json_encode($request->roles);
-//        foreach ($position as $role)
-//        {
-//            return $role->name;
-//        }
     }
 
     /**
@@ -57,7 +51,7 @@ class MedicalStaffApiController extends Controller
     {
         foreach ($request->roles as $role)
         {
-            $staff->assignRole($role);
+            $staff->assignRole($role->name);
         }
         return $this;
     }
