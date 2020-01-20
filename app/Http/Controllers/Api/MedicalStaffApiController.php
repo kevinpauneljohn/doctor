@@ -13,7 +13,10 @@ class MedicalStaffApiController extends Controller
     {
 //        $staff = new User();
 //        $this->staff($staff, $request)->role($staff,$request);
-        return $request->roles;
+        foreach ($request->roles as $role)
+        {
+            return $role;
+        }
 
     }
 
