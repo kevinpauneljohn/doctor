@@ -9,8 +9,7 @@ class MedicalStaffApiController extends Controller
 {
     public function createMedicalStaff(Request $request)
     {
-        $medicalStaff = json_encode($request->medical_staff);
-        return $medicalStaff;
+        return $request->all();
 
     }
 }
