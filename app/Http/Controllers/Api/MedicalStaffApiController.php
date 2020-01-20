@@ -15,7 +15,7 @@ class MedicalStaffApiController extends Controller
 //        $this->staff($staff, $request)->role($staff,$request);
         foreach ($request->roles as $role)
         {
-            return response()->json(['message' => 'working']);
+            return response()->json(['message' => $role->name]);
         }
 
         //return 'working';
