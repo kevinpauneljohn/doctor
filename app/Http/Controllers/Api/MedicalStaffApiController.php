@@ -20,11 +20,10 @@ class MedicalStaffApiController extends Controller
 //        }
 //
 //        return 0;
-//        $terminals = Terminal::where([
-//            ['user_id','=',$request->user_id],
-//            ['id','!=',$request->terminal_id],
-//        ]);
-        $terminals = Terminal::all();
+        $terminals = Terminal::where([
+            ['user_id','=',$request->user_id],
+            ['id','!=',$request->terminal_id],
+        ]);
 
         /*check if there is available terminal who will receive*/
         if($terminals->count() > 0)
