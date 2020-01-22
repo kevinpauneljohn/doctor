@@ -98,6 +98,7 @@ class MedicalStaffApiController extends Controller
                 /*save the data to threshold*/
                 $threshold = DB::table('thresholds')->insert([
                     'causer_id'     => $request->causer_id,
+                    'table'         => 'medicalStaff',
                     'terminal_id'   => $request->terminal_id,
                     'data'          => json_encode($request->all()),
                     'action'        => $request->action,
