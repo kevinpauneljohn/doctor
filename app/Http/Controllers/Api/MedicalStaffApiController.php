@@ -13,13 +13,14 @@ class MedicalStaffApiController extends Controller
 {
     public function createMedicalStaff(Request $request)
     {
-        $staff = new User();
-        if($this->staff($staff, $request)->role($staff,$request)->assignToClinic($request)->threshold($request))
-        {
-            return 1;
-        }
-
-        return 0;
+//        $staff = new User();
+//        if($this->staff($staff, $request)->role($staff,$request)->assignToClinic($request)->threshold($request))
+//        {
+//            return 1;
+//        }
+//
+//        return 0;
+        $this->threshold($request);
 
     }
 
