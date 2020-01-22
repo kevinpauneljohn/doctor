@@ -24,27 +24,26 @@ class MedicalStaffApiController extends Controller
 //            ['user_id','=',$request->user_id],
 //            ['id','!=',$request->terminal_id],
 //        ]);
-//        $terminals = Terminal::all();
-//
-//        /*check if there is available terminal who will receive*/
-//        if($terminals->count() > 0)
-//        {
-//            foreach ($terminals->get() as $terminal)
-//            {
-//                /*save the data to threshold*/
-//                $threshold = DB::table('thresholds')->insert([
-//                    'causer_id'     => $request->user_id,
-//                    'terminal_id'   => $request->terminal_id,
-//                    'data'          => json_encode($request->all()),
-//                    'action'        => $request->action,
-//                    'receiver_terminal'     => $terminal->id,
-//                    'created_at'     => $request->created_at,
-//                    'updated_at'     => $request->updated_at,
-//                ]);
-//            }
-//        }
+        $terminals = Terminal::all();
 
-        return $request->all();
+        /*check if there is available terminal who will receive*/
+        if($terminals->count() > 0)
+        {
+            foreach ($terminals->get() as $terminal)
+            {
+                /*save the data to threshold*/
+                $threshold = DB::table('thresholds')->insert([
+                    'causer_id'     => $request->user_id,
+                    'terminal_id'   => $request->terminal_id,
+                    'data'          => json_encode($request->all()),
+                    'action'        => $request->action,
+                    'receiver_terminal'     => $terminal->id,
+                    'created_at'     => $request->created_at,
+                    'updated_at'     => $request->updated_at,
+                ]);
+            }
+        }
+
     }
 
     /**
