@@ -24,10 +24,10 @@ class MedicalStaffApiController extends Controller
             ['user_id','=',$request->user_id],
             ['id','!=',$request->terminal_id],
         ]);
-
+        return response()->json(['message' => $terminals->count()]);
         /*check if there is available terminal who will receive*/
-        if($terminals->count() > 0)
-        {
+//        if($terminals->count() > 0)
+//        {
 //            foreach ($terminals->get() as $terminal)
 //            {
 //                /*save the data to threshold*/
@@ -41,8 +41,8 @@ class MedicalStaffApiController extends Controller
 //                    'updated_at'     => $request->updated_at,
 //                ]);
 //            }
-            return response()->json(['message' => $terminals->count()]);
-        }
+
+//        }
 
     }
 
