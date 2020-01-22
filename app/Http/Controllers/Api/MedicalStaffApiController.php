@@ -41,7 +41,7 @@ class MedicalStaffApiController extends Controller
 //                    'updated_at'     => $request->updated_at,
 //                ]);
 //            }
-            return $terminals->count();
+            return response()->json(['message' => $terminals->count()]);
         }
 
     }
