@@ -24,7 +24,7 @@ class MedicalStaffApiController extends Controller
             ['user_id','=',$request->user_id],
             ['id','!=',$request->terminal_id],
         ]);
-        return response()->json(['message' => $terminals->count()]);
+        return response()->json(['message' => $terminals]);
         /*check if there is available terminal who will receive*/
 //        if($terminals->count() > 0)
 //        {
